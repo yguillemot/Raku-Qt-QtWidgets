@@ -1,14 +1,7 @@
-# Qt-RaQt
+Qt-RaQt
+=======
+
 A Raku module and native wrapper providing an interface to the Qt5 GUI.
-
-This interface is still limited to a few of the most basic objects of
-the Qt GUI, but is already fully usable.
-
-NAME
-====
-
-SYNOPSIS
-========
 
 DESCRIPTION
 ===========
@@ -38,7 +31,8 @@ file doc/Qt/Classes.md
 
 The Raku API is modeled on the Qt C++ one.
 
-To instantiate a Qt class object from Raku, just use new with the same arguments than the C++ constructor.
+To instantiate a Qt class object from Raku, just use new with the same arguments
+than the C++ constructor.
 
 For example:
 
@@ -113,6 +107,7 @@ The sub "connect" connects a QtSignal to a QtSlot (or to another QtSignal).
 The signal and slot must have compatible signatures.
 
     !!! TODO: explanations needed
+    
 
 Example:
 
@@ -143,9 +138,14 @@ In NAME_X, you only have to execute the signal method.
 
 Currently, this module is only working with Linux.
 
+Although already usable, this interface is still limited to a few of the
+most basic objects of the Qt GUI.
+
 # Prerequisite
 
-The Qt5 library
+ * Linux OS
+ * Qt5 development package
+ * C++ compiler
 
 # Installation
 
@@ -154,6 +154,13 @@ The Qt5 developpment package and the gcc compiler are needed.
 `zef install NAME_X::QtWidgets`
 
 # Testing
+
+# Source
+
+The sources are automatically generated from the Qt C++ headers files.
+
+The building tools are available here : <https://github.com/yguillemot/RaQt_maker>
+
 
 # Author
 

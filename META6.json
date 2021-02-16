@@ -3,10 +3,10 @@
     "name" : "Qt::RaQt",
     "api" : "1",
     "auth" : "Yves Guillemot",
-    "version" : "0.1.0",
+    "version" : "0.0.1",
     "description" : "A wrapper to the Qt GUI",
     "authors" : [ "Yves Guillemot" ],
-    "license" : "GPL-V3",
+    "license" : "GPL-3.0-or-later",
     "provides" : {
         "Qt::RaQt" : "lib/Qt/RaQt.rakumod",
         "Qt::RaQt::RaQtWrappers" : "lib/Qt/RaQt/RaQtWrappers.rakumod",
@@ -19,6 +19,6 @@
     "tags": [
       "Qt", "Graphics", "GUI"
     ],
-    "source-url" : "git://github.com/yvguill/Qt-RaQt.git"
+    "source-url" : "https://github.com/yguillemot/Qt-RaQt.git"
 }
 
