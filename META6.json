@@ -1,24 +1,24 @@
 {
     "raku" : "6.d",
-    "name" : "Qt::RaQt",
+    "name" : "Qt::QtWidgets",
     "api" : "1",
     "auth" : "Yves Guillemot",
     "version" : "0.0.1",
-    "description" : "A wrapper to the Qt GUI",
+    "description" : "A wrapper to the Qt Widgets GUI",
     "authors" : [ "Yves Guillemot" ],
     "license" : "GPL-3.0-or-later",
     "provides" : {
-        "Qt::RaQt" : "lib/Qt/RaQt.rakumod",
-        "Qt::RaQt::RaQtWrappers" : "lib/Qt/RaQt/RaQtWrappers.rakumod",
-        "Qt::RaQt::RaQtHelpers" : "lib/Qt/RaQt/RaQtHelpers.rakumod"
+        "Qt::QtWidgets" : "lib/Qt/RaQt.rakumod",
+        "Qt::QtWidgets::QtWrappers" : "lib/Qt/QtWidgets/QtWrappers.rakumod",
+        "Qt::QtWidgets::QtHelpers" : "lib/Qt/QtWidgets/QtHelpers.rakumod"
     },
     "depends" : [  ],
     "build-depends" : [  ],
     "test-depends" : [  ],
-    "resources" : [ "libRaQtWrapper.so" ],
+    "resources" : [ "libQtWidgetsWrapper.so" ],
     "tags": [
-      "Qt", "Graphics", "GUI"
+      "QT", "GRAPHICS", "GUI"
     ],
-    "source-url" : "https://github.com/yguillemot/Qt-RaQt.git"
+    "source-url" : "https://github.com/yguillemot/Qt-QtWidgets.git"
 }
 

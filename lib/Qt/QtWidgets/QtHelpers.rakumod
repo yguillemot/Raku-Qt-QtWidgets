@@ -21,23 +21,23 @@ our constant %qType = {
 our constant $qtClasses is export = set
     "RaQt::" <<~<<  <
 
-        QAction
-        QCoreApplication
-        QLayout
-        QTimer
-        QBoxLayout
-        QGuiApplication
         QWidget
         QAbstractButton
+        QAction
+        QCoreApplication
         QFrame
-        QHBoxLayout
+        QLayout
         QLineEdit
         QMenu
-        QVBoxLayout
+        QTimer
         QAbstractScrollArea
+        QBoxLayout
+        QGuiApplication
         QLabel
         QPushButton
+        QHBoxLayout
         QTextEdit
+        QVBoxLayout
 
     >;
 

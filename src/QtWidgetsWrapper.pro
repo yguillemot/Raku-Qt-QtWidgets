@@ -1,10 +1,10 @@
 
 TEMPLATE = lib
 QT += widgets
-SOURCES += RaQtWrapper.cpp
+SOURCES += QtWidgetsWrapper.cpp
 #SOURCES += subAPI.cpp
-HEADERS += RaQtWrapper.hpp
-HEADERS += RaQtWrapper.h
+HEADERS += QtWidgetsWrapper.hpp
+HEADERS += QtWidgetsWrapper.h
 #HEADERS += subAPI.h
 
 # install

@@ -1,5 +1,5 @@
-Qt-RaQt
-=======
+Qt::QtWidgets
+=============
 
 A Raku module and native wrapper providing an interface to the Qt5 GUI.
 

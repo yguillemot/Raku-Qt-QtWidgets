@@ -8,14 +8,14 @@
 # 
 #     - 2) Regenerate the whole code.
 # 
-unit module RaQt;
+unit module QtWidgets;
 
-# TODO : Est-ce que l'Id donné aux objets RaQtObject est utile ?
+# TODO : Est-ce que l'Id donné aux objets QtObject est utile ?
 #        Pourquoi ne pas utiliser le pointeur vers l'objet C++ du wrapper ?
 
 use NativeCall;
-use Qt::RaQt::RaQtHelpers;
-use Qt::RaQt::RaQtWrappers;
+use Qt::QtWidgets::QtHelpers;
+use Qt::QtWidgets::QtWrappers;
 
 our %signals;    # className -> @[SigSlot( "signal(signature)", isSimpleSig )]
 our %slots;
@@ -34,27 +34,7 @@ class SigSlot {
 }
 
 BEGIN {
-    %signals<RaQt::QAction>.push(SigSlot.new(
-        name => "triggered",
-        sig => "(Bool)",
-        qSig => "(bool)",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => False,
-        isPrivate => False,
-        sSignature => createSignature((("Bool" ,"checked", False), ))
-    ));
-    %signals<RaQt::QTimer>.push(SigSlot.new(
-        name => "timeout",
-        sig => "()",
-        qSig => "()",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => False,
-        isPrivate => True,
-        sSignature => createSignature(())
-    ));
-    %signals<RaQt::QAbstractButton>.push(SigSlot.new(
+    %signals<QtWidgets::QAbstractButton>.push(SigSlot.new(
         name => "pressed",
         sig => "()",
         qSig => "()",
@@ -64,7 +44,7 @@ BEGIN {
         isPrivate => False,
         sSignature => createSignature(())
     ));
-    %signals<RaQt::QAbstractButton>.push(SigSlot.new(
+    %signals<QtWidgets::QAbstractButton>.push(SigSlot.new(
         name => "clicked",
         sig => "(Bool)",
         qSig => "(bool)",
@@ -74,7 +54,17 @@ BEGIN {
         isPrivate => False,
         sSignature => createSignature((("Bool" ,"checked", False), ))
     ));
-    %signals<RaQt::QLineEdit>.push(SigSlot.new(
+    %signals<QtWidgets::QAction>.push(SigSlot.new(
+        name => "triggered",
+        sig => "(Bool)",
+        qSig => "(bool)",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => False,
+        isPrivate => False,
+        sSignature => createSignature((("Bool" ,"checked", False), ))
+    ));
+    %signals<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "returnPressed",
         sig => "()",
         qSig => "()",
@@ -84,7 +74,7 @@ BEGIN {
         isPrivate => False,
         sSignature => createSignature(())
     ));
-    %signals<RaQt::QLineEdit>.push(SigSlot.new(
+    %signals<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "editingFinished",
         sig => "()",
         qSig => "()",
@@ -94,27 +84,19 @@ BEGIN {
         isPrivate => False,
         sSignature => createSignature(())
     ));
-
-
-    %slots<RaQt::QAction>.push(SigSlot.new(
-        name => "trigger",
+    %signals<QtWidgets::QTimer>.push(SigSlot.new(
+        name => "timeout",
         sig => "()",
         qSig => "()",
         sigIsSimple => True,
         isPlainQt => True,
-        isSlot => True,
+        isSlot => False,
+        isPrivate => True,
         sSignature => createSignature(())
     ));
-    %slots<RaQt::QAction>.push(SigSlot.new(
-        name => "setEnabled",
-        sig => "(Bool)",
-        qSig => "(bool)",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(("Bool", ))
-    ));
-    %slots<RaQt::QAction>.push(SigSlot.new(
+
+
+    %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "setDisabled",
         sig => "(Bool)",
         qSig => "(bool)",
@@ -123,43 +105,7 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(("Bool", ))
     ));
-    %slots<RaQt::QCoreApplication>.push(SigSlot.new(
-        name => "quit",
-        sig => "()",
-        qSig => "()",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(())
-    ));
-    %slots<RaQt::QTimer>.push(SigSlot.new(
-        name => "start",
-        sig => "()",
-        qSig => "()",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(())
-    ));
-    %slots<RaQt::QTimer>.push(SigSlot.new(
-        name => "stop",
-        sig => "()",
-        qSig => "()",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(())
-    ));
-    %slots<RaQt::QWidget>.push(SigSlot.new(
-        name => "setDisabled",
-        sig => "(Bool)",
-        qSig => "(bool)",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(("Bool", ))
-    ));
-    %slots<RaQt::QWidget>.push(SigSlot.new(
+    %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "setWindowTitle",
         sig => "(Str)",
         qSig => "(const QString&)",
@@ -168,7 +114,7 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(("Str", ))
     ));
-    %slots<RaQt::QWidget>.push(SigSlot.new(
+    %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "setFocus",
         sig => "()",
         qSig => "()",
@@ -177,7 +123,7 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(())
     ));
-    %slots<RaQt::QWidget>.push(SigSlot.new(
+    %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "update",
         sig => "()",
         qSig => "()",
@@ -186,7 +132,7 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(())
     ));
-    %slots<RaQt::QWidget>.push(SigSlot.new(
+    %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "show",
         sig => "()",
         qSig => "()",
@@ -195,7 +141,7 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(())
     ));
-    %slots<RaQt::QAbstractButton>.push(SigSlot.new(
+    %slots<QtWidgets::QAbstractButton>.push(SigSlot.new(
         name => "click",
         sig => "()",
         qSig => "()",
@@ -204,7 +150,43 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(())
     ));
-    %slots<RaQt::QLineEdit>.push(SigSlot.new(
+    %slots<QtWidgets::QAction>.push(SigSlot.new(
+        name => "trigger",
+        sig => "()",
+        qSig => "()",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(())
+    ));
+    %slots<QtWidgets::QAction>.push(SigSlot.new(
+        name => "setEnabled",
+        sig => "(Bool)",
+        qSig => "(bool)",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(("Bool", ))
+    ));
+    %slots<QtWidgets::QAction>.push(SigSlot.new(
+        name => "setDisabled",
+        sig => "(Bool)",
+        qSig => "(bool)",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(("Bool", ))
+    ));
+    %slots<QtWidgets::QCoreApplication>.push(SigSlot.new(
+        name => "quit",
+        sig => "()",
+        qSig => "()",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(())
+    ));
+    %slots<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "setText",
         sig => "(Str)",
         qSig => "(const QString&)",
@@ -213,7 +195,7 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(("Str", ))
     ));
-    %slots<RaQt::QLineEdit>.push(SigSlot.new(
+    %slots<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "clear",
         sig => "()",
         qSig => "()",
@@ -222,7 +204,25 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(())
     ));
-    %slots<RaQt::QLabel>.push(SigSlot.new(
+    %slots<QtWidgets::QTimer>.push(SigSlot.new(
+        name => "start",
+        sig => "()",
+        qSig => "()",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(())
+    ));
+    %slots<QtWidgets::QTimer>.push(SigSlot.new(
+        name => "stop",
+        sig => "()",
+        qSig => "()",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(())
+    ));
+    %slots<QtWidgets::QLabel>.push(SigSlot.new(
         name => "setText",
         sig => "(Str)",
         qSig => "(const QString&)",
@@ -231,7 +231,7 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(("Str", ))
     ));
-    %slots<RaQt::QLabel>.push(SigSlot.new(
+    %slots<QtWidgets::QLabel>.push(SigSlot.new(
         name => "clear",
         sig => "()",
         qSig => "()",
@@ -245,7 +245,7 @@ BEGIN {
 
 
 
-# BEWARE : For some reason, class RaQtSigsloty is compiled BEFORE other classes
+# BEWARE : For some reason, class Sigsloty is compiled BEFORE other classes
 #          May be the cause is the import instruction?
 
 
@@ -293,7 +293,7 @@ my ConnectionsManager $CM;   # Where global values are stored
 
 
 # This class is parent of everything
-class RaQtBase {
+class QtBase {
 
     has Pointer $.address is rw;
     has Bool $.ownedByRaku is rw;
@@ -324,7 +324,7 @@ class RaQtBase {
 ####### Part 1 : sub API ######################################################
 
 ### Beginning of the sub API part ###
-class Qt is RaQtBase is export {
+class Qt is QtBase is export {
     enum AlignmentFlag (
         AlignLeft => 1,
         AlignLeading => 1,
@@ -516,7 +516,7 @@ class Qt is RaQtBase is export {
         WindowFullscreenButtonHint => 2147483648,
     );
     our sub WindowFlags($e? = Widget --> Int ) is export { $e };
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = False;
@@ -532,7 +532,7 @@ class Qt is RaQtBase is export {
     }
 }
 
-class QEvent is RaQtBase is export {
+class QEvent is QtBase is export {
     enum Type (
         None => 0,
         Timer => 1,
@@ -707,25 +707,25 @@ class QEvent is RaQtBase is export {
         User => 1000,
         MaxUser => 65535,
     );
-    multi sub ctor(RaQtBase $this, QEvent::Type $type) {
+    multi sub ctor(QtBase $this, QEvent::Type $type) {
         $this.address = QWQEventCtor_1($type);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, QEvent $other) {
+    multi sub ctor(QtBase $this, QEvent $other) {
         my $a1 = $other.address;
         $this.address = QWQEventCtor_2($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -769,7 +769,7 @@ class QEvent is RaQtBase is export {
 }
 
 class QInputEvent is QEvent is export {
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = False;
@@ -786,20 +786,20 @@ class QInputEvent is QEvent is export {
 }
 
 class QPaintEvent is QEvent is export {
-    multi sub ctor(RaQtBase $this, QRect $paintRect) {
+    multi sub ctor(QtBase $this, QRect $paintRect) {
         my $a1 = $paintRect.address;
         $this.address = QWQPaintEventCtor_2($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -823,20 +823,20 @@ class QPaintEvent is QEvent is export {
 }
 
 class QMouseEvent is QInputEvent is export {
-    multi sub ctor(RaQtBase $this, QEvent::Type $type, QPointF $localPos, Qt::MouseButton $button, Int $buttons, Int $modifiers) {
+    multi sub ctor(QtBase $this, QEvent::Type $type, QPointF $localPos, Qt::MouseButton $button, Int $buttons, Int $modifiers) {
         my $a2 = $localPos.address;
         $this.address = QWQMouseEventCtor_1($type, $a2, $button, $buttons, $modifiers);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, QEvent::Type $type, QPointF $localPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers) {
+    multi sub ctor(QtBase $this, QEvent::Type $type, QPointF $localPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers) {
         my $a2 = $localPos.address;
         my $a3 = $screenPos.address;
         $this.address = QWQMouseEventCtor_2($type, $a2, $a3, $button, $buttons, $modifiers);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, QEvent::Type $type, QPointF $localPos, QPointF $windowPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers) {
+    multi sub ctor(QtBase $this, QEvent::Type $type, QPointF $localPos, QPointF $windowPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers) {
         my $a2 = $localPos.address;
         my $a3 = $windowPos.address;
         my $a4 = $screenPos.address;
@@ -844,7 +844,7 @@ class QMouseEvent is QInputEvent is export {
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, QEvent::Type $type, QPointF $localPos, QPointF $windowPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers, Qt::MouseEventSource $source) {
+    multi sub ctor(QtBase $this, QEvent::Type $type, QPointF $localPos, QPointF $windowPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers, Qt::MouseEventSource $source) {
         my $a2 = $localPos.address;
         my $a3 = $windowPos.address;
         my $a4 = $screenPos.address;
@@ -852,14 +852,14 @@ class QMouseEvent is QInputEvent is export {
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -892,31 +892,31 @@ class QMouseEvent is QInputEvent is export {
     }
 }
 
-class QBrush is RaQtBase is export {
-    multi sub ctor(RaQtBase $this) {
+class QBrush is QtBase is export {
+    multi sub ctor(QtBase $this) {
         $this.address = QWQBrushCtor_1();
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, Qt::BrushStyle $bs) {
+    multi sub ctor(QtBase $this, Qt::BrushStyle $bs) {
         $this.address = QWQBrushCtor_2($bs);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, QColor $color, Qt::BrushStyle $bs = Qt::SolidPattern) {
+    multi sub ctor(QtBase $this, QColor $color, Qt::BrushStyle $bs = Qt::SolidPattern) {
         my $a1 = $color.address;
         $this.address = QWQBrushCtor_3($a1, $bs);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -942,25 +942,25 @@ class QBrush is RaQtBase is export {
     }
 }
 
-class QColor is RaQtBase is export {
-    multi sub ctor(RaQtBase $this, Qt::GlobalColor $color) {
+class QColor is QtBase is export {
+    multi sub ctor(QtBase $this, Qt::GlobalColor $color) {
         $this.address = QWQColorCtor_2($color);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, Int $r, Int $g, Int $b, Int $a = 255) {
+    multi sub ctor(QtBase $this, Int $r, Int $g, Int $b, Int $a = 255) {
         $this.address = QWQColorCtor_3($r, $g, $b, $a);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -997,20 +997,20 @@ class QColor is RaQtBase is export {
     }
 }
 
-class QFont is RaQtBase is export {
-    multi sub ctor(RaQtBase $this) {
+class QFont is QtBase is export {
+    multi sub ctor(QtBase $this) {
         $this.address = QWQFontCtor_1();
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -1045,27 +1045,27 @@ class QFont is RaQtBase is export {
     }
 }
 
-class QPainter is RaQtBase is export {
-    multi sub ctor(RaQtBase $this) {
+class QPainter is QtBase is export {
+    multi sub ctor(QtBase $this) {
         $this.address = QWQPainterCtor_1();
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
 
-multi sub ctor(RaQtBase $this, QPaintDevice $arg1) {
+multi sub ctor(QtBase $this, QPaintDevice $arg1) {
     if !$arg1 {
         ctor($this);
         return;
     }
 
     given $arg1.qtType {
-        when RaQt::QLabel {
+        when QtWidgets::QLabel {
             $this.address = QWQPainterCtor_QWidget($arg1.addres);
         }
-        when RaQt::QWidget {
+        when QtWidgets::QWidget {
             $this.address = QWQPainterCtor_QWidget($arg1.addres);
         }
-        when RaQt::QImage {
+        when QtWidgets::QImage {
             $this.address = QWQPainterCtor_QImage($arg1.addres);
         }
         default {
@@ -1076,14 +1076,14 @@ multi sub ctor(RaQtBase $this, QPaintDevice $arg1) {
     $this.ownedByRaku = True;
     $this.qtType = ::?CLASS.^name;
 }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -1105,13 +1105,13 @@ method begin(QPaintDevice $arg1 --> Bool) {
     }
 
     given $arg1.qtType {
-        when "RaQt::QLabel"  {
+        when "QtWidgets::QLabel"  {
             return ?QWQPainterbegin_QWidget(self.address, $arg1.address);
         }
-        when "RaQt::QWidget"  {
+        when "QtWidgets::QWidget"  {
             return ?QWQPainterbegin_QWidget(self.address, $arg1.address);
         }
-        when "RaQt::QImage" {
+        when "QtWidgets::QImage" {
             return ?QWQPainterbegin_QImage(self.address, $arg1.address);
         }
         default {
@@ -1168,31 +1168,31 @@ method begin(QPaintDevice $arg1 --> Bool) {
     }
 }
 
-class QPen is RaQtBase is export {
-    multi sub ctor(RaQtBase $this) {
+class QPen is QtBase is export {
+    multi sub ctor(QtBase $this) {
         $this.address = QWQPenCtor_1();
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, Qt::PenStyle $arg1) {
+    multi sub ctor(QtBase $this, Qt::PenStyle $arg1) {
         $this.address = QWQPenCtor_2($arg1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, QColor $color) {
+    multi sub ctor(QtBase $this, QColor $color) {
         my $a1 = $color.address;
         $this.address = QWQPenCtor_3($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -1223,25 +1223,25 @@ class QPen is RaQtBase is export {
     }
 }
 
-class QPoint is RaQtBase is export {
-    multi sub ctor(RaQtBase $this) {
+class QPoint is QtBase is export {
+    multi sub ctor(QtBase $this) {
         $this.address = QWQPointCtor_1();
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, Int $xpos, Int $ypos) {
+    multi sub ctor(QtBase $this, Int $xpos, Int $ypos) {
         $this.address = QWQPointCtor_2($xpos, $ypos);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -1287,33 +1287,33 @@ class QPoint is RaQtBase is export {
     }
 }
 
-class QPointF is RaQtBase is export {
-    multi sub ctor(RaQtBase $this) {
+class QPointF is QtBase is export {
+    multi sub ctor(QtBase $this) {
         $this.address = QWQPointFCtor_1();
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, QPoint $p) {
+    multi sub ctor(QtBase $this, QPoint $p) {
         my $a1 = $p.address;
         $this.address = QWQPointFCtor_2($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, Real $xpos, Real $ypos) {
+    multi sub ctor(QtBase $this, Real $xpos, Real $ypos) {
         my Num $a1 = $xpos.Num;
         my Num $a2 = $ypos.Num;
         $this.address = QWQPointFCtor_3($a1, $a2);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -1364,32 +1364,32 @@ class QPointF is RaQtBase is export {
     }
 }
 
-class QRect is RaQtBase is export {
-    multi sub ctor(RaQtBase $this) {
+class QRect is QtBase is export {
+    multi sub ctor(QtBase $this) {
         $this.address = QWQRectCtor_1();
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, QPoint $topleft, QPoint $bottomright) {
+    multi sub ctor(QtBase $this, QPoint $topleft, QPoint $bottomright) {
         my $a1 = $topleft.address;
         my $a2 = $bottomright.address;
         $this.address = QWQRectCtor_2($a1, $a2);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, Int $left, Int $top, Int $width, Int $height) {
+    multi sub ctor(QtBase $this, Int $left, Int $top, Int $width, Int $height) {
         $this.address = QWQRectCtor_4($left, $top, $width, $height);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -1426,20 +1426,20 @@ class QRect is RaQtBase is export {
     }
 }
 
-class QRegion is RaQtBase is export {
-    multi sub ctor(RaQtBase $this) {
+class QRegion is QtBase is export {
+    multi sub ctor(QtBase $this) {
         $this.address = QWQRegionCtor_1();
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -1456,25 +1456,8 @@ class QRegion is RaQtBase is export {
     }
 }
 
-class QLayoutItem is RaQtBase is export {
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p) {
-        # Get access to a preexisting Qt object
-        $this.address = $p;
-        $this.ownedByRaku = False;
-        $this.qtType = ::?CLASS.^name;
-    }
-    multi sub ctor(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QLayoutItem");
-    }
-    submethod new(|capture) {
-        my QLayoutItem $rObj = self.bless;
-        ctor($rObj, |capture);
-        return $rObj;
-    }
-}
-
-class QPaintDevice is RaQtBase is export {
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p) {
+class QPaintDevice is QtBase is export {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = False;
@@ -1519,19 +1502,19 @@ class QImage is QPaintDevice is export {
         Format_Grayscale8 => 24,
         NImageFormats => 25,
     );
-    multi sub ctor(RaQtBase $this, Int $width, Int $height, QImage::Format $format) {
+    multi sub ctor(QtBase $this, Int $width, Int $height, QImage::Format $format) {
         $this.address = QWQImageCtor_3($width, $height, $format);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -1568,6 +1551,23 @@ class QImage is QPaintDevice is export {
         QWQImagefill_2(self.address, $a1);
     }
 }
+
+class QLayoutItem is QtBase is export {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p) {
+        # Get access to a preexisting Qt object
+        $this.address = $p;
+        $this.ownedByRaku = False;
+        $this.qtType = ::?CLASS.^name;
+    }
+    multi sub ctor(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QLayoutItem");
+    }
+    submethod new(|capture) {
+        my QLayoutItem $rObj = self.bless;
+        ctor($rObj, |capture);
+        return $rObj;
+    }
+}
 ### End of the sub API part ###
 
 
@@ -1585,7 +1585,7 @@ class QImage is QPaintDevice is export {
 
 # Store a pointer to some related object in Qt library and manage
 # the signals and slots
-class RaQtSigsloty is RaQtBase is export {
+class Sigsloty is QtBase is export {
 
 #     say 'INIT @signals';
 
@@ -1766,10 +1766,10 @@ sub showSigsSlots is export {
 
 
 
-import RaQtSigsloty;
+import Sigsloty;
 
 # Object with a related object in Qt library
-class RaQtObject is RaQtSigsloty is export {
+class QtObject is Sigsloty is export {
 
     has int32 $.id;
 
@@ -1984,7 +1984,7 @@ class ConnectionsManager {
     }
 
 
-    method addObj(RaQtObject $obj) returns Int {
+    method addObj(QtObject $obj) returns Int {
         %!objs{++$lastConnId} = $obj;
         return $lastConnId;
     }
@@ -2032,7 +2032,7 @@ class ConnectionsManager {
 
 ATTTENTION : Ce qui est ecrit plus bas n'est plus exact :
      Une classe ConnectorR (C++ seulement) est maintenant créée pour
-     chacun des slots définis au moment de l'instantiation d'une classe RaQtObject.
+     chacun des slots définis au moment de l'instantiation d'une classe QtObject.
 
 
 
@@ -2078,7 +2078,7 @@ sub QWConnectorEDTOR(Pointer)
 
 
 
-sub connect(RaQtSigsloty $src, $sigName, RaQtSigsloty $dst, $slotName)
+sub connect(Sigsloty $src, $sigName, Sigsloty $dst, $slotName)
         is export
 {
     my Bool $simple;  # True if signature is "simple"
@@ -2336,7 +2336,7 @@ sub slotCallbackComplexSig(int32 $objectId, Str $slotName, int32 $dataId)
 # Start of code for QObject
 # QObject is processed as a special case
 
-class QObject is RaQtObject is export {
+class QObject is QtObject is export {
     method ctor { ... }
 #     submethod TWEAK {
 #         say ::?CLASS, " TWEAK";
@@ -2353,194 +2353,6 @@ class QObject is RaQtObject is export {
 ####### Part 2 : main API #####################################################
 
 ### Beginning of the main API part ###
-class QAction is QObject is export {
-    multi sub ctor(RaQtBase $this, QObject $parent = (QObject)) {
-        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
-        $this.address = QWQActionCtor_1($a1);
-        $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
-    }
-    multi sub subClassCtor(RaQtBase $this, QObject $parent = (QObject)) {
-        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
-        $this.address = SCWQActionCtor_1($a1);
-        $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
-    }
-    method validateCB(Str $m) {
-        QWvalidateCB_QAction(self.address, self.id, $m);
-    }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
-        # Get access to a preexisting Qt object
-        $this.address = $p;
-        $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
-    }
-    multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod new(|capture) {
-        my QAction $rObj = self.bless;
-        ctor($rObj, |capture);
-        return $rObj;
-    }
-    multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod subClass(|capture) {
-        subClassCtor(self, |capture);
-        self.validateCallBacks();
-    }
-    submethod DESTROY {
-        if self.ownedByRaku {
-            QWQActionDtor(self.address);
-            self.ownedByRaku = False;
-        }
-    }
-    method trigger() is QtSlot
-    {
-        QWQActiontrigger(self.address);
-    }
-    method setEnabled(Bool $arg1) is QtSlot
-    {
-        my int8 $a1 = $arg1.Int;
-        QWQActionsetEnabled(self.address, $a1);
-    }
-    method setDisabled(Bool $b) is QtSlot
-    {
-        my int8 $a1 = $b.Int;
-        QWQActionsetDisabled(self.address, $a1);
-    }
-    method triggered(Bool $checked = False)
-        is QtSignal { ... }
-}
-
-class QCoreApplication is QObject is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QCoreApplication");
-    }
-    method sendEvent(QObject $receiver, QEvent $event --> Bool)
-    {
-        my $a1 = ?$receiver ?? $receiver.address !! QWInt2Pointer(0);
-        my $a2 = ?$event ?? $event.address !! QWInt2Pointer(0);
-        my $result = QWQCoreApplicationsendEvent(self.address, $a1, $a2);
-        my $result1 = ?$result;
-        return $result1;
-    }
-    method quit() is QtSlot
-    {
-        QWQCoreApplicationquit(self.address);
-    }
-}
-
-class QLayout is QObject is QLayoutItem is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QLayout");
-    }
-    multi method setAlignment(QWidget $w, Int $alignment --> Bool)
-    {
-        my $a1 = ?$w ?? $w.address !! QWInt2Pointer(0);
-        my $result = QWQLayoutsetAlignment_1(self.address, $a1, $alignment);
-        my $result1 = ?$result;
-        return $result1;
-    }
-    multi method setAlignment(QLayout $l, Int $alignment --> Bool)
-    {
-        my $a1 = ?$l ?? $l.address !! QWInt2Pointer(0);
-        my $result = QWQLayoutsetAlignment_2(self.address, $a1, $alignment);
-        my $result1 = ?$result;
-        return $result1;
-    }
-    method addWidget(QWidget $w)
-    {
-        my $a1 = ?$w ?? $w.address !! QWInt2Pointer(0);
-        QWQLayoutaddWidget(self.address, $a1);
-    }
-}
-
-class QTimer is QObject is export {
-    multi sub ctor(RaQtBase $this, QObject $parent = (QObject)) {
-        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
-        $this.address = QWQTimerCtor($a1);
-        $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
-    }
-    multi sub subClassCtor(RaQtBase $this, QObject $parent = (QObject)) {
-        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
-        $this.address = SCWQTimerCtor($a1);
-        $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
-    }
-    method validateCB(Str $m) {
-        QWvalidateCB_QTimer(self.address, self.id, $m);
-    }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
-        # Get access to a preexisting Qt object
-        $this.address = $p;
-        $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
-    }
-    multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod new(|capture) {
-        my QTimer $rObj = self.bless;
-        ctor($rObj, |capture);
-        return $rObj;
-    }
-    multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod subClass(|capture) {
-        subClassCtor(self, |capture);
-        self.validateCallBacks();
-    }
-    submethod DESTROY {
-        if self.ownedByRaku {
-            QWQTimerDtor(self.address);
-            self.ownedByRaku = False;
-        }
-    }
-    multi method setInterval(Int $msec)
-    {
-        QWQTimersetInterval_1(self.address, $msec);
-    }
-    multi method start() is QtSlot
-    {
-        QWQTimerstart_2(self.address);
-    }
-    method stop() is QtSlot
-    {
-        QWQTimerstop(self.address);
-    }
-    method timeout()
-        is QtPrivateSignal { ... }
-}
-
-class QBoxLayout is QLayout is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QBoxLayout");
-    }
-    method addLayout(QLayout $layout, Int $stretch = 0)
-    {
-        my $a1 = ?$layout ?? $layout.address !! QWInt2Pointer(0);
-        QWQBoxLayoutaddLayout(self.address, $a1, $stretch);
-    }
-}
-
-class QGuiApplication is QCoreApplication is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QGuiApplication");
-    }
-}
-
 class QWidget is QObject is QPaintDevice is export {
     enum RenderFlag (
         DrawWindowBackground => 1,
@@ -2558,13 +2370,13 @@ class QWidget is QObject is QPaintDevice is export {
             paintEvent
         >;
     }
-    multi sub ctor(RaQtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
+    multi sub ctor(QtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQWidgetCtor($a1, $f);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
+    multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQWidgetCtor($a1, $f);
         $this.ownedByRaku = True;
@@ -2573,14 +2385,14 @@ class QWidget is QObject is QPaintDevice is export {
     method validateCB(Str $m) {
         QWvalidateCB_QWidget(self.address, self.id, $m);
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -2590,7 +2402,7 @@ class QWidget is QObject is QPaintDevice is export {
         return $rObj;
     }
     multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
+        note "QtWidgets subclass ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -2725,44 +2537,40 @@ class QAbstractButton is QWidget is export {
         is QtSignal { ... }
 }
 
-class QFrame is QWidget is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QFrame");
-    }
-}
-
-class QHBoxLayout is QBoxLayout is export {
-    multi sub ctor(RaQtBase $this) {
-        $this.address = QWQHBoxLayoutCtor_1();
+class QAction is QObject is export {
+    multi sub ctor(QtBase $this, QObject $parent = (QObject)) {
+        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
+        $this.address = QWQActionCtor_1($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this) {
-        $this.address = SCWQHBoxLayoutCtor_1();
+    multi sub subClassCtor(QtBase $this, QObject $parent = (QObject)) {
+        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
+        $this.address = SCWQActionCtor_1($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
-        QWvalidateCB_QHBoxLayout(self.address, self.id, $m);
+        QWvalidateCB_QAction(self.address, self.id, $m);
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
     submethod new(|capture) {
-        my QHBoxLayout $rObj = self.bless;
+        my QAction $rObj = self.bless;
         ctor($rObj, |capture);
         return $rObj;
     }
     multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
+        note "QtWidgets subclass ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -2772,20 +2580,85 @@ class QHBoxLayout is QBoxLayout is export {
     }
     submethod DESTROY {
         if self.ownedByRaku {
-            QWQHBoxLayoutDtor(self.address);
+            QWQActionDtor(self.address);
             self.ownedByRaku = False;
         }
+    }
+    method trigger() is QtSlot
+    {
+        QWQActiontrigger(self.address);
+    }
+    method setEnabled(Bool $arg1) is QtSlot
+    {
+        my int8 $a1 = $arg1.Int;
+        QWQActionsetEnabled(self.address, $a1);
+    }
+    method setDisabled(Bool $b) is QtSlot
+    {
+        my int8 $a1 = $b.Int;
+        QWQActionsetDisabled(self.address, $a1);
+    }
+    method triggered(Bool $checked = False)
+        is QtSignal { ... }
+}
+
+class QCoreApplication is QObject is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QCoreApplication");
+    }
+    method sendEvent(QObject $receiver, QEvent $event --> Bool)
+    {
+        my $a1 = ?$receiver ?? $receiver.address !! QWInt2Pointer(0);
+        my $a2 = ?$event ?? $event.address !! QWInt2Pointer(0);
+        my $result = QWQCoreApplicationsendEvent(self.address, $a1, $a2);
+        my $result1 = ?$result;
+        return $result1;
+    }
+    method quit() is QtSlot
+    {
+        QWQCoreApplicationquit(self.address);
+    }
+}
+
+class QFrame is QWidget is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QFrame");
+    }
+}
+
+class QLayout is QObject is QLayoutItem is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QLayout");
+    }
+    multi method setAlignment(QWidget $w, Int $alignment --> Bool)
+    {
+        my $a1 = ?$w ?? $w.address !! QWInt2Pointer(0);
+        my $result = QWQLayoutsetAlignment_1(self.address, $a1, $alignment);
+        my $result1 = ?$result;
+        return $result1;
+    }
+    multi method setAlignment(QLayout $l, Int $alignment --> Bool)
+    {
+        my $a1 = ?$l ?? $l.address !! QWInt2Pointer(0);
+        my $result = QWQLayoutsetAlignment_2(self.address, $a1, $alignment);
+        my $result1 = ?$result;
+        return $result1;
+    }
+    method addWidget(QWidget $w)
+    {
+        my $a1 = ?$w ?? $w.address !! QWInt2Pointer(0);
+        QWQLayoutaddWidget(self.address, $a1);
     }
 }
 
 class QLineEdit is QWidget is export {
-    multi sub ctor(RaQtBase $this, QWidget $parent = (QWidget)) {
+    multi sub ctor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQLineEditCtor_1($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this, QWidget $parent = (QWidget)) {
+    multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQLineEditCtor_1($a1);
         $this.ownedByRaku = True;
@@ -2794,26 +2667,26 @@ class QLineEdit is QWidget is export {
     method validateCB(Str $m) {
         QWvalidateCB_QLineEdit(self.address, self.id, $m);
     }
-    multi sub ctor(RaQtBase $this, Str $arg1, QWidget $parent = (QWidget)) {
+    multi sub ctor(QtBase $this, Str $arg1, QWidget $parent = (QWidget)) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQLineEditCtor_2($arg1, $a2);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this, Str $arg1, QWidget $parent = (QWidget)) {
+    multi sub subClassCtor(QtBase $this, Str $arg1, QWidget $parent = (QWidget)) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQLineEditCtor_2($arg1, $a2);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -2823,7 +2696,7 @@ class QLineEdit is QWidget is export {
         return $rObj;
     }
     multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
+        note "QtWidgets subclass ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -2861,13 +2734,13 @@ class QLineEdit is QWidget is export {
 }
 
 class QMenu is QWidget is export {
-    multi sub ctor(RaQtBase $this, QWidget $parent = (QWidget)) {
+    multi sub ctor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQMenuCtor_1($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this, QWidget $parent = (QWidget)) {
+    multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQMenuCtor_1($a1);
         $this.ownedByRaku = True;
@@ -2876,26 +2749,26 @@ class QMenu is QWidget is export {
     method validateCB(Str $m) {
         QWvalidateCB_QMenu(self.address, self.id, $m);
     }
-    multi sub ctor(RaQtBase $this, Str $title, QWidget $parent = (QWidget)) {
+    multi sub ctor(QtBase $this, Str $title, QWidget $parent = (QWidget)) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQMenuCtor_2($title, $a2);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this, Str $title, QWidget $parent = (QWidget)) {
+    multi sub subClassCtor(QtBase $this, Str $title, QWidget $parent = (QWidget)) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQMenuCtor_2($title, $a2);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -2905,7 +2778,7 @@ class QMenu is QWidget is export {
         return $rObj;
     }
     multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
+        note "QtWidgets subclass ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -2933,38 +2806,40 @@ class QMenu is QWidget is export {
     }
 }
 
-class QVBoxLayout is QBoxLayout is export {
-    multi sub ctor(RaQtBase $this) {
-        $this.address = QWQVBoxLayoutCtor_1();
+class QTimer is QObject is export {
+    multi sub ctor(QtBase $this, QObject $parent = (QObject)) {
+        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
+        $this.address = QWQTimerCtor($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this) {
-        $this.address = SCWQVBoxLayoutCtor_1();
+    multi sub subClassCtor(QtBase $this, QObject $parent = (QObject)) {
+        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
+        $this.address = SCWQTimerCtor($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
-        QWvalidateCB_QVBoxLayout(self.address, self.id, $m);
+        QWvalidateCB_QTimer(self.address, self.id, $m);
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
     submethod new(|capture) {
-        my QVBoxLayout $rObj = self.bless;
+        my QTimer $rObj = self.bless;
         ctor($rObj, |capture);
         return $rObj;
     }
     multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
+        note "QtWidgets subclass ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -2974,10 +2849,24 @@ class QVBoxLayout is QBoxLayout is export {
     }
     submethod DESTROY {
         if self.ownedByRaku {
-            QWQVBoxLayoutDtor(self.address);
+            QWQTimerDtor(self.address);
             self.ownedByRaku = False;
         }
     }
+    multi method setInterval(Int $msec)
+    {
+        QWQTimersetInterval_1(self.address, $msec);
+    }
+    multi method start() is QtSlot
+    {
+        QWQTimerstart_2(self.address);
+    }
+    method stop() is QtSlot
+    {
+        QWQTimerstop(self.address);
+    }
+    method timeout()
+        is QtPrivateSignal { ... }
 }
 
 class QAbstractScrollArea is QFrame is export {
@@ -2986,14 +2875,31 @@ class QAbstractScrollArea is QFrame is export {
     }
 }
 
+class QBoxLayout is QLayout is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QBoxLayout");
+    }
+    method addLayout(QLayout $layout, Int $stretch = 0)
+    {
+        my $a1 = ?$layout ?? $layout.address !! QWInt2Pointer(0);
+        QWQBoxLayoutaddLayout(self.address, $a1, $stretch);
+    }
+}
+
+class QGuiApplication is QCoreApplication is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QGuiApplication");
+    }
+}
+
 class QLabel is QFrame is export {
-    multi sub ctor(RaQtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
+    multi sub ctor(QtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQLabelCtor_1($a1, $f);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
+    multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQLabelCtor_1($a1, $f);
         $this.ownedByRaku = True;
@@ -3002,26 +2908,26 @@ class QLabel is QFrame is export {
     method validateCB(Str $m) {
         QWvalidateCB_QLabel(self.address, self.id, $m);
     }
-    multi sub ctor(RaQtBase $this, Str $text, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
+    multi sub ctor(QtBase $this, Str $text, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQLabelCtor_2($text, $a2, $f);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this, Str $text, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
+    multi sub subClassCtor(QtBase $this, Str $text, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQLabelCtor_2($text, $a2, $f);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -3031,7 +2937,7 @@ class QLabel is QFrame is export {
         return $rObj;
     }
     multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
+        note "QtWidgets subclass ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -3068,13 +2974,13 @@ class QLabel is QFrame is export {
 }
 
 class QPushButton is QAbstractButton is export {
-    multi sub ctor(RaQtBase $this, Str $text, QWidget $parent = (QWidget)) {
+    multi sub ctor(QtBase $this, Str $text, QWidget $parent = (QWidget)) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQPushButtonCtor_2($text, $a2);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this, Str $text, QWidget $parent = (QWidget)) {
+    multi sub subClassCtor(QtBase $this, Str $text, QWidget $parent = (QWidget)) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQPushButtonCtor_2($text, $a2);
         $this.ownedByRaku = True;
@@ -3083,14 +2989,14 @@ class QPushButton is QAbstractButton is export {
     method validateCB(Str $m) {
         QWvalidateCB_QPushButton(self.address, self.id, $m);
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -3100,7 +3006,7 @@ class QPushButton is QAbstractButton is export {
         return $rObj;
     }
     multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
+        note "QtWidgets subclass ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -3121,14 +3027,61 @@ class QPushButton is QAbstractButton is export {
     }
 }
 
+class QHBoxLayout is QBoxLayout is export {
+    multi sub ctor(QtBase $this) {
+        $this.address = QWQHBoxLayoutCtor_1();
+        $this.ownedByRaku = True;
+        $this.qtType = ::?CLASS.^name;
+    }
+    multi sub subClassCtor(QtBase $this) {
+        $this.address = SCWQHBoxLayoutCtor_1();
+        $this.ownedByRaku = True;
+        $this.qtType = ::?CLASS.^name;
+    }
+    method validateCB(Str $m) {
+        QWvalidateCB_QHBoxLayout(self.address, self.id, $m);
+    }
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+        # Get access to a preexisting Qt object
+        $this.address = $p;
+        $this.ownedByRaku = $obr;
+        $this.qtType = ::?CLASS.^name;
+    }
+    multi sub ctor(|capture) {
+        note "QtWidgets ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod new(|capture) {
+        my QHBoxLayout $rObj = self.bless;
+        ctor($rObj, |capture);
+        return $rObj;
+    }
+    multi sub subClassCtor(|capture) {
+        note "QtWidgets subclass ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod subClass(|capture) {
+        subClassCtor(self, |capture);
+        self.validateCallBacks();
+    }
+    submethod DESTROY {
+        if self.ownedByRaku {
+            QWQHBoxLayoutDtor(self.address);
+            self.ownedByRaku = False;
+        }
+    }
+}
+
 class QTextEdit is QAbstractScrollArea is export {
-    multi sub ctor(RaQtBase $this, QWidget $parent = (QWidget)) {
+    multi sub ctor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQTextEditCtor_1($a1);
         $this.ownedByRaku = True;
         $this.qtType = ::?CLASS.^name;
     }
-    multi sub subClassCtor(RaQtBase $this, QWidget $parent = (QWidget)) {
+    multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQTextEditCtor_1($a1);
         $this.ownedByRaku = True;
@@ -3137,14 +3090,14 @@ class QTextEdit is QAbstractScrollArea is export {
     method validateCB(Str $m) {
         QWvalidateCB_QTextEdit(self.address, self.id, $m);
     }
-    multi sub ctor(RaQtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
         $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
-        note "RaQt ", ::?CLASS.^name,
+        note "QtWidgets ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -3154,7 +3107,7 @@ class QTextEdit is QAbstractScrollArea is export {
         return $rObj;
     }
     multi sub subClassCtor(|capture) {
-        note "RaQt subclass ", ::?CLASS.^name,
+        note "QtWidgets subclass ", ::?CLASS.^name,
              " ctor called with unsupported args";
         die "Bad args";
     }
@@ -3172,6 +3125,53 @@ class QTextEdit is QAbstractScrollArea is export {
     {
         my $result = QWQTextEdittoPlainText(self.address);
         return $result;
+    }
+}
+
+class QVBoxLayout is QBoxLayout is export {
+    multi sub ctor(QtBase $this) {
+        $this.address = QWQVBoxLayoutCtor_1();
+        $this.ownedByRaku = True;
+        $this.qtType = ::?CLASS.^name;
+    }
+    multi sub subClassCtor(QtBase $this) {
+        $this.address = SCWQVBoxLayoutCtor_1();
+        $this.ownedByRaku = True;
+        $this.qtType = ::?CLASS.^name;
+    }
+    method validateCB(Str $m) {
+        QWvalidateCB_QVBoxLayout(self.address, self.id, $m);
+    }
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+        # Get access to a preexisting Qt object
+        $this.address = $p;
+        $this.ownedByRaku = $obr;
+        $this.qtType = ::?CLASS.^name;
+    }
+    multi sub ctor(|capture) {
+        note "QtWidgets ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod new(|capture) {
+        my QVBoxLayout $rObj = self.bless;
+        ctor($rObj, |capture);
+        return $rObj;
+    }
+    multi sub subClassCtor(|capture) {
+        note "QtWidgets subclass ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod subClass(|capture) {
+        subClassCtor(self, |capture);
+        self.validateCallBacks();
+    }
+    submethod DESTROY {
+        if self.ownedByRaku {
+            QWQVBoxLayoutDtor(self.address);
+            self.ownedByRaku = False;
+        }
     }
 }
 ### End of the main API part ###

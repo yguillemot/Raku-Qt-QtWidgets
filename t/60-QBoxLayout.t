@@ -5,11 +5,11 @@ use Test;
 
 plan 12;
 
-use Qt::RaQt;
+use Qt::QtWidgets;
 
 my $count = 0;
 
-class Tempo is RaQtObject {
+class Tempo is QtObject {
     method finish is QtSignal { ... }
 }
 

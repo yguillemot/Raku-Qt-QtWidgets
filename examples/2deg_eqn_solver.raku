@@ -1,7 +1,7 @@
 
 # A second degree equation solver
 
-use Qt::RaQt;
+use Qt::QtWidgets;
 
 
 # Objects creation
@@ -79,7 +79,7 @@ $layout.addWidget($spacer2);
 $layout.addWidget($result);
 
 # This class is only used to contain the QtSlot the GUI calls
-class Solver is RaQtObject {
+class Solver is QtObject {
 
     method work is QtSlot {
 

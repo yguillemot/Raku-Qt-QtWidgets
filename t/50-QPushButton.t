@@ -5,15 +5,15 @@ use Test;
 
 plan 6;
 
-use Qt::RaQt;
+use Qt::QtWidgets;
 
 my $count = 0;
 
-class Stop is RaQtObject {
+class Stop is QtObject {
     method finish is QtSignal { ... }
 }
 
-class Receiver is RaQtObject {
+class Receiver is QtObject {
     method receive is QtSlot {
         $count++;
         # say "count = $count";

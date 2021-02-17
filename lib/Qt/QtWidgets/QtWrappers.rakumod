@@ -8,88 +8,13 @@
 # 
 #     - 2) Regenerate the whole code.
 # 
-unit module RaQtWrappers;
+unit module QtWrappers;
 
 
 use NativeCall;
-use Qt::RaQt::RaQtHelpers;
+use Qt::QtWidgets::QtHelpers;
 
 ### Beginning of the main API part ###
-sub QWQActionCtor_1(Pointer)
-    returns Pointer is native(&libwrapper) is export { * }
-
-sub SCWQActionCtor_1(Pointer)
-    returns Pointer is native(&libwrapper) is export { * }
-
-sub QWvalidateCB_QAction(Pointer, int32, Str)
-    is native(&libwrapper) is export { * }
-
-sub QWQActionDtor(Pointer)
-    is native(&libwrapper) is export { * }
-
-sub QWQActiontrigger(Pointer)
-    is native(&libwrapper) is export { * }
-
-sub QWQActionsetEnabled(Pointer, int8)
-    is native(&libwrapper) is export { * }
-
-sub QWQActionsetDisabled(Pointer, int8)
-    is native(&libwrapper) is export { * }
-
-
-################################################################################
-
-sub QWQCoreApplicationsendEvent(Pointer, Pointer, Pointer)
-    returns int8 is native(&libwrapper) is export { * }
-
-sub QWQCoreApplicationquit(Pointer)
-    is native(&libwrapper) is export { * }
-
-
-################################################################################
-
-sub QWQLayoutsetAlignment_1(Pointer, Pointer, int32)
-    returns int8 is native(&libwrapper) is export { * }
-
-sub QWQLayoutsetAlignment_2(Pointer, Pointer, int32)
-    returns int8 is native(&libwrapper) is export { * }
-
-sub QWQLayoutaddWidget(Pointer, Pointer)
-    is native(&libwrapper) is export { * }
-
-
-################################################################################
-
-sub QWQTimerCtor(Pointer)
-    returns Pointer is native(&libwrapper) is export { * }
-
-sub SCWQTimerCtor(Pointer)
-    returns Pointer is native(&libwrapper) is export { * }
-
-sub QWvalidateCB_QTimer(Pointer, int32, Str)
-    is native(&libwrapper) is export { * }
-
-sub QWQTimerDtor(Pointer)
-    is native(&libwrapper) is export { * }
-
-sub QWQTimersetInterval_1(Pointer, int32)
-    is native(&libwrapper) is export { * }
-
-sub QWQTimerstart_2(Pointer)
-    is native(&libwrapper) is export { * }
-
-sub QWQTimerstop(Pointer)
-    is native(&libwrapper) is export { * }
-
-
-################################################################################
-
-sub QWQBoxLayoutaddLayout(Pointer, Pointer, int32)
-    is native(&libwrapper) is export { * }
-
-
-################################################################################
-
 sub QWQWidgetCtor(Pointer, int32)
     returns Pointer is native(&libwrapper) is export { * }
 
@@ -180,16 +105,46 @@ sub QWQAbstractButtonclick(Pointer)
 
 ################################################################################
 
-sub QWQHBoxLayoutCtor_1()
+sub QWQActionCtor_1(Pointer)
     returns Pointer is native(&libwrapper) is export { * }
 
-sub SCWQHBoxLayoutCtor_1()
+sub SCWQActionCtor_1(Pointer)
     returns Pointer is native(&libwrapper) is export { * }
 
-sub QWvalidateCB_QHBoxLayout(Pointer, int32, Str)
+sub QWvalidateCB_QAction(Pointer, int32, Str)
     is native(&libwrapper) is export { * }
 
-sub QWQHBoxLayoutDtor(Pointer)
+sub QWQActionDtor(Pointer)
+    is native(&libwrapper) is export { * }
+
+sub QWQActiontrigger(Pointer)
+    is native(&libwrapper) is export { * }
+
+sub QWQActionsetEnabled(Pointer, int8)
+    is native(&libwrapper) is export { * }
+
+sub QWQActionsetDisabled(Pointer, int8)
+    is native(&libwrapper) is export { * }
+
+
+################################################################################
+
+sub QWQCoreApplicationsendEvent(Pointer, Pointer, Pointer)
+    returns int8 is native(&libwrapper) is export { * }
+
+sub QWQCoreApplicationquit(Pointer)
+    is native(&libwrapper) is export { * }
+
+
+################################################################################
+
+sub QWQLayoutsetAlignment_1(Pointer, Pointer, int32)
+    returns int8 is native(&libwrapper) is export { * }
+
+sub QWQLayoutsetAlignment_2(Pointer, Pointer, int32)
+    returns int8 is native(&libwrapper) is export { * }
+
+sub QWQLayoutaddWidget(Pointer, Pointer)
     is native(&libwrapper) is export { * }
 
 
@@ -255,16 +210,31 @@ sub QWQMenuexec_1(Pointer)
 
 ################################################################################
 
-sub QWQVBoxLayoutCtor_1()
+sub QWQTimerCtor(Pointer)
     returns Pointer is native(&libwrapper) is export { * }
 
-sub SCWQVBoxLayoutCtor_1()
+sub SCWQTimerCtor(Pointer)
     returns Pointer is native(&libwrapper) is export { * }
 
-sub QWvalidateCB_QVBoxLayout(Pointer, int32, Str)
+sub QWvalidateCB_QTimer(Pointer, int32, Str)
     is native(&libwrapper) is export { * }
 
-sub QWQVBoxLayoutDtor(Pointer)
+sub QWQTimerDtor(Pointer)
+    is native(&libwrapper) is export { * }
+
+sub QWQTimersetInterval_1(Pointer, int32)
+    is native(&libwrapper) is export { * }
+
+sub QWQTimerstart_2(Pointer)
+    is native(&libwrapper) is export { * }
+
+sub QWQTimerstop(Pointer)
+    is native(&libwrapper) is export { * }
+
+
+################################################################################
+
+sub QWQBoxLayoutaddLayout(Pointer, Pointer, int32)
     is native(&libwrapper) is export { * }
 
 
@@ -324,6 +294,21 @@ sub QWQPushButtonsetMenu(Pointer, Pointer)
 
 ################################################################################
 
+sub QWQHBoxLayoutCtor_1()
+    returns Pointer is native(&libwrapper) is export { * }
+
+sub SCWQHBoxLayoutCtor_1()
+    returns Pointer is native(&libwrapper) is export { * }
+
+sub QWvalidateCB_QHBoxLayout(Pointer, int32, Str)
+    is native(&libwrapper) is export { * }
+
+sub QWQHBoxLayoutDtor(Pointer)
+    is native(&libwrapper) is export { * }
+
+
+################################################################################
+
 sub QWQTextEditCtor_1(Pointer)
     returns Pointer is native(&libwrapper) is export { * }
 
@@ -338,6 +323,21 @@ sub QWQTextEditDtor(Pointer)
 
 sub QWQTextEdittoPlainText(Pointer)
     returns Str is native(&libwrapper) is export { * }
+
+
+################################################################################
+
+sub QWQVBoxLayoutCtor_1()
+    returns Pointer is native(&libwrapper) is export { * }
+
+sub SCWQVBoxLayoutCtor_1()
+    returns Pointer is native(&libwrapper) is export { * }
+
+sub QWvalidateCB_QVBoxLayout(Pointer, int32, Str)
+    is native(&libwrapper) is export { * }
+
+sub QWQVBoxLayoutDtor(Pointer)
+    is native(&libwrapper) is export { * }
 
 
 ################################################################################

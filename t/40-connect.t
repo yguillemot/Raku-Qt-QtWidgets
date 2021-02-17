@@ -3,7 +3,7 @@ use Test;
 
 plan 6;
 
-use Qt::RaQt;
+use Qt::QtWidgets;
 
 my $r = False;
 
@@ -18,7 +18,7 @@ my $bresult1 = False;
 my $bresult2 = True;
 
 
-class Destination is RaQtObject {
+class Destination is QtObject {
     multi method xrecevoir() is QtSlot
     {
         $r = True;
@@ -40,14 +40,14 @@ class Destination is RaQtObject {
     }
 }
 
-class Source is RaQtObject {
+class Source is QtObject {
     method xemettre() is QtSignal { ... }
     method iemettre(Int $i) is QtSignal { ... }
     method semettre(Str $s) is QtSignal { ... }
     method bemettre(Bool $b) is QtSignal { ... }
 }
 
-class Tempo is RaQtObject {
+class Tempo is QtObject {
     method finish is QtSignal { ... }
 }
 

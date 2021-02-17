@@ -1,7 +1,7 @@
 
 # A digital clock
 
-use Qt::RaQt;
+use Qt::QtWidgets;
 
 # Objects creation
 

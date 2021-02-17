@@ -27,11 +27,11 @@ method build($workdir) {
     # Create empty resources files for all platforms so that package managers
     # do not complain
     for <dll dylib so> -> $ext {
-        "$destdir/libRaQtWrapper.$ext".IO.spurt("");
+        "$destdir/libQtWidgetsWrapper.$ext".IO.spurt("");
     }
 
-    shell("cd $makefiledir; qmake RaQtWrapper.pro; make");
-    shell("cp $makefiledir/libRaQtWrapper.so.1.0.0 $destdir/libRaQtWrapper.so");
+    shell("cd $makefiledir; qmake QtWidgetsWrapper.pro; make");
+    shell("cp $makefiledir/libQtWidgetsWrapper.so.1.0.0 $destdir/libQtWidgetsWrapper.so");
 
 }
 

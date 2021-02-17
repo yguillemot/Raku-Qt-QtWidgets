@@ -3,7 +3,7 @@ use Test;
 
 plan 4;
 
-use Qt::RaQt;
+use Qt::QtWidgets;
 
 my ($x1, $y1) = (100.22, 200.87);
 my $a = QPointF.new($x1, $y1);

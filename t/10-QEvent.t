@@ -3,7 +3,7 @@ use Test;
 
 plan 4;
 
-use Qt::RaQt;
+use Qt::QtWidgets;
 
 my $a = QEvent.new(QEvent::FocusOut);
 my $b = QEvent.new($a.address);

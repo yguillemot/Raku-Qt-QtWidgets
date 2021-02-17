@@ -4,7 +4,7 @@ use Test;
 plan 6;
 
 
-use Qt::RaQt;
+use Qt::QtWidgets;
 
 
 my $a = QPoint.new(100, 200);

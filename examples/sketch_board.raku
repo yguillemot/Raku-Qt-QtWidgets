@@ -1,7 +1,7 @@
 
 # A tiny graphic editor
 
-use Qt::RaQt;
+use Qt::QtWidgets;
 
 
 
