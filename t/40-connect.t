@@ -52,7 +52,7 @@ class Tempo is QtObject {
 }
 
 
-my $qApp = QApplication.new(args => ());
+my $qApp = QApplication.new;
 my $s = Source.new;
 my $d = Destination.new;
 my $t = Tempo.new;

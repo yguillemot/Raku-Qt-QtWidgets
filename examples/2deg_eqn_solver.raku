@@ -7,7 +7,7 @@ use Qt::QtWidgets;
 # Objects creation
 
 # Create the application object first
-my $qApp = QApplication.new(args => @*ARGS);
+my $qApp = QApplication.new;
 
 
 # Create labels end editable fields
@@ -39,7 +39,7 @@ my $goButton = QPushButton.new("Compute");
 $aValue.setToolTip("Enter here the value of the A coefficient");
 $bValue.setToolTip("Enter here the value of the B coefficient");
 $cValue.setToolTip("Enter here the value of the C coefficient");
-$goButton.setToolTip("Press this button to compute the solution");
+$goButton.setToolTip("Press this button to compute the roots");
 
 
 # Define the layout
@@ -107,7 +107,7 @@ class Solver is QtObject {
             } else {
                 $result.setText(
                     "First degree equation\n" ~
-                    "One solution : X = " ~ $c/$b);
+                    "One root : X = " ~ $c/$b);
                 return;
             }
         }
@@ -117,14 +117,14 @@ class Solver is QtObject {
             my $x1 = (-$b - i * sqrt(-$delta)) / 2 / $a;
             my $x2 = (-$b + i * sqrt(-$delta)) / 2 / $a;
             $result.setText(
-                "Two complex solutions :\n" ~
+                "Two complex roots :\n" ~
                 "X1 = $x1\n" ~
                 "X2 = $x2");
         } else {
             my $x1 = (-$b - sqrt($delta)) / 2 / $a;
             my $x2 = (-$b + sqrt($delta)) / 2 / $a;
             $result.setText(
-                "Two real solutions :\n" ~
+                "Two real roots :\n" ~
                 "X1 = $x1\n" ~
                 "X2 = $x2");
         }

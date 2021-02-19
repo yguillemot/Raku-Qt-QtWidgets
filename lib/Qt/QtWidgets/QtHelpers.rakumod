@@ -67,7 +67,7 @@ our constant %qSigSig is export = {
 
 
 sub libwrapper is export {
-  my $lib-name = sprintf($*VM.config<dll>, "RaQtWrapper");
+  my $lib-name = sprintf($*VM.config<dll>, "QtWidgetsWrapper");
   my $installed-lib = ~(%?RESOURCES{$lib-name});
   return $installed-lib ?? $installed-lib !! "resources/$lib-name";
 }

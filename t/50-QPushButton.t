@@ -20,9 +20,9 @@ class Receiver is QtObject {
     }
 }
 
-my $s = Stop.new;
+my $qApp = QApplication.new;
 
-my $qApp = QApplication.new(args => ());
+my $s = Stop.new;
 
 my $b1 = QPushButton.new("Foo");
 

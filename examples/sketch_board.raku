@@ -4,11 +4,10 @@
 use Qt::QtWidgets;
 
 
-
 # Objects creation
 
 # Create the application object first
-my $qApp = QApplication.new(args => @*ARGS);
+my $qApp = QApplication.new;
 
 # Create buttons
 my $quitButton = QPushButton.new('&Quit');
@@ -39,7 +38,6 @@ $colorButton.setMenu($penColorMenu);
 
 
 # Subclass a QWidget to create the drawing board
-
 class DrawPlace is QWidget {
 
     my $redColor = QColor.new(Qt::red);
@@ -58,73 +56,90 @@ class DrawPlace is QWidget {
     my $color = $redColor;      # Current pen color
 
     submethod BUILD {
+        # Pass arguments to the constructor of the parent Qt object 
         self.QWidget::subClass((QWidget), Qt::WindowFlags(Qt::Widget));
+        
+        # Init
         $penDown = False;
         @lines = ();
         @lastLine = ();
         $firstTime = True;
     }
 
+    # In the following methods, ($ev.x, $ev.y) are the
+    # coordinates of the mouse pointer
+    
     method mouseMoveEvent(QMouseEvent $ev)
     {
         if $penDown {
+            # Note the last mouse move (if the pen is down)
             @lastLine.push([$ev.x, $ev.y]);
+            
+            # Ask to paint (will call paintEvent)
             self.update;
         }
     }
 
     method mousePressEvent(QMouseEvent $ev)
     {
+        # Begin to record a new line
         $penDown = True;
         @lastLine = ();
         @lastLine.push([$ev.x, $ev.y]);
+            
+        # Ask to paint (will call paintEvent)
         self.update;
     }
 
     method mouseReleaseEvent(QMouseEvent $ev)
     {
+        # Finish the last line and save it with the others
         $penDown = False;
         @lastLine.push([$ev.x, $ev.y]);
         my @l = @lastLine;
         @lines.push([$color, $width, @l]);
+            
+        # Ask to paint (will call paintEvent)
         self.update;
     }
 
     method paintEvent(QPaintEvent $ev)
     {
+        # Position and size of the rectangle were drawing is possible
         my $rect = $ev.rect;
         my $x = $rect.x;
         my $y = $rect.y;
         my $w = $rect.width;
         my $h = $rect.height;
 
+        # Create a painter and begin to draw
         my $painter = QPainter.new();
         $painter.begin(self);
 
+        # Create a pen with a color and a size
         my $fgc = QColor.new(Qt::blue);
         my $pen = QPen.new($fgc);
         $pen.setWidth(2);
 
+        # Create a brush with a color and a pattern
         my $bgc = QColor.new(Qt::yellow);
         my $brush = QBrush.new($bgc, Qt::SolidPattern);
 
+        # Draw a border with the pen and a background with the brush
         $painter.setPen($pen);
-        $painter.drawLine(1, 1, $w - 2, 1);
-        $painter.drawLine($w - 2, 1, $w - 2, $h - 2);
-        $painter.drawLine($w - 2, $h - 2, 1, $h - 2);
-        $painter.drawLine(1, $h - 2, 1, 1);
-
         $painter.setBrush($brush);
-        $painter.drawRect(20, 20, $w - 40, $h - 40);
+        $painter.drawRect($x + 2, $y + 2, $w - 4, $h - 4);
 
+        # Remove the brush
         $brush.setStyle(Qt::NoBrush);
         $painter.setBrush($brush);
-        $painter.drawRect(10, 10, $w - 20, $h - 20);
 
+        # Select pen with current color and size
         $pen.setColor($color);
         $pen.setWidth($width);
         $painter.setPen($pen);
 
+        # Draw the current line
         my Bool $start = True;
         my ($x1, $y1, $x2, $y2);
         for @lastLine -> @p {
@@ -138,7 +153,7 @@ class DrawPlace is QWidget {
             }
         }
 
-
+        # Draw the others lines with the recorded colors and sizes
         for @lines -> ($c, $w, @line) {
             $pen.setColor($c);
             $pen.setWidth($w);
@@ -157,16 +172,23 @@ class DrawPlace is QWidget {
             }
         }
 
+        # Stop the painter
         $painter.end();
     }
 
     method clear is QtSlot
     {
+        # Remove all data
         @lastLine = ();
         @lines = ();
+        
+        # Ask to paint (will call paintEvent)        
         self.update;
     }
 
+    
+    # Set current pen size
+    
     method thinPen is QtSlot
     {
         $width = 2;
@@ -182,7 +204,9 @@ class DrawPlace is QWidget {
         $width = 8;
     }
 
-
+    
+    # Set current pen color
+    
     method redPen is QtSlot
     {
         $color = $redColor;
@@ -198,18 +222,15 @@ class DrawPlace is QWidget {
         $color = $greenColor;
     }
 
-
 }
 
 
-
-
+# Create the draw board and set its size
 my $drawPlace = DrawPlace.new;
 $drawPlace.setMinimumSize(600, 400);
 
 
-
-# Connections
+# Connect the signals from buttons and menus to slots
 connect $quitButton, "clicked", $qApp, "quit";
 connect $clearButton, "pressed", $drawPlace, "clear";
 connect $thin, "triggered", $drawPlace, "thinPen";
@@ -219,24 +240,23 @@ connect $red, "triggered", $drawPlace, "redPen";
 connect $blue, "triggered", $drawPlace, "bluePen";
 connect $green, "triggered", $drawPlace, "greenPen";
 
-# Layout
+# Layout : Horizontal box for the buttons
 my $buttonLayout = QHBoxLayout.new;
 $buttonLayout.addWidget($clearButton);
 $buttonLayout.addWidget($widthButton);
 $buttonLayout.addWidget($colorButton);
 $buttonLayout.addWidget($quitButton);
 
+# Layout : Vertical box for the draw place and the buttons box
 my $layout = QVBoxLayout.new;
 $layout.addWidget($drawPlace);
 $layout.addLayout($buttonLayout);
 
-# main window
+# main window (an other QWidget)
 my $window = QWidget.new;
-$window.setLayout($layout);
-$window.setWindowTitle("A drawing board");
-$window.show;
-
-
+$window.setLayout($layout);    # Set the layout and its content to the window
+$window.setWindowTitle("A drawing board");    # Add a title 
+$window.show;      # Set the window visible
 
 # Run the graphical application
 my $status = $qApp.exec;

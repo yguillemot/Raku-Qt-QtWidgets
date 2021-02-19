@@ -37,7 +37,7 @@ class TLabel is QLabel {
 }
 
 
-my $qApp = QApplication.new(args => ());
+my $qApp = QApplication.new;
 
 
 # Trying to have labels positionned as here:
