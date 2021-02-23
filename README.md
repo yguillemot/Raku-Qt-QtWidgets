@@ -9,33 +9,44 @@ This module defines Raku classes trying to mimic the Qt GUI C++ classes.
 Qt objects are created and used through the Raku classes with native calls.
 
 This is a work in progress and, currently, only a few classes are defines.
-Anyway, the Qt libray is a gigantic piece of work and will never be totally accessible through NAME_X.
-In particular, there is no reason to use classes like QString or QMap when Raku itself already provides similar functionalities.
+Nevertheless, this module is already usable.
 
 ## Examples
 
-clock.raku
+### clock.raku
 
-2deg_eqn_solver.raku
+A very simple clock displaying the current time.
 
-sketch_board.raku
+### 2deg_eqn_solver.raku
 
+A graphical interface to solve quadratic equations.
+
+### sketch_board.raku
+
+A small example showing how to draw with the mouse. 
 
 ## Implemented functionnalities
 
 The list of Qt classes and methods already ported is given in the
 file doc/Qt/Classes.md
 
-## Classes
+## Classes and methods
 
-The Raku API is modeled on the Qt C++ one.
+The Raku API aims to be as close as possible of the C++ one.
+
+Classes defined by the Raku API implement the Qt C++ classes and the Raku
+methods have the same arguments as their related C++ methods.
+
+Therefore the Qt C++ documentation applies to its Raku interface.
+
+[ TODO : Reference, pointers, etc...]
+
+### Instantiation
 
 To instantiate a Qt class object from Raku, just use new with the same arguments
 than the C++ constructor.
 
-For example:
-
-when the C++ call of a QPushButton constructor is :
+For example the C++ call of a QPushButton constructor is :
 
 `QPushButton * button = new QPushButton("some text");`
 
@@ -43,9 +54,11 @@ the raku equivalent is:
 
 `my $button = QPushButton.new("some text");`
 
-Same thing with the methods :
+### Calling a method
 
-the C++ code :
+Raku methods are called exactly as the original C++ method.
+
+The C++ code :
 
 `button->setDisable(true);`
 
@@ -53,9 +66,9 @@ is translated to Raku as :
 
 `$button.setDisable(True);`
 
-## Enums 
+### Enums 
 
-C++ enums have their Raku equivalent :
+Similarly the C++ enums have their Raku equivalent :
 
 the C++ code :
 
@@ -65,8 +78,9 @@ is translated to Raku as :
 
 `my $pen = QPen.new(Qt::DashLine);`
 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-## Signals and slots
+### Signals and slots
 
 The signals and slots mechanism used by Qt allows unrelated objects to communicate.
 
