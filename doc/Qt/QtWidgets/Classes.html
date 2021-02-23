@@ -691,7 +691,7 @@ enum Type
 
 <pre><code>inherits QWidget
 
-inherited by QLabel, QAbstractScrollArea
+inherited by QAbstractScrollArea, QLabel
 </code></pre>
 
 <h4>Method setDisabled(Bool $arg1)</h4>
@@ -883,12 +883,6 @@ calls Qt method void quit()
 <pre><code>calls Qt method  QHBoxLayout()
 </code></pre>
 
-<h4>Method addLayout(QLayout $layout, Int $stretch = 0)</h4>
-
-<pre><code>inherited from QBoxLayout
-calls Qt method void addLayout(QLayout* layout, int stretch = 0)
-</code></pre>
-
 <h4>Method setAlignment(QWidget $w, Int $alignment --&gt; Bool)</h4>
 
 <pre><code>inherited from QLayout
@@ -905,6 +899,12 @@ calls Qt method bool setAlignment(QLayout* l, Qt::Alignment alignment)
 
 <pre><code>inherited from QLayout
 calls Qt method void addWidget(QWidget* w)
+</code></pre>
+
+<h4>Method addLayout(QLayout $layout, Int $stretch = 0)</h4>
+
+<pre><code>inherited from QBoxLayout
+calls Qt method void addLayout(QLayout* layout, int stretch = 0)
 </code></pre>
 
 <h2 id="toc_12">Class QImage</h2>
@@ -1680,7 +1680,7 @@ calls Qt method void ignore()
 
 <h2 id="toc_20">Class QPaintDevice</h2>
 
-<pre><code>inherited by QImage, QWidget
+<pre><code>inherited by QWidget, QImage
 </code></pre>
 
 <h2 id="toc_21">Class QPaintEvent</h2>
@@ -2416,7 +2416,7 @@ calls Qt method void addWidget(QWidget* w)
 <pre><code>inherits QObject
 inherits QPaintDevice
 
-inherited by QMenu, QAbstractButton, QFrame, QLineEdit
+inherited by QMenu, QLineEdit, QAbstractButton, QFrame
 
 enum RenderFlag 
 </code></pre>

@@ -427,7 +427,7 @@ Class QFrame
 ------------
 	inherits QWidget
 
-	inherited by QLabel, QAbstractScrollArea
+	inherited by QAbstractScrollArea, QLabel
 
 
 #### Method setDisabled(Bool $arg1)
@@ -565,10 +565,6 @@ Class QHBoxLayout
 #### Method QHBoxLayout.new( --> QHBoxLayout))
 	calls Qt method  QHBoxLayout()
 
-#### Method addLayout(QLayout $layout, Int $stretch = 0)
-	inherited from QBoxLayout
-	calls Qt method void addLayout(QLayout* layout, int stretch = 0)
-
 #### Method setAlignment(QWidget $w, Int $alignment --> Bool)
 	inherited from QLayout
 	calls Qt method bool setAlignment(QWidget* w, Qt::Alignment alignment)
@@ -580,6 +576,10 @@ Class QHBoxLayout
 #### Method addWidget(QWidget $w)
 	inherited from QLayout
 	calls Qt method void addWidget(QWidget* w)
+
+#### Method addLayout(QLayout $layout, Int $stretch = 0)
+	inherited from QBoxLayout
+	calls Qt method void addLayout(QLayout* layout, int stretch = 0)
 
 
 Class QImage
@@ -1122,7 +1122,7 @@ Class QMouseEvent
 Class QPaintDevice
 ------------------
 
-	inherited by QImage, QWidget
+	inherited by QWidget, QImage
 
 
 
@@ -1656,7 +1656,7 @@ Class QWidget
 	inherits QObject
 	inherits QPaintDevice
 
-	inherited by QMenu, QAbstractButton, QFrame, QLineEdit
+	inherited by QMenu, QLineEdit, QAbstractButton, QFrame
 
     enum RenderFlag 
 

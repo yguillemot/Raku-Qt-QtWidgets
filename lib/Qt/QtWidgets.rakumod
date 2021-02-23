@@ -3358,6 +3358,10 @@ class QApplication is QCoreApplication is export {
         }
     }
 
+    sub setupEverything {
+    
+        # Start the connections manager if needed
+        $CM = ConnectionsManager.new if !$CM;
 
     sub setupEverything {
     

@@ -8,7 +8,7 @@
     "authors" : [ "Yves Guillemot" ],
     "license" : "GPL-3.0-or-later",
     "provides" : {
-        "Qt::QtWidgets" : "lib/Qt/RaQt.rakumod",
+        "Qt::QtWidgets" : "lib/Qt/QtWidgets.rakumod",
         "Qt::QtWidgets::QtWrappers" : "lib/Qt/QtWidgets/QtWrappers.rakumod",
         "Qt::QtWidgets::QtHelpers" : "lib/Qt/QtWidgets/QtHelpers.rakumod"
     },
