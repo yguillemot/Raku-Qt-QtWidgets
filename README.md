@@ -217,9 +217,7 @@ class MyLabel is QLabel
 my $label = MyLabel.new(txt => "text on the label");
 ```
 
-### Versions of involved software
-
-ààààààààààààààààààààààààààààààààààààààààààààà
+## Versions of involved software
 
 ## Issues
 
@@ -240,15 +238,23 @@ most basic objects of the Qt GUI.
 
 The Qt5 developpment package and the gcc compiler are needed.
 
-`zef install Qt::QtWidgets::QtWidgets`
+`zef install Qt::QtWidgets`
 
 ## Testing
 
+```
+export RAKULIB=lib
+export LD_LIBRARY_PATH=resources
+for t in t/*.t; do raku $t; done
+```
+
 ## Source
 
-The sources are automatically generated from the Qt C++ headers files.
+The sources and documentation are automatically generated from the
+Qt C++ headers files.
 
-The building tools are available here : <https://github.com/yguillemot/RaQt_maker>
+The building tools are available here :
+<https://github.com/yguillemot/RaQt_maker>
 
 
 ## Author
