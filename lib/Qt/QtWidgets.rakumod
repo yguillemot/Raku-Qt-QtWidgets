@@ -34,6 +34,26 @@ class SigSlot {
 }
 
 BEGIN {
+    %signals<QtWidgets::QAction>.push(SigSlot.new(
+        name => "triggered",
+        sig => "(Bool)",
+        qSig => "(bool)",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => False,
+        isPrivate => False,
+        sSignature => createSignature((("Bool" ,"checked", False), ))
+    ));
+    %signals<QtWidgets::QTimer>.push(SigSlot.new(
+        name => "timeout",
+        sig => "()",
+        qSig => "()",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => False,
+        isPrivate => True,
+        sSignature => createSignature(())
+    ));
     %signals<QtWidgets::QAbstractButton>.push(SigSlot.new(
         name => "pressed",
         sig => "()",
@@ -46,16 +66,6 @@ BEGIN {
     ));
     %signals<QtWidgets::QAbstractButton>.push(SigSlot.new(
         name => "clicked",
-        sig => "(Bool)",
-        qSig => "(bool)",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => False,
-        isPrivate => False,
-        sSignature => createSignature((("Bool" ,"checked", False), ))
-    ));
-    %signals<QtWidgets::QAction>.push(SigSlot.new(
-        name => "triggered",
         sig => "(Bool)",
         qSig => "(bool)",
         sigIsSimple => True,
@@ -84,18 +94,62 @@ BEGIN {
         isPrivate => False,
         sSignature => createSignature(())
     ));
-    %signals<QtWidgets::QTimer>.push(SigSlot.new(
-        name => "timeout",
+
+
+    %slots<QtWidgets::QAction>.push(SigSlot.new(
+        name => "trigger",
         sig => "()",
         qSig => "()",
         sigIsSimple => True,
         isPlainQt => True,
-        isSlot => False,
-        isPrivate => True,
+        isSlot => True,
         sSignature => createSignature(())
     ));
-
-
+    %slots<QtWidgets::QAction>.push(SigSlot.new(
+        name => "setEnabled",
+        sig => "(Bool)",
+        qSig => "(bool)",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(("Bool", ))
+    ));
+    %slots<QtWidgets::QAction>.push(SigSlot.new(
+        name => "setDisabled",
+        sig => "(Bool)",
+        qSig => "(bool)",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(("Bool", ))
+    ));
+    %slots<QtWidgets::QCoreApplication>.push(SigSlot.new(
+        name => "quit",
+        sig => "()",
+        qSig => "()",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(())
+    ));
+    %slots<QtWidgets::QTimer>.push(SigSlot.new(
+        name => "start",
+        sig => "()",
+        qSig => "()",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(())
+    ));
+    %slots<QtWidgets::QTimer>.push(SigSlot.new(
+        name => "stop",
+        sig => "()",
+        qSig => "()",
+        sigIsSimple => True,
+        isPlainQt => True,
+        isSlot => True,
+        sSignature => createSignature(())
+    ));
     %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "setDisabled",
         sig => "(Bool)",
@@ -150,42 +204,6 @@ BEGIN {
         isSlot => True,
         sSignature => createSignature(())
     ));
-    %slots<QtWidgets::QAction>.push(SigSlot.new(
-        name => "trigger",
-        sig => "()",
-        qSig => "()",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(())
-    ));
-    %slots<QtWidgets::QAction>.push(SigSlot.new(
-        name => "setEnabled",
-        sig => "(Bool)",
-        qSig => "(bool)",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(("Bool", ))
-    ));
-    %slots<QtWidgets::QAction>.push(SigSlot.new(
-        name => "setDisabled",
-        sig => "(Bool)",
-        qSig => "(bool)",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(("Bool", ))
-    ));
-    %slots<QtWidgets::QCoreApplication>.push(SigSlot.new(
-        name => "quit",
-        sig => "()",
-        qSig => "()",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(())
-    ));
     %slots<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "setText",
         sig => "(Str)",
@@ -197,24 +215,6 @@ BEGIN {
     ));
     %slots<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "clear",
-        sig => "()",
-        qSig => "()",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(())
-    ));
-    %slots<QtWidgets::QTimer>.push(SigSlot.new(
-        name => "start",
-        sig => "()",
-        qSig => "()",
-        sigIsSimple => True,
-        isPlainQt => True,
-        isSlot => True,
-        sSignature => createSignature(())
-    ));
-    %slots<QtWidgets::QTimer>.push(SigSlot.new(
-        name => "stop",
         sig => "()",
         qSig => "()",
         sigIsSimple => True,
@@ -1416,6 +1416,22 @@ class QRegion is QtBase is export {
     }
 }
 
+class QLayoutItem is QtBase is export {
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p) {
+        # Get access to a preexisting Qt object
+        $this.address = $p;
+        $this.ownedByRaku = False;
+    }
+    multi sub ctor(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QLayoutItem");
+    }
+    submethod new(|capture) {
+        my QLayoutItem $rObj = self.bless;
+        ctor($rObj, |capture);
+        return $rObj;
+    }
+}
+
 class QPaintDevice is QtBase is export {
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p) {
         # Get access to a preexisting Qt object
@@ -1506,22 +1522,6 @@ class QImage is QPaintDevice is export {
     {
         my $a1 = $color.address;
         QWQImagefill_2(self.address, $a1);
-    }
-}
-
-class QLayoutItem is QtBase is export {
-    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p) {
-        # Get access to a preexisting Qt object
-        $this.address = $p;
-        $this.ownedByRaku = False;
-    }
-    multi sub ctor(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QLayoutItem");
-    }
-    submethod new(|capture) {
-        my QLayoutItem $rObj = self.bless;
-        ctor($rObj, |capture);
-        return $rObj;
     }
 }
 ### End of the sub API part ###
@@ -2517,6 +2517,188 @@ class QObject is QtObject is export {
 ####### Part 2 : main API #####################################################
 
 ### Beginning of the main API part ###
+class QAction is QObject is export {
+    multi sub ctor(QtBase $this, QObject $parent = (QObject)) {
+        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
+        $this.address = QWQActionCtor_1($a1);
+        $this.ownedByRaku = True;
+    }
+    multi sub subClassCtor(QtBase $this, QObject $parent = (QObject)) {
+        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
+        $this.address = SCWQActionCtor_1($a1);
+        $this.ownedByRaku = True;
+    }
+    method validateCB(Str $m) {
+        QWvalidateCB_QAction(self.address, self.id, $m);
+    }
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+        # Get access to a preexisting Qt object
+        $this.address = $p;
+        $this.ownedByRaku = $obr;
+    }
+    multi sub ctor(|capture) {
+        note "QtWidgets ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod new(|capture) {
+        my QAction $rObj = self.bless;
+        ctor($rObj, |capture);
+        return $rObj;
+    }
+    multi sub subClassCtor(|capture) {
+        note "QtWidgets subclass ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod subClass(|capture) {
+        subClassCtor(self, |capture);
+        self.validateCallBacks();
+    }
+    submethod DESTROY {
+        if self.ownedByRaku {
+            QWQActionDtor(self.address);
+            self.ownedByRaku = False;
+        }
+    }
+    method trigger() is QtSlot
+    {
+        QWQActiontrigger(self.address);
+    }
+    method setEnabled(Bool $arg1) is QtSlot
+    {
+        my int8 $a1 = $arg1.Int;
+        QWQActionsetEnabled(self.address, $a1);
+    }
+    method setDisabled(Bool $b) is QtSlot
+    {
+        my int8 $a1 = $b.Int;
+        QWQActionsetDisabled(self.address, $a1);
+    }
+    method triggered(Bool $checked = False)
+        is QtSignal { ... }
+}
+
+class QCoreApplication is QObject is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QCoreApplication");
+    }
+    method sendEvent(QObject $receiver, QEvent $event --> Bool)
+    {
+        my $a1 = ?$receiver ?? $receiver.address !! QWInt2Pointer(0);
+        my $a2 = ?$event ?? $event.address !! QWInt2Pointer(0);
+        my $result = QWQCoreApplicationsendEvent(self.address, $a1, $a2);
+        my $result1 = ?$result;
+        return $result1;
+    }
+    method quit() is QtSlot
+    {
+        QWQCoreApplicationquit(self.address);
+    }
+}
+
+class QLayout is QObject is QLayoutItem is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QLayout");
+    }
+    multi method setAlignment(QWidget $w, Int $alignment --> Bool)
+    {
+        my $a1 = ?$w ?? $w.address !! QWInt2Pointer(0);
+        my $result = QWQLayoutsetAlignment_1(self.address, $a1, $alignment);
+        my $result1 = ?$result;
+        return $result1;
+    }
+    multi method setAlignment(QLayout $l, Int $alignment --> Bool)
+    {
+        my $a1 = ?$l ?? $l.address !! QWInt2Pointer(0);
+        my $result = QWQLayoutsetAlignment_2(self.address, $a1, $alignment);
+        my $result1 = ?$result;
+        return $result1;
+    }
+    method addWidget(QWidget $w)
+    {
+        my $a1 = ?$w ?? $w.address !! QWInt2Pointer(0);
+        QWQLayoutaddWidget(self.address, $a1);
+    }
+}
+
+class QTimer is QObject is export {
+    multi sub ctor(QtBase $this, QObject $parent = (QObject)) {
+        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
+        $this.address = QWQTimerCtor($a1);
+        $this.ownedByRaku = True;
+    }
+    multi sub subClassCtor(QtBase $this, QObject $parent = (QObject)) {
+        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
+        $this.address = SCWQTimerCtor($a1);
+        $this.ownedByRaku = True;
+    }
+    method validateCB(Str $m) {
+        QWvalidateCB_QTimer(self.address, self.id, $m);
+    }
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+        # Get access to a preexisting Qt object
+        $this.address = $p;
+        $this.ownedByRaku = $obr;
+    }
+    multi sub ctor(|capture) {
+        note "QtWidgets ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod new(|capture) {
+        my QTimer $rObj = self.bless;
+        ctor($rObj, |capture);
+        return $rObj;
+    }
+    multi sub subClassCtor(|capture) {
+        note "QtWidgets subclass ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod subClass(|capture) {
+        subClassCtor(self, |capture);
+        self.validateCallBacks();
+    }
+    submethod DESTROY {
+        if self.ownedByRaku {
+            QWQTimerDtor(self.address);
+            self.ownedByRaku = False;
+        }
+    }
+    multi method setInterval(Int $msec)
+    {
+        QWQTimersetInterval_1(self.address, $msec);
+    }
+    multi method start() is QtSlot
+    {
+        QWQTimerstart_2(self.address);
+    }
+    method stop() is QtSlot
+    {
+        QWQTimerstop(self.address);
+    }
+    method timeout()
+        is QtPrivateSignal { ... }
+}
+
+class QBoxLayout is QLayout is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QBoxLayout");
+    }
+    method addLayout(QLayout $layout, Int $stretch = 0)
+    {
+        my $a1 = ?$layout ?? $layout.address !! QWInt2Pointer(0);
+        QWQBoxLayoutaddLayout(self.address, $a1, $stretch);
+    }
+}
+
+class QGuiApplication is QCoreApplication is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QGuiApplication");
+    }
+}
+
 class QWidget is QObject is QPaintDevice is export {
     enum RenderFlag (
         DrawWindowBackground => 1,
@@ -2698,19 +2880,23 @@ class QAbstractButton is QWidget is export {
         is QtSignal { ... }
 }
 
-class QAction is QObject is export {
-    multi sub ctor(QtBase $this, QObject $parent = (QObject)) {
-        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
-        $this.address = QWQActionCtor_1($a1);
+class QFrame is QWidget is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QFrame");
+    }
+}
+
+class QHBoxLayout is QBoxLayout is export {
+    multi sub ctor(QtBase $this) {
+        $this.address = QWQHBoxLayoutCtor_1();
         $this.ownedByRaku = True;
     }
-    multi sub subClassCtor(QtBase $this, QObject $parent = (QObject)) {
-        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
-        $this.address = SCWQActionCtor_1($a1);
+    multi sub subClassCtor(QtBase $this) {
+        $this.address = SCWQHBoxLayoutCtor_1();
         $this.ownedByRaku = True;
     }
     method validateCB(Str $m) {
-        QWvalidateCB_QAction(self.address, self.id, $m);
+        QWvalidateCB_QHBoxLayout(self.address, self.id, $m);
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
@@ -2723,7 +2909,7 @@ class QAction is QObject is export {
         die "Bad args";
     }
     submethod new(|capture) {
-        my QAction $rObj = self.bless;
+        my QHBoxLayout $rObj = self.bless;
         ctor($rObj, |capture);
         return $rObj;
     }
@@ -2738,74 +2924,9 @@ class QAction is QObject is export {
     }
     submethod DESTROY {
         if self.ownedByRaku {
-            QWQActionDtor(self.address);
+            QWQHBoxLayoutDtor(self.address);
             self.ownedByRaku = False;
         }
-    }
-    method trigger() is QtSlot
-    {
-        QWQActiontrigger(self.address);
-    }
-    method setEnabled(Bool $arg1) is QtSlot
-    {
-        my int8 $a1 = $arg1.Int;
-        QWQActionsetEnabled(self.address, $a1);
-    }
-    method setDisabled(Bool $b) is QtSlot
-    {
-        my int8 $a1 = $b.Int;
-        QWQActionsetDisabled(self.address, $a1);
-    }
-    method triggered(Bool $checked = False)
-        is QtSignal { ... }
-}
-
-class QCoreApplication is QObject is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QCoreApplication");
-    }
-    method sendEvent(QObject $receiver, QEvent $event --> Bool)
-    {
-        my $a1 = ?$receiver ?? $receiver.address !! QWInt2Pointer(0);
-        my $a2 = ?$event ?? $event.address !! QWInt2Pointer(0);
-        my $result = QWQCoreApplicationsendEvent(self.address, $a1, $a2);
-        my $result1 = ?$result;
-        return $result1;
-    }
-    method quit() is QtSlot
-    {
-        QWQCoreApplicationquit(self.address);
-    }
-}
-
-class QFrame is QWidget is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QFrame");
-    }
-}
-
-class QLayout is QObject is QLayoutItem is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QLayout");
-    }
-    multi method setAlignment(QWidget $w, Int $alignment --> Bool)
-    {
-        my $a1 = ?$w ?? $w.address !! QWInt2Pointer(0);
-        my $result = QWQLayoutsetAlignment_1(self.address, $a1, $alignment);
-        my $result1 = ?$result;
-        return $result1;
-    }
-    multi method setAlignment(QLayout $l, Int $alignment --> Bool)
-    {
-        my $a1 = ?$l ?? $l.address !! QWInt2Pointer(0);
-        my $result = QWQLayoutsetAlignment_2(self.address, $a1, $alignment);
-        my $result1 = ?$result;
-        return $result1;
-    }
-    method addWidget(QWidget $w)
-    {
-        my $a1 = ?$w ?? $w.address !! QWInt2Pointer(0);
-        QWQLayoutaddWidget(self.address, $a1);
     }
 }
 
@@ -2954,19 +3075,17 @@ class QMenu is QWidget is export {
     }
 }
 
-class QTimer is QObject is export {
-    multi sub ctor(QtBase $this, QObject $parent = (QObject)) {
-        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
-        $this.address = QWQTimerCtor($a1);
+class QVBoxLayout is QBoxLayout is export {
+    multi sub ctor(QtBase $this) {
+        $this.address = QWQVBoxLayoutCtor_1();
         $this.ownedByRaku = True;
     }
-    multi sub subClassCtor(QtBase $this, QObject $parent = (QObject)) {
-        my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
-        $this.address = SCWQTimerCtor($a1);
+    multi sub subClassCtor(QtBase $this) {
+        $this.address = SCWQVBoxLayoutCtor_1();
         $this.ownedByRaku = True;
     }
     method validateCB(Str $m) {
-        QWvalidateCB_QTimer(self.address, self.id, $m);
+        QWvalidateCB_QVBoxLayout(self.address, self.id, $m);
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
@@ -2979,7 +3098,7 @@ class QTimer is QObject is export {
         die "Bad args";
     }
     submethod new(|capture) {
-        my QTimer $rObj = self.bless;
+        my QVBoxLayout $rObj = self.bless;
         ctor($rObj, |capture);
         return $rObj;
     }
@@ -2994,46 +3113,15 @@ class QTimer is QObject is export {
     }
     submethod DESTROY {
         if self.ownedByRaku {
-            QWQTimerDtor(self.address);
+            QWQVBoxLayoutDtor(self.address);
             self.ownedByRaku = False;
         }
     }
-    multi method setInterval(Int $msec)
-    {
-        QWQTimersetInterval_1(self.address, $msec);
-    }
-    multi method start() is QtSlot
-    {
-        QWQTimerstart_2(self.address);
-    }
-    method stop() is QtSlot
-    {
-        QWQTimerstop(self.address);
-    }
-    method timeout()
-        is QtPrivateSignal { ... }
 }
 
 class QAbstractScrollArea is QFrame is export {
     submethod new(|capture) is hidden-from-backtrace {
         unimplementedCtor("QAbstractScrollArea");
-    }
-}
-
-class QBoxLayout is QLayout is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QBoxLayout");
-    }
-    method addLayout(QLayout $layout, Int $stretch = 0)
-    {
-        my $a1 = ?$layout ?? $layout.address !! QWInt2Pointer(0);
-        QWQBoxLayoutaddLayout(self.address, $a1, $stretch);
-    }
-}
-
-class QGuiApplication is QCoreApplication is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QGuiApplication");
     }
 }
 
@@ -3164,50 +3252,6 @@ class QPushButton is QAbstractButton is export {
     }
 }
 
-class QHBoxLayout is QBoxLayout is export {
-    multi sub ctor(QtBase $this) {
-        $this.address = QWQHBoxLayoutCtor_1();
-        $this.ownedByRaku = True;
-    }
-    multi sub subClassCtor(QtBase $this) {
-        $this.address = SCWQHBoxLayoutCtor_1();
-        $this.ownedByRaku = True;
-    }
-    method validateCB(Str $m) {
-        QWvalidateCB_QHBoxLayout(self.address, self.id, $m);
-    }
-    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
-        # Get access to a preexisting Qt object
-        $this.address = $p;
-        $this.ownedByRaku = $obr;
-    }
-    multi sub ctor(|capture) {
-        note "QtWidgets ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod new(|capture) {
-        my QHBoxLayout $rObj = self.bless;
-        ctor($rObj, |capture);
-        return $rObj;
-    }
-    multi sub subClassCtor(|capture) {
-        note "QtWidgets subclass ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod subClass(|capture) {
-        subClassCtor(self, |capture);
-        self.validateCallBacks();
-    }
-    submethod DESTROY {
-        if self.ownedByRaku {
-            QWQHBoxLayoutDtor(self.address);
-            self.ownedByRaku = False;
-        }
-    }
-}
-
 class QTextEdit is QAbstractScrollArea is export {
     multi sub ctor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
@@ -3256,50 +3300,6 @@ class QTextEdit is QAbstractScrollArea is export {
     {
         my $result = QWQTextEdittoPlainText(self.address);
         return $result;
-    }
-}
-
-class QVBoxLayout is QBoxLayout is export {
-    multi sub ctor(QtBase $this) {
-        $this.address = QWQVBoxLayoutCtor_1();
-        $this.ownedByRaku = True;
-    }
-    multi sub subClassCtor(QtBase $this) {
-        $this.address = SCWQVBoxLayoutCtor_1();
-        $this.ownedByRaku = True;
-    }
-    method validateCB(Str $m) {
-        QWvalidateCB_QVBoxLayout(self.address, self.id, $m);
-    }
-    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
-        # Get access to a preexisting Qt object
-        $this.address = $p;
-        $this.ownedByRaku = $obr;
-    }
-    multi sub ctor(|capture) {
-        note "QtWidgets ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod new(|capture) {
-        my QVBoxLayout $rObj = self.bless;
-        ctor($rObj, |capture);
-        return $rObj;
-    }
-    multi sub subClassCtor(|capture) {
-        note "QtWidgets subclass ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod subClass(|capture) {
-        subClassCtor(self, |capture);
-        self.validateCallBacks();
-    }
-    submethod DESTROY {
-        if self.ownedByRaku {
-            QWQVBoxLayoutDtor(self.address);
-            self.ownedByRaku = False;
-        }
     }
 }
 ### End of the main API part ###
@@ -3358,10 +3358,6 @@ class QApplication is QCoreApplication is export {
         }
     }
 
-    sub setupEverything {
-    
-        # Start the connections manager if needed
-        $CM = ConnectionsManager.new if !$CM;
 
     sub setupEverything {
     

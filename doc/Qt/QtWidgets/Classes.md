@@ -290,7 +290,7 @@ Class QBoxLayout
 ----------------
 	inherits QLayout
 
-	inherited by QHBoxLayout, QVBoxLayout
+	inherited by QVBoxLayout, QHBoxLayout
 
 
 #### Method addLayout(QLayout $layout, Int $stretch = 0)
@@ -375,7 +375,7 @@ Class QCoreApplication
 Class QEvent
 ------------
 
-	inherited by QPaintEvent, QInputEvent
+	inherited by QInputEvent, QPaintEvent
 
     enum Type 
 
@@ -565,6 +565,10 @@ Class QHBoxLayout
 #### Method QHBoxLayout.new( --> QHBoxLayout))
 	calls Qt method  QHBoxLayout()
 
+#### Method addLayout(QLayout $layout, Int $stretch = 0)
+	inherited from QBoxLayout
+	calls Qt method void addLayout(QLayout* layout, int stretch = 0)
+
 #### Method setAlignment(QWidget $w, Int $alignment --> Bool)
 	inherited from QLayout
 	calls Qt method bool setAlignment(QWidget* w, Qt::Alignment alignment)
@@ -576,10 +580,6 @@ Class QHBoxLayout
 #### Method addWidget(QWidget $w)
 	inherited from QLayout
 	calls Qt method void addWidget(QWidget* w)
-
-#### Method addLayout(QLayout $layout, Int $stretch = 0)
-	inherited from QBoxLayout
-	calls Qt method void addLayout(QLayout* layout, int stretch = 0)
 
 
 Class QImage
@@ -1309,26 +1309,6 @@ Class QPushButton
 #### Method setMenu(QMenu $menu)
 	calls Qt method void setMenu(QMenu* menu)
 
-#### Method setText(Str $text)
-	inherited from QAbstractButton
-	calls Qt method void setText(const QString& text)
-
-#### Method text( --> Str)
-	inherited from QAbstractButton
-	calls Qt method QString text()
-
-#### Method click()
-	[slot] inherited from QAbstractButton
-	calls Qt method void click()
-
-#### Method pressed()
-	[signal] inherited from QAbstractButton
-	calls Qt method void pressed()
-
-#### Method clicked(Bool $checked = False)
-	[signal] inherited from QAbstractButton
-	calls Qt method void clicked(bool checked = false)
-
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
 	calls Qt method void setDisabled(bool arg1)
@@ -1436,6 +1416,26 @@ Class QPushButton
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void paintEvent(QPaintEvent* event)
+
+#### Method setText(Str $text)
+	inherited from QAbstractButton
+	calls Qt method void setText(const QString& text)
+
+#### Method text( --> Str)
+	inherited from QAbstractButton
+	calls Qt method QString text()
+
+#### Method click()
+	[slot] inherited from QAbstractButton
+	calls Qt method void click()
+
+#### Method pressed()
+	[signal] inherited from QAbstractButton
+	calls Qt method void pressed()
+
+#### Method clicked(Bool $checked = False)
+	[signal] inherited from QAbstractButton
+	calls Qt method void clicked(bool checked = false)
 
 
 Class QRect
@@ -1656,7 +1656,7 @@ Class QWidget
 	inherits QObject
 	inherits QPaintDevice
 
-	inherited by QMenu, QLineEdit, QAbstractButton, QFrame
+	inherited by QLineEdit, QFrame, QAbstractButton, QMenu
 
     enum RenderFlag 
 
