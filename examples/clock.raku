@@ -5,8 +5,9 @@ use Qt::QtWidgets;
 
 # Objects creation
 
-# Create the application object first
-my $qApp = QApplication.new(args => @*ARGS);
+# Create the application object first (the first argument will be
+# the window title)
+my $qApp = QApplication.new("What time is it ?", @*ARGS);
 
 # Create the label used as the output window and give it a large font size
 my $label = QLabel.new("00-00-00");

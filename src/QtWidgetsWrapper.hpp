@@ -15,7 +15,7 @@
 #include <iostream>
 #include <string.h>
 
-#include "RaQtWrapper.h"
+#include "QtWidgetsWrapper.h"
 
 
 extern void (*slotCallback)(int objId, char *slotName);

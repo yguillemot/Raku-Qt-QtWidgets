@@ -245,6 +245,9 @@ EXTERNC void QWEmit_Bool(void * source, char * signalName, int32_t data);
 EXTERNC void QWconnect(void * source, char *signal,
                        void * destination, char *slot);
 
+EXTERNC void QWdisconnect(void * source, char *signal,
+                          void * destination, char *slot);
+
 EXTERNC void * QWConnectorRCTOR(int32_t objId, char * slotName, char * sigName);
 
 EXTERNC void QWConnectorRDTOR(void * obj);

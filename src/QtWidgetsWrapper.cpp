@@ -17,7 +17,7 @@
 #include <string.h>
 #include <stdint.h>
 
-#include "RaQtWrapper.hpp"
+#include "QtWidgetsWrapper.hpp"
 
 
 
@@ -1064,6 +1064,51 @@ void QWconnect(void * source, char *signal, void * destination, char *slot)
     if (!(QObject::connect(src, qsignal.toLocal8Bit().data(),
                            dst, qslot.toLocal8Bit().data()))) {
         std::cerr << "Can't connect "
+                            << src << ":\"" << signal << "\""
+                  << " to " << dst << ":\"" << slot   << "\"\n";
+    }
+    
+    // for debug
+//     fprintf(connectLog, "0x%08lX %s --> 0x%08lX %s\n",
+//                         (ulong) src, qsignal.toLocal8Bit().data(),
+//                         (ulong) dst, qslot.toLocal8Bit().data());
+//     fflush(connectLog);
+    
+}
+
+
+
+
+
+void QWdisconnect(void * source, char *signal, void * destination, char *slot)
+{
+    QObject *src = reinterpret_cast<QObject *>(source);
+    QObject *dst = reinterpret_cast<QObject *>(destination);
+    
+//     std::cout << "DISCONNECT [" << signal << " -> " << slot << "]\n";
+
+    QString qsignal = "2UNKNOWN(UNKNOWN)";
+    QString qslot = "1UNKNOWN(UNKNOWN)";
+    if (signalDict->contains(signal)) {
+        QtSignal * qtSignal =  signalDict->value(signal);
+        qsignal = qtSignal->signalName;
+    }
+    if (slotDict->contains(slot)) {
+//         std::cout << "    slotDict contains " << slot << " !\n";
+        qslot = slotDict->value(slot);
+    } else if (signalDict->contains(slot)) {
+//         std::cout << "    signalDict contains " << slot << " !\n";
+        qslot = signalDict->value(slot)->signalName;
+    }
+
+//     std::cout << "DISCONNECT 0x" << std::hex << source << " "
+//               << signal << " => " << qsignal.toLocal8Bit().data() << "\n"
+//               << "        0x" << std::hex << destination << " "
+//               << slot << " => " << qslot.toLocal8Bit().data() << "\n";
+
+    if (!(QObject::disconnect(src, qsignal.toLocal8Bit().data(),
+                           dst, qslot.toLocal8Bit().data()))) {
+        std::cerr << "Can't disconnect "
                             << src << ":\"" << signal << "\""
                   << " to " << dst << ":\"" << slot   << "\"\n";
     }

@@ -289,15 +289,16 @@ class Qt { ... }
 
 
 class ConnectionsManager { ... };
+class QApplication { ... };
 my ConnectionsManager $CM;   # Where global values are stored
+my QApplication $QA;         
 
 
-# This class is parent of everything
+# This class is parent of everything related to Qt
 class QtBase {
 
     has Pointer $.address is rw;
     has Bool $.ownedByRaku is rw;
-    has Str $.qtType is rw;
 
     method validateCallBacks()
     {
@@ -520,7 +521,6 @@ class Qt is QtBase is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = False;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) is hidden-from-backtrace {
         unimplementedCtor("Qt");
@@ -710,19 +710,16 @@ class QEvent is QtBase is export {
     multi sub ctor(QtBase $this, QEvent::Type $type) {
         $this.address = QWQEventCtor_1($type);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, QEvent $other) {
         my $a1 = $other.address;
         $this.address = QWQEventCtor_2($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -773,7 +770,6 @@ class QInputEvent is QEvent is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = False;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) is hidden-from-backtrace {
         unimplementedCtor("QInputEvent");
@@ -790,13 +786,11 @@ class QPaintEvent is QEvent is export {
         my $a1 = $paintRect.address;
         $this.address = QWQPaintEventCtor_2($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -827,14 +821,12 @@ class QMouseEvent is QInputEvent is export {
         my $a2 = $localPos.address;
         $this.address = QWQMouseEventCtor_1($type, $a2, $button, $buttons, $modifiers);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, QEvent::Type $type, QPointF $localPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers) {
         my $a2 = $localPos.address;
         my $a3 = $screenPos.address;
         $this.address = QWQMouseEventCtor_2($type, $a2, $a3, $button, $buttons, $modifiers);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, QEvent::Type $type, QPointF $localPos, QPointF $windowPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers) {
         my $a2 = $localPos.address;
@@ -842,7 +834,6 @@ class QMouseEvent is QInputEvent is export {
         my $a4 = $screenPos.address;
         $this.address = QWQMouseEventCtor_3($type, $a2, $a3, $a4, $button, $buttons, $modifiers);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, QEvent::Type $type, QPointF $localPos, QPointF $windowPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers, Qt::MouseEventSource $source) {
         my $a2 = $localPos.address;
@@ -850,13 +841,11 @@ class QMouseEvent is QInputEvent is export {
         my $a4 = $screenPos.address;
         $this.address = QWQMouseEventCtor_4($type, $a2, $a3, $a4, $button, $buttons, $modifiers, $source);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -896,24 +885,20 @@ class QBrush is QtBase is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQBrushCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, Qt::BrushStyle $bs) {
         $this.address = QWQBrushCtor_2($bs);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, QColor $color, Qt::BrushStyle $bs = Qt::SolidPattern) {
         my $a1 = $color.address;
         $this.address = QWQBrushCtor_3($a1, $bs);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -946,18 +931,15 @@ class QColor is QtBase is export {
     multi sub ctor(QtBase $this, Qt::GlobalColor $color) {
         $this.address = QWQColorCtor_2($color);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, Int $r, Int $g, Int $b, Int $a = 255) {
         $this.address = QWQColorCtor_3($r, $g, $b, $a);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -1001,13 +983,11 @@ class QFont is QtBase is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQFontCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -1049,7 +1029,6 @@ class QPainter is QtBase is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQPainterCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
 
 multi sub ctor(QtBase $this, QPaintDevice $arg1) {
@@ -1058,29 +1037,27 @@ multi sub ctor(QtBase $this, QPaintDevice $arg1) {
         return;
     }
 
-    given $arg1.qtType {
-        when QtWidgets::QLabel {
+    given $arg1 {
+        when QLabel {
             $this.address = QWQPainterCtor_QWidget($arg1.addres);
         }
-        when QtWidgets::QWidget {
+        when QWidget {
             $this.address = QWQPainterCtor_QWidget($arg1.addres);
         }
-        when QtWidgets::QImage {
+        when QImage {
             $this.address = QWQPainterCtor_QImage($arg1.addres);
         }
         default {
-            die "QPainter({$arg1.qtType} is unsupported";
+            die "QPainter({$arg1.WHAT} is unsupported";
         }
     }
 
     $this.ownedByRaku = True;
-    $this.qtType = ::?CLASS.^name;
 }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -1104,19 +1081,19 @@ method begin(QPaintDevice $arg1 --> Bool) {
         return ?QWQPainterbegin_null(self.address);
     }
 
-    given $arg1.qtType {
-        when "QtWidgets::QLabel"  {
+    given $arg1 {
+        when QLabel  {
             return ?QWQPainterbegin_QWidget(self.address, $arg1.address);
         }
-        when "QtWidgets::QWidget"  {
+        when QWidget  {
             return ?QWQPainterbegin_QWidget(self.address, $arg1.address);
         }
-        when "QtWidgets::QImage" {
+        when QImage {
             return ?QWQPainterbegin_QImage(self.address, $arg1.address);
         }
         default {
-            note "QPainter::begin : arg type {$arg1.qtType} is unsupported";
-            die "QPainter({$arg1.qtType}) is unsupported";
+            note "QPainter::begin : arg type {$arg1.WHAT} is unsupported";
+            die "QPainter({$arg1.WHAT}) is unsupported";
         }
     }
 }
@@ -1172,24 +1149,20 @@ class QPen is QtBase is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQPenCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, Qt::PenStyle $arg1) {
         $this.address = QWQPenCtor_2($arg1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, QColor $color) {
         my $a1 = $color.address;
         $this.address = QWQPenCtor_3($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -1227,18 +1200,15 @@ class QPoint is QtBase is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQPointCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, Int $xpos, Int $ypos) {
         $this.address = QWQPointCtor_2($xpos, $ypos);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -1291,26 +1261,22 @@ class QPointF is QtBase is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQPointFCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, QPoint $p) {
         my $a1 = $p.address;
         $this.address = QWQPointFCtor_2($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, Real $xpos, Real $ypos) {
         my Num $a1 = $xpos.Num;
         my Num $a2 = $ypos.Num;
         $this.address = QWQPointFCtor_3($a1, $a2);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -1368,25 +1334,21 @@ class QRect is QtBase is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQRectCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, QPoint $topleft, QPoint $bottomright) {
         my $a1 = $topleft.address;
         my $a2 = $bottomright.address;
         $this.address = QWQRectCtor_2($a1, $a2);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, Int $left, Int $top, Int $width, Int $height) {
         $this.address = QWQRectCtor_4($left, $top, $width, $height);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -1430,13 +1392,11 @@ class QRegion is QtBase is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQRegionCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -1461,7 +1421,6 @@ class QPaintDevice is QtBase is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = False;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) is hidden-from-backtrace {
         unimplementedCtor("QPaintDevice");
@@ -1505,13 +1464,11 @@ class QImage is QPaintDevice is export {
     multi sub ctor(QtBase $this, Int $width, Int $height, QImage::Format $format) {
         $this.address = QWQImageCtor_3($width, $height, $format);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -1557,7 +1514,6 @@ class QLayoutItem is QtBase is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = False;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) is hidden-from-backtrace {
         unimplementedCtor("QLayoutItem");
@@ -1773,7 +1729,7 @@ class QtObject is Sigsloty is export {
 
     has int32 $.id;
 
-    # Pointers to connectors : for local classes only
+    # Pointers to C++ objects "connectors" : for local classes only
     has %.emitters;
     has %.receivers;
 
@@ -1892,8 +1848,12 @@ class QtObject is Sigsloty is export {
             # Complex data mode, local to local message
 
             # Get the signal key
-            my $keySig = self.id ~ $signalName ~ cap2sigStr($values);
-# #                 say "KEYSIG = >", $keySig, "<";
+            
+            #???????????????
+            # my $keySig = self.id ~ $signalName ~ cap2sigStr($values);
+            my $keySig = self.id ~ $signalName ~ $sigStr;
+            
+            # say "KEYSIG = >", $keySig, "<";
 
             my $connCount = $CM.signalConnections($keySig);
             if !$connCount {
@@ -1927,19 +1887,35 @@ class QtObject is Sigsloty is export {
 
 sub QWconnect(Pointer, Str, Pointer, Str) is native(&libwrapper) { * }
 
+sub QWdisconnect(Pointer, Str, Pointer, Str) is native(&libwrapper) { * }
+
 
 class ConnectionsManager {
 
+    # key = connection_Id
+    # value = reference to the object
     has %.objs is rw;
-
-    has %!sigConn;          # key = srcObjId ~ signalName ~ signalSignature
-                            # value = How many times a signal is connected
-
-    has %!sigData;
-
     my $lastConnId = 0;
+    has Semaphore $!objLock;
+
+    # key = srcObjId ~ signalName ~ signalSignature
+    # value = How many times a signal is connected
+    has %!sigConn;          
+    has Semaphore $!sigLock;
+
+    # key = event id
+    # value = data object (data, count)
+    has %!sigData;
+    has Semaphore $!dataLock;
+
 
     my $lastEventId = 0;
+    
+    submethod TWEAK {
+        $!objLock = Semaphore.new(1);
+        $!sigLock = Semaphore.new(1);
+        $!dataLock = Semaphore.new(1);
+    }
 
     method dump {
         say "CM OBJS :";
@@ -1959,33 +1935,56 @@ class ConnectionsManager {
 
     method addSignalConnection($signalKey)
     {
-        if %!sigConn{$signalKey}:exists {
-            %!sigConn{$signalKey}++;
-        } else {
-            %!sigConn{$signalKey} = 1;
-       }
+        $!sigLock.acquire;
+            if %!sigConn{$signalKey}:exists {
+                %!sigConn{$signalKey}++;
+            } else {
+                %!sigConn{$signalKey} = 1;
+            }
+        $!sigLock.release;
     }
 
     method rmSignalConnection($signalKey)
     {
-        if %!sigConn{$signalKey}:exists && %!sigConn{$signalKey} != 0 {
-            %!sigConn{$signalKey}--;
-        } else {
-            note "Can't remove \"", $signalKey, "\" unexistent connection";
-       }
+        $!sigLock.acquire;
+            if %!sigConn{$signalKey}:exists && %!sigConn{$signalKey} != 0 {
+                %!sigConn{$signalKey}--;
+            } else {
+                note "Can't remove non-existent connection \"",
+                                                        $signalKey, "\" ";
+            }
+        $!sigLock.release;
     }
 
     method signalConnections($signalKey) returns Int {
-        if %!sigConn{$signalKey}:exists {
-            return %!sigConn{$signalKey};
-        } else {
-            return 0;
-       }
+        # say '$CM.signalConnections key=', $signalKey;
+        my $val;
+        $!sigLock.acquire;
+            if %!sigConn{$signalKey}:exists {
+                $val = %!sigConn{$signalKey};
+            } else {
+                $val = 0;
+            }
+        $!sigLock.release;
+        return $val;
     }
 
 
+    # TODO : $obj are added, but never removed !!!!!!!
     method addObj(QtObject $obj) returns Int {
-        %!objs{++$lastConnId} = $obj;
+        $!objLock.acquire;
+            %!objs{++$lastConnId} = $obj;
+        $!objLock.release;
+        return $lastConnId;
+    }
+    
+    # TODO : This method should be called in the DESTROY submethods ! TODO
+    method removeObj(Int $id) {
+        $!objLock.acquire;
+            if %!objs{$id}:exists {
+                %!objs{$id}:delete;
+            }
+        $!objLock.release;
         return $lastConnId;
     }
 
@@ -1999,32 +1998,36 @@ class ConnectionsManager {
 
     method addData (Capture $data, Int $count) returns Int
     {
-        my $id = ++$lastEventId;
-#    say "YG add id=$id c=$count";
-        %!sigData{$id} = Data.new(data => $data, count => $count);
+        $!dataLock.acquire;
+            my $id = ++$lastEventId;
+            %!sigData{$id} = Data.new(data => $data, count => $count);
+        $!dataLock.release;
         return $id;
     }
 
     method getData(Int $id) # returns (Capture, Bool) # HOW TO DECLARE IT ???
     {
-#     say "YG get START";
-        if %!sigData{$id}:exists {
-            my Int $c = %!sigData{$id}.count;
-            my Capture $d = %!sigData{$id}.data;
-            $c--;
-            if $c {
-                %!sigData{$id}.count = $c;
+        # say "getData : id = $id";
+    
+        my @r;
+        $!dataLock.acquire;
+            if %!sigData{$id}:exists {
+                my Int $c = %!sigData{$id}.count;
+                my Capture $d = %!sigData{$id}.data;
+                $c--;
+                if $c {
+                    %!sigData{$id}.count = $c;
+                } else {
+                    %!sigData{$id}:delete;
+                }
+                @r = ($d, True);
             } else {
-                %!sigData{$id}:delete;
+                @r = (Nil, False);
             }
-#     say "YG get id=$id c=$c";
-            return ($d, True);
-        } else {
-            return (Nil, False);
-        }
+        $!dataLock.release;
+        return @r;
     }
 }
-
 
 
 
@@ -2219,7 +2222,7 @@ sub connect(Sigsloty $src, $sigName, Sigsloty $dst, $slotName)
 
         # The following key identifies the source of the connection
         my $keySig = $src.id ~ $sigName ~ $source.sig;
-#         say "KEYSIG = ", $keySig;
+        # say "KEYSIG = ", $keySig;
 
         # Count connexions. This count is needed to remove the data
         # when all the connexions have been used.
@@ -2235,6 +2238,165 @@ sub connect(Sigsloty $src, $sigName, Sigsloty $dst, $slotName)
 
     # Then connect inside Qt
     QWconnect($srcObj, $signal, $dstObj, $slot);
+}
+
+#------------------------------------------------------------------
+
+
+
+sub disconnect(Sigsloty $src, $sigName, Sigsloty $dst, $slotName)
+        is export
+{
+    my Bool $simple;  # True if signature is "simple"
+
+#     say "    signalStrSig = \"$signalStrSig\"";
+#     say "    slotStrSig = \"$slotStrSig\"";
+
+    my SigSlot $source;
+    my SigSlot $destination;
+
+    # Does the specified signal exist ?
+    # Look not only in the given class, but also in all its parents
+    my @classNames = ($src.^name);
+#     say "CLASSLIST (", $src.^name, ")";
+    for $src.^parents -> $p {
+#         say "\t\t", $p.^name;
+        @classNames.push($p.^name);
+    }
+    SIGLOOP: for @classNames -> $className {
+        if %signals{$className}:exists {
+            for @(%signals{$className}) -> $v {
+                if $v.name ~~ $sigName {
+                    $source = $v;
+                    last SIGLOOP;
+                }
+            }
+        }
+    }
+    if !$source {
+        die "disconnect : signal ", $src.^name, ".", $sigName, " not found";
+    }
+
+    # Does the specified slot exist ?
+    # Look not only in the given class, but also in all its parents
+    @classNames = ($dst.^name);
+    for $dst.^parents -> $p {
+        @classNames.push($p.^name);
+    }
+    SLOTLOOP: for @classNames -> $className {
+        if %slots{$className}:exists {
+            for @(%slots{$className}) -> $v {
+                if $v.name ~~ $slotName {
+                    $destination = $v;
+                    $simple = $v.sigIsSimple;
+                    last SLOTLOOP;
+                }
+            }
+        }
+    }
+
+    if !$destination {
+        # Maybe the destination is a signal
+        SIGLOOP2: for @classNames -> $className {
+            if %signals{$className}:exists {
+                for @(%signals{$className}) -> $v {
+                    if $v.name ~~ $slotName {
+                        $destination = $v;
+                        $simple = $v.sigIsSimple;
+                        last SIGLOOP2;
+                    }
+                }
+            }
+        }
+    }
+
+    if !$destination {
+        die "disconnect : destination slot or signal ",
+                            $dst.^name, ".", $slotName, " not found";
+    }
+
+    # Is destination a private signal ?
+    if $destination.isPrivate {
+        die "can't be connected to a private signal ",
+                        $dst.^name, ".", $slotName, $destination.sig;
+    }
+
+    # Are source and destination compatible ?
+    my $nbp = $destination.sSignature.accepts($source.sSignature);
+    # say "NBP = $nbp";
+    if $nbp < 0 {
+        my Str $destNature = $destination.isSlot ?? "slot" !! "signal";
+        die "disconnect : incompatible source and destination\n",
+            "source is signal ", $src.^name, "::", $sigName, $source.sig,
+            " [", $source.sSignature.str, "]\n",
+            "destination is $destNature ", $dst.^name, "::", $slotName, $destination.sig,
+            " [", ~$destination.sSignature.str, "]\n";
+    }
+
+    my $slotStrSig = $destination.sig;
+    my $slotStrQSig = $destination.qSig;
+    # Modify destination signatures if needed
+    if $simple && $nbp > 0 {
+        $slotStrSig = removeArgs($slotStrSig, $nbp);
+        $slotStrQSig = removeArgs($slotStrSig, $nbp);
+    }
+
+    # remove the connexion
+
+    my Pointer $srcObj = Nil;
+    my Pointer $dstObj = Nil;
+    my Str $signal = "???";
+    my Str $slot = "???";
+
+
+    if $simple {
+        # Plusieurs cas a etudier...
+        if $source.isPlainQt {
+            $srcObj = $src.address;
+            $signal = $sigName ~ $source.qSig;
+        } else {
+            $srcObj = $src.emitters{$sigName ~ $source.sig};
+            $signal = "QWSignal" ~ %qSigSig{$source.sig};
+        }
+        if $destination.isPlainQt {
+            $dstObj = $dst.address;
+            $slot = $slotName ~ $slotStrQSig;
+        } else {
+            if $destination.isSlot {
+                $dstObj = $dst.receivers{$slotName ~ $slotStrSig};
+                $slot = "QWSlot" ~ %qSigSig{$slotStrSig};
+            } else {
+                $dstObj = $dst.emitters{$slotName ~ $slotStrSig};
+                $slot = "QWSignal" ~ %qSigSig{$slotStrSig};
+            }
+        }
+
+    } else {
+        # Local to local connexion, with use of the cache :
+        # Neither source nor destination are pure Qt widgets
+        # Data will be kept inside perl space and identified with
+        # a unique data key.
+        # This key will be send instead of the data.
+
+        # The following key identifies the source of the connection
+        my $keySig = $src.id ~ $sigName ~ $source.sig;
+#         say "KEYSIG = ", $keySig;
+
+# TODO TODO TODO
+#         # Count connexions. This count is needed to remove the data
+#         # when all the connexions have been used.
+#         $CM.addSignalConnection($keySig);
+
+        $signal = "QWSignal(int)";
+        $slot = "QWLocalToLocalSlot(int)";
+        $srcObj = $src.emitters{$sigName ~ $source.sig};
+        $dstObj = $dst.receivers{$slotName ~ $destination.sig};
+    }
+
+    # say "CONNECT : $signal --> $slot";
+
+    # Then connect inside Qt
+    QWdisconnect($srcObj, $signal, $dstObj, $slot);
 }
 
 #------------------------------------------------------------------
@@ -2317,10 +2479,12 @@ sub slotCallbackComplexSig(int32 $objectId, Str $slotName, int32 $dataId)
 {
     my ($capt, $ok) = $CM.getData($dataId);
 
-#     say "Stack: " ~ Backtrace.new;
-#     say "just before calling the slot";
-#     say $capt.gist;
-#     say $CM.objs{$objectId}.gist;
+    # say "Stack: " ~ Backtrace.new;
+    # say "just before calling the slot ", $slotName;
+    # say "ok = ", $ok;
+    # say $capt.gist;
+    # say "objectId : ", $objectId;
+    # say $CM.objs{$objectId}.gist;
 
     if (!$ok) {
         note "INTERNAL ERROR: Data(Id=$dataId) not found in capture cache";
@@ -2374,13 +2538,11 @@ class QWidget is QObject is QPaintDevice is export {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQWidgetCtor($a1, $f);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQWidgetCtor($a1, $f);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QWidget(self.address, self.id, $m);
@@ -2389,7 +2551,6 @@ class QWidget is QObject is QPaintDevice is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -2542,13 +2703,11 @@ class QAction is QObject is export {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQActionCtor_1($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, QObject $parent = (QObject)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQActionCtor_1($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QAction(self.address, self.id, $m);
@@ -2557,7 +2716,6 @@ class QAction is QObject is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -2656,13 +2814,11 @@ class QLineEdit is QWidget is export {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQLineEditCtor_1($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQLineEditCtor_1($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QLineEdit(self.address, self.id, $m);
@@ -2671,19 +2827,16 @@ class QLineEdit is QWidget is export {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQLineEditCtor_2($arg1, $a2);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, Str $arg1, QWidget $parent = (QWidget)) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQLineEditCtor_2($arg1, $a2);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -2738,13 +2891,11 @@ class QMenu is QWidget is export {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQMenuCtor_1($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQMenuCtor_1($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QMenu(self.address, self.id, $m);
@@ -2753,19 +2904,16 @@ class QMenu is QWidget is export {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQMenuCtor_2($title, $a2);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, Str $title, QWidget $parent = (QWidget)) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQMenuCtor_2($title, $a2);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -2811,13 +2959,11 @@ class QTimer is QObject is export {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQTimerCtor($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, QObject $parent = (QObject)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQTimerCtor($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QTimer(self.address, self.id, $m);
@@ -2826,7 +2972,6 @@ class QTimer is QObject is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -2897,13 +3042,11 @@ class QLabel is QFrame is export {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQLabelCtor_1($a1, $f);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQLabelCtor_1($a1, $f);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QLabel(self.address, self.id, $m);
@@ -2912,19 +3055,16 @@ class QLabel is QFrame is export {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQLabelCtor_2($text, $a2, $f);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, Str $text, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags()) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQLabelCtor_2($text, $a2, $f);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -2978,13 +3118,11 @@ class QPushButton is QAbstractButton is export {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQPushButtonCtor_2($text, $a2);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, Str $text, QWidget $parent = (QWidget)) {
         my $a2 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQPushButtonCtor_2($text, $a2);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QPushButton(self.address, self.id, $m);
@@ -2993,7 +3131,6 @@ class QPushButton is QAbstractButton is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -3031,12 +3168,10 @@ class QHBoxLayout is QBoxLayout is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQHBoxLayoutCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this) {
         $this.address = SCWQHBoxLayoutCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QHBoxLayout(self.address, self.id, $m);
@@ -3045,7 +3180,6 @@ class QHBoxLayout is QBoxLayout is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -3079,13 +3213,11 @@ class QTextEdit is QAbstractScrollArea is export {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = QWQTextEditCtor_1($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
         $this.address = SCWQTextEditCtor_1($a1);
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QTextEdit(self.address, self.id, $m);
@@ -3094,7 +3226,6 @@ class QTextEdit is QAbstractScrollArea is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -3132,12 +3263,10 @@ class QVBoxLayout is QBoxLayout is export {
     multi sub ctor(QtBase $this) {
         $this.address = QWQVBoxLayoutCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub subClassCtor(QtBase $this) {
         $this.address = SCWQVBoxLayoutCtor_1();
         $this.ownedByRaku = True;
-        $this.qtType = ::?CLASS.^name;
     }
     method validateCB(Str $m) {
         QWvalidateCB_QVBoxLayout(self.address, self.id, $m);
@@ -3146,7 +3275,6 @@ class QVBoxLayout is QBoxLayout is export {
         # Get access to a preexisting Qt object
         $this.address = $p;
         $this.ownedByRaku = $obr;
-        $this.qtType = ::?CLASS.^name;
     }
     multi sub ctor(|capture) {
         note "QtWidgets ", ::?CLASS.^name,
@@ -3194,27 +3322,49 @@ sub QWApplicationExec(Pointer) returns int32 is native(&libwrapper) { * }
 class QApplication is QCoreApplication is export {
 
     # WARNING : Subclassing QApplication is currently unsupported
-    BEGIN {
-        $CM = ConnectionsManager.new if !$CM;
-    }
 
-    submethod BUILD(:@args = ()) {
-
-#         say "BUILD ", ::?CLASS.^name;
-
+    multi sub ctor(QtBase $this, 
+                    Str $progName = $*PROGRAM-NAME, @args = @*ARGS) {
+                    
         # Reconstruction of C main arguments : (int argc, char **argv)
+        # from $progName (argv[0]) and @args (the list of others argv[])
         my $argv = CArray[Str].new;
-        $argv[0] = $*PROGRAM-NAME;
+        $argv[0] = $progName;
         my $argc = 1;
         for @args -> $x {
             $argv[$argc++] = $x;
         }
+                    
+        # Call QApplication ctor
+        $this.address = QWApplicationCtor($argc, $argv);
+        $this.ownedByRaku = True;
+    }
 
-        self.address = QWApplicationCtor($argc, $argv);
-        self.ownedByRaku = True;
-#         say "QApplication ctor : args = ", $argv;
+    multi sub ctor(|capture) {
+        $QA = Nil;
+        note "QApplication.new called with unsupported args";
+        die "Bad args";
+    }
+
+    submethod new(|capture) {
+        if $QA {
+            die "QApplication can't have more than one instance";
+        } else {
+            setupEverything;
+            my QApplication $rObj = self.bless;
+            $QA = $rObj;
+            ctor($rObj, |capture);
+            return $rObj;
+        }
+    }
 
 
+    sub setupEverything {
+    
+        # Start the connections manager if needed
+        $CM = ConnectionsManager.new if !$CM;
+
+        # Register the addresses of the callbacks
         QWSetupSlotCallback(&slotCallback);
         QWSetupSlotCallbackInt(&slotCallbackInt);
         QWSetupSlotCallbackInt2(&slotCallbackInt2);
@@ -3229,25 +3379,12 @@ class QApplication is QCoreApplication is export {
         QWSetupSlotCallbackQEvent(&slotCallbackQEvent);
         QWSetupSlotCallbackQMouseEvent(&slotCallbackQMouseEvent);
         QWSetupSlotCallbackQPaintEvent(&slotCallbackQPaintEvent);
-
-
     }
 
     method exec {
-
-        # Pour debug
-#         say "XYZ " x 19;
-#         for %slots.kv -> $k, $v {
-#             say $k;
-#             say "\t", $v;
-#         }
-
-
         return QWApplicationExec($.address);
     }
 
-    # Should be defined in QCoreApplication
-    # method quit is QtSlot { ... }
 }
 
 # End of code for QApplication

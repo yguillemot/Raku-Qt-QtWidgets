@@ -67,7 +67,7 @@ our constant %qSigSig is export = {
 
 
 sub libwrapper is export {
-  my $lib-name = sprintf($*VM.config<dll>, "RaQtWrapper");
+  my $lib-name = sprintf($*VM.config<dll>, "QtWidgetsWrapper");
   my $installed-lib = ~(%?RESOURCES{$lib-name});
   return $installed-lib ?? $installed-lib !! "resources/$lib-name";
 }
@@ -151,26 +151,26 @@ sub methPosArgs2Str(Signature $s --> Str) is export
     return $r ~ ")";
 }
 
-sub methPosArgs2qSigStr(Signature $s --> Str) is export
-{
-    # say "METH SIGNAL : ", $meth.name;
-    # say "   Signature : ", $meth.signature.params;
-    # say "   Middle : ", posArgs2Str($meth.signature.params);
-    my Str $r = "(";
-    my Str $sep = "";
-    my Bool $first = True;
-    for $s.params -> $p {
-        if $first { $first = False; next }  # Skip the object reference
-        last if $p.gist.Str ~~ /\*/;        # Ignore slurpy arguments
-        if %qType{$p.type.perl}:exists {
-            $r ~= $sep ~ %qType{$p.type.perl};
-        } else {
-            $r ~= $sep ~ "UNKNOWN";
-        }
-        $sep = ",";
-    }
-    return $r ~ ")";
-}
+# sub methPosArgs2qSigStr(Signature $s --> Str) is export
+# {
+#     # say "METH SIGNAL : ", $meth.name;
+#     # say "   Signature : ", $meth.signature.params;
+#     # say "   Middle : ", posArgs2Str($meth.signature.params);
+#     my Str $r = "(";
+#     my Str $sep = "";
+#     my Bool $first = True;
+#     for $s.params -> $p {
+#         if $first { $first = False; next }  # Skip the object reference
+#         last if $p.gist.Str ~~ /\*/;        # Ignore slurpy arguments
+#         if %qType{$p.type.perl}:exists {
+#             $r ~= $sep ~ %qType{$p.type.perl};
+#         } else {
+#             $r ~= $sep ~ "UNKNOWN";
+#         }
+#         $sep = ",";
+#     }
+#     return $r ~ ")";
+# }
 
 
 # Remove the invocant from a signature

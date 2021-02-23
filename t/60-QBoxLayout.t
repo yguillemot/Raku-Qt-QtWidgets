@@ -37,7 +37,7 @@ class TLabel is QLabel {
 }
 
 
-my $qApp = QApplication.new(args => ());
+my $qApp = QApplication.new;
 
 
 # Trying to have labels positionned as here:
@@ -96,7 +96,7 @@ my $dy = $w.height / 8;
 # say "W = {$w.width}   H = {$w.height}";
 # say "dx = $dx   dy = $dy";
 
-# Read color near the center of each label
+# Grab color near the center of each label
 for @l Z (0..*) -> ($l, $i) {
     my $x = $dx + 2 * $l.x * $dx;
     my $y = $dy + 2 * $l.y * $dy;
@@ -109,19 +109,19 @@ for @l Z (0..*) -> ($l, $i) {
                      + ($wc.green - $rc.green)**2
                      + ($wc.blue - $rc.blue)**2;
     
-     ok $deltaColor == 0, "Position label $i";
+     ok $deltaColor == 0, "Label $i is in ({$l.x}, {$l.y})";
 }
 
-# Read color where no label should be
+# Grab color where no label should be
 for ((1,0), (2,0), (0,1), (2,1), (0,2), (1,2)) -> ($i, $j) {
     my $x = $dx + 2 * $i * $dx;
     my $y = $dy + 2 * $j * $dy;
     my QColor $rc = $image.pixelColor($x.Int, $y.Int);
     
-    # Read color should not be one used by a label
+    # Background color should not be one used by a label
     ok    $rc.red != 0 && $rc.red != 255
        && $rc.green != 0 && $rc.green != 255
-       && $rc.blue != 0 && $rc.blue != 255,      "No label in ($i, $j)";
+       && $rc.blue != 0 && $rc.blue != 255,   "There is no label in ($i, $j)";
 }
     
 # my $status = $qApp.exec;
