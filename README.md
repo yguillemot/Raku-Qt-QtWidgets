@@ -78,20 +78,23 @@ is translated to Raku as :
 
 `my $pen = QPen.new(Qt::DashLine);`
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ### Signals and slots
 
-The signals and slots mechanism used by Qt allows unrelated objects to communicate.
+The signals and slots mechanism used by Qt allows unrelated objects to
+communicate.
 
-A Qt object can have slots and/or signals if it inherits from QObject.
+A C++ Qt object can have slots and/or signals if it inherits from the
+C++ class "QObject".
 
-Similarly, NAME_X objects inheriting from "NAME_XObject" class can have slots and/or signals called QtSignals and QtSlots.
+Similarly, a Raku object can have slots
+and/or signals if it inherits from the Raku class "QtObject".
 
-A NAME_X slot is an ordinary method defined with the trait "is QtSlot".
+A Raku Qt::QtWidgets slot is an ordinary method defined with the trait
+"is QtSlot".
 
 ```
-class MyClass is NAME_XObject {
+class MyClass is Qt::QtWidgetsObject {
    ... # Some code
    method mySlot(...) is QtSlot {
         ... # Some code
@@ -100,26 +103,28 @@ class MyClass is NAME_XObject {
 }
 ```
 
-A NAME_X signal is a method defined with the trait "is QtSignal".
-Its associated code is never executed; so a stub is used.
+As well, a Qt::QtWidgets signal is a method defined with the trait "is QtSignal".
+Its associated code will never be executed; so a stub is used.
 
 ```
-class MyClass2 is NAME_XObject {
+class MyClass2 is Qt::QtWidgetsObject {
    ... # Some code
    method mySignal(...) is QtSignal { ... }
    ... # Some code
 }
 ```
 
-## Connect
+### Connect
 
 The sub "connect" connects a QtSignal to a QtSlot (or to another QtSignal).
 
-`sub connect(NAME_XObject $src, Str $signal, NAME_XObject $dst, Str $slot)`
+`sub connect(QtObject $src, Str $signal, QtObject $dst, Str $slot)`
+
+The names of signal and slot are passed to connect in strings.
 
 The signal and slot must have compatible signatures.
 
-    !!! TODO: explanations needed
+    [!!! TODO: explanations needed]
     
 
 Example:
@@ -130,20 +135,91 @@ my $dst = MyClass.new;
 connect $src, "mySignal", $dst, "mySlot";
 ```
 
-## Emit a QtSignal
+### Emit a QtSignal
 
-In Qt, the macro "emit" is used to emit a signal.
+In C++ Qt, the keyword "emit" is used to emit a signal.
 
-In NAME_X, you only have to execute the signal method. 
+`emit mySignal(some_arg);`
 
-## Subclassing a Qt object
+In Raku Qt::QtWidgets, you only have to execute the signal method. 
 
-    !!! TODO
+`self.mySignal(some_arg);`
 
-## TODO
+### Subclassing a Qt object
 
-## Versions of involved software
+When programming with Qt and C++, some features can only be accessed
+by overriding some Qt C++ virtual methods.
 
+A parallel mechanism is implemented in the Qt::QtWidgets module.
+
+Subclassing a Qt object needs three step :
+
+    * Define a Raku class inheriting the Qt class
+        
+    * Call the "subClass" method of the parent class from the TWEAK submethod 
+    of the new class.
+    
+    * Override the virtual methods. They just have to be defined with the
+    right signature and dont need any specific syntax.
+    
+    
+The first step is obvious. The second is used to instantiate the C++ 
+counterpart of the Raku class and to pass it the parameters its constructor
+needs. In this second step, the parent class whose the subClass method is
+called must be explicitely specified : 
+`self.ParentClass::subClass($param, ...);`
+
+The following example shows how to subclass a QLabel and override its
+QMouseMoveEvent method.
+
+**Pure C++ version:**
+
+``` C++
+#include <QtWidgets>
+
+class MyLabel : public QLabel
+{
+public :
+    MyLabel(const QString txt) : QLabel(txt) { }
+    
+    void mousePressEvent(QMouseEvent* event)
+    {
+        // Do something when the mouse is pressed on the label
+    }    
+};
+
+...
+
+// Instantiation of the label in the main function :
+MyLabel * label = new MyLabel("text on the label");
+```
+
+**Raku version:**
+
+``` Raku
+use Qt::QtWidgets;
+
+class MyLabel is QLabel
+{
+    has Str $.txt;
+    
+    submethod TWEAK { self.QLabel::subClass($!txt); } 
+    
+    method mousePressEvent(QMouseEvent $event)
+    {
+        # Do something when the mouse is pressed on the label
+    }
+}
+
+...
+
+# Instantiation of the label in the main program :
+my $label = MyLabel.new(txt => "text on the label");
+```
+
+### Versions of involved software
+
+ààààààààààààààààààààààààààààààààààààààààààààà
 
 ## Issues
 
@@ -164,7 +240,7 @@ most basic objects of the Qt GUI.
 
 The Qt5 developpment package and the gcc compiler are needed.
 
-`zef install NAME_X::QtWidgets`
+`zef install Qt::QtWidgets::QtWidgets`
 
 ## Testing
 
