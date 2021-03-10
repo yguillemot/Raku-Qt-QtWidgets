@@ -620,7 +620,7 @@ calls Qt method void quit()
 
 <h2 id="toc_7">Class QEvent</h2>
 
-<pre><code>inherited by QInputEvent, QPaintEvent
+<pre><code>inherited by QPaintEvent, QInputEvent
 
 enum Type 
 </code></pre>
@@ -691,7 +691,7 @@ enum Type
 
 <pre><code>inherits QWidget
 
-inherited by QAbstractScrollArea, QLabel
+inherited by QLabel, QAbstractScrollArea
 </code></pre>
 
 <h4>Method setDisabled(Bool $arg1)</h4>
@@ -883,12 +883,6 @@ calls Qt method void quit()
 <pre><code>calls Qt method  QHBoxLayout()
 </code></pre>
 
-<h4>Method addLayout(QLayout $layout, Int $stretch = 0)</h4>
-
-<pre><code>inherited from QBoxLayout
-calls Qt method void addLayout(QLayout* layout, int stretch = 0)
-</code></pre>
-
 <h4>Method setAlignment(QWidget $w, Int $alignment --&gt; Bool)</h4>
 
 <pre><code>inherited from QLayout
@@ -905,6 +899,12 @@ calls Qt method bool setAlignment(QLayout* l, Qt::Alignment alignment)
 
 <pre><code>inherited from QLayout
 calls Qt method void addWidget(QWidget* w)
+</code></pre>
+
+<h4>Method addLayout(QLayout $layout, Int $stretch = 0)</h4>
+
+<pre><code>inherited from QBoxLayout
+calls Qt method void addLayout(QLayout* layout, int stretch = 0)
 </code></pre>
 
 <h2 id="toc_12">Class QImage</h2>
@@ -1931,6 +1931,36 @@ calls Qt method void ignore()
 <pre><code>calls Qt method void setMenu(QMenu* menu)
 </code></pre>
 
+<h4>Method setText(Str $text)</h4>
+
+<pre><code>inherited from QAbstractButton
+calls Qt method void setText(const QString&amp; text)
+</code></pre>
+
+<h4>Method text( --&gt; Str)</h4>
+
+<pre><code>inherited from QAbstractButton
+calls Qt method QString text()
+</code></pre>
+
+<h4>Method click()</h4>
+
+<pre><code>[slot] inherited from QAbstractButton
+calls Qt method void click()
+</code></pre>
+
+<h4>Method pressed()</h4>
+
+<pre><code>[signal] inherited from QAbstractButton
+calls Qt method void pressed()
+</code></pre>
+
+<h4>Method clicked(Bool $checked = False)</h4>
+
+<pre><code>[signal] inherited from QAbstractButton
+calls Qt method void clicked(bool checked = false)
+</code></pre>
+
 <h4>Method setDisabled(Bool $arg1)</h4>
 
 <pre><code>[slot] inherited from QWidget
@@ -2091,36 +2121,6 @@ calls Qt method void leaveEvent(QEvent* event)
 
 <pre><code>[virtual] [protected] inherited from QWidget
 calls Qt method void paintEvent(QPaintEvent* event)
-</code></pre>
-
-<h4>Method setText(Str $text)</h4>
-
-<pre><code>inherited from QAbstractButton
-calls Qt method void setText(const QString&amp; text)
-</code></pre>
-
-<h4>Method text( --&gt; Str)</h4>
-
-<pre><code>inherited from QAbstractButton
-calls Qt method QString text()
-</code></pre>
-
-<h4>Method click()</h4>
-
-<pre><code>[slot] inherited from QAbstractButton
-calls Qt method void click()
-</code></pre>
-
-<h4>Method pressed()</h4>
-
-<pre><code>[signal] inherited from QAbstractButton
-calls Qt method void pressed()
-</code></pre>
-
-<h4>Method clicked(Bool $checked = False)</h4>
-
-<pre><code>[signal] inherited from QAbstractButton
-calls Qt method void clicked(bool checked = false)
 </code></pre>
 
 <h2 id="toc_27">Class QRect</h2>
@@ -2387,12 +2387,6 @@ calls Qt method void timeout()
 <pre><code>calls Qt method  QVBoxLayout()
 </code></pre>
 
-<h4>Method addLayout(QLayout $layout, Int $stretch = 0)</h4>
-
-<pre><code>inherited from QBoxLayout
-calls Qt method void addLayout(QLayout* layout, int stretch = 0)
-</code></pre>
-
 <h4>Method setAlignment(QWidget $w, Int $alignment --&gt; Bool)</h4>
 
 <pre><code>inherited from QLayout
@@ -2411,12 +2405,18 @@ calls Qt method bool setAlignment(QLayout* l, Qt::Alignment alignment)
 calls Qt method void addWidget(QWidget* w)
 </code></pre>
 
+<h4>Method addLayout(QLayout $layout, Int $stretch = 0)</h4>
+
+<pre><code>inherited from QBoxLayout
+calls Qt method void addLayout(QLayout* layout, int stretch = 0)
+</code></pre>
+
 <h2 id="toc_32">Class QWidget</h2>
 
 <pre><code>inherits QObject
 inherits QPaintDevice
 
-inherited by QLineEdit, QFrame, QAbstractButton, QMenu
+inherited by QMenu, QAbstractButton, QFrame, QLineEdit
 
 enum RenderFlag 
 </code></pre>

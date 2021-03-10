@@ -32,6 +32,8 @@ EXTERNC void * QWApplicationInstance();
 
 
 
+//BEGIN_INSERTION_HERE
+//WRAPPER_H_CODE
 EXTERNC void  QWQAbstractButtonsetText(void * obj, char * text);
 EXTERNC char * QWQAbstractButtontext(void * obj);
 EXTERNC void  QWQAbstractButtonclick(void * obj);
@@ -230,6 +232,7 @@ EXTERNC void  QWQWidgetpaintEvent(void * obj, void * event);
 EXTERNC void QWvalidateCB_QWidget(void *obj, int32_t objId, char *methodName);
 EXTERNC void QWQWidgetDtor(void *);
 EXTERNC void SCWQWidgetDtor(void *);
+//END_INSERTION_HERE
 
 
 
@@ -242,11 +245,11 @@ EXTERNC void QWEmit_Bool(void * source, char * signalName, int32_t data);
 
 
 
-EXTERNC void QWconnect(void * source, char *signal,
-                       void * destination, char *slot);
+EXTERNC int8_t QWconnect(void * source, char *signal,
+                         void * destination, char *slot);
 
-EXTERNC void QWdisconnect(void * source, char *signal,
-                          void * destination, char *slot);
+EXTERNC int8_t QWdisconnect(void * source, char *signal,
+                            void * destination, char *slot);
 
 EXTERNC void * QWConnectorRCTOR(int32_t objId, char * slotName, char * sigName);
 
@@ -298,6 +301,8 @@ EXTERNC void QWSetupSlotCallbackBool(
 EXTERNC void QWSetupSlotCallbackPointer(
     void (*f)(int objId, char *slotName, void *p));
 
+//BEGIN_INSERTION_HERE
+//CALLBACKS_INITIALIZERS
 EXTERNC void QWSetupSlotCallbackQEvent(
     void (*f)(int32_t objId, const char *slotName, QEvent* event));
 
@@ -307,6 +312,7 @@ EXTERNC void QWSetupSlotCallbackQMouseEvent(
 EXTERNC void QWSetupSlotCallbackQPaintEvent(
     void (*f)(int32_t objId, const char *slotName, QPaintEvent* event));
 
+//END_INSERTION_HERE
 
 
 EXTERNC void QWSetupSlotCallbackComplexSig(

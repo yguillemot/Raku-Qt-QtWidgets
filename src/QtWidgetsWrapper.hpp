@@ -26,9 +26,12 @@ extern void (*slotCallbackIntStr)(int objId, char *slotName, STD_INT i, char *s)
 extern void (*slotCallbackBool)(int objId, char *slotName, uchar b);
 extern void (*slotCallbackPointer)(int objId, char *slotName, void *p);
 
+//BEGIN_INSERTION_HERE
+//VIRTUAL_METHODS_CALLBACKS_PROTOTYPES
 extern void (*slotCallbackQEvent)(int objId, const char *slotName, QEvent* event);
 extern void (*slotCallbackQMouseEvent)(int objId, const char *slotName, QMouseEvent* event);
 extern void (*slotCallbackQPaintEvent)(int objId, const char *slotName, QPaintEvent* event);
+//END_INSERTION_HERE
 
 
 extern void (*slotCallbackComplexSig)(int32_t objId, char *slotName, uint32_t dataId);
@@ -133,13 +136,15 @@ class CallbackValidator
 
 public:
     CallbackValidator() :
+        //BEGIN_INSERTION_HERE
+        //VALIDATOR_INIT
                 m_objId(0)        ,
         m_enterEvent(false)        ,
         m_leaveEvent(false)        ,
         m_mouseMoveEvent(false)        ,
         m_mousePressEvent(false)        ,
         m_mouseReleaseEvent(false)        ,
-        m_paintEvent(false)
+        m_paintEvent(false)//END_INSERTION_HERE
 
     {
 //         std::cout << "############## EVENTVALIDATOR CTOR ##############\n";
@@ -174,6 +179,8 @@ public:
         QString meth = QString(methodName);
 
 
+//BEGIN_INSERTION_HERE
+//VALIDATOR_SWITCH
     if (meth == QString("enterEvent")) {
         m_enterEvent = true;
     }
@@ -192,6 +199,7 @@ public:
     if (meth == QString("paintEvent")) {
         m_paintEvent = true;
     }
+//END_INSERTION_HERE
 
 
 //         std::cout << "m_objId = " << m_objId << "\n";
@@ -209,12 +217,15 @@ public:
     int32_t m_objId;
 
     // Validate the callback
+    //BEGIN_INSERTION_HERE
+    //VALIDATOR_DECLARATION
         bool m_enterEvent;
         bool m_leaveEvent;
         bool m_mouseMoveEvent;
         bool m_mousePressEvent;
         bool m_mouseReleaseEvent;
         bool m_paintEvent;
+    //END_INSERTION_HERE
 
 
     // Raku name of the method used as callback
@@ -231,6 +242,8 @@ public:
 //////////////////////////////////////////////////////////////////////////////
 // Subclasses
 
+//BEGIN_INSERTION_HERE
+//SUBCLASSES_WITH_VIRTUAL_METHODS
 class SCQLabel : public QLabel, public CallbackValidator
 {
 public:
@@ -741,6 +754,7 @@ public:
 
 };
 
+//END_INSERTION_HERE
 
 
 

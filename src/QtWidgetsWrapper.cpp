@@ -35,8 +35,11 @@ void (*slotCallbackInt2)(int objId, char *slotName, STD_INT i1, STD_INT i2) = 0;
 void (*slotCallbackStr)(int objId, char *slotName, char *s) = 0;
 void (*slotCallbackIntStr)(int objId, char *slotName, STD_INT i, char *s) = 0;
 void (*slotCallbackBool)(int objId, char *slotName, uchar b) = 0;
+
 void (*slotCallbackPointer)(int objId, char *slotName, void *p) = 0;
 
+//BEGIN_INSERTION_HERE
+//CALLBACKS_POINTERS_DECLARATION
 void (*slotCallbackQEvent)
     (int32_t objId, const char *slotName, QEvent* event) = 0;
 
@@ -46,6 +49,7 @@ void (*slotCallbackQMouseEvent)
 void (*slotCallbackQPaintEvent)
     (int32_t objId, const char *slotName, QPaintEvent* event) = 0;
 
+//END_INSERTION_HERE
 
 
 void (*slotCallbackComplexSig)(int32_t objId, char *slotName, uint32_t dataId) = 0;
@@ -127,6 +131,8 @@ void * QWApplicationCtor(int argc, char **argv)
         new QtSignal(SIGNAL(QWSignal(const QString)),
                        (void *)emit_QWSignal_str));
 
+    //BEGIN_INSERTION_HERE
+    //SIGNALS_DICTIONARY
     signalDict->insert("pressed()",
         new QtSignal(SIGNAL(pressed()), nullptr));
     signalDict->insert("clicked(bool)",
@@ -143,6 +149,7 @@ void * QWApplicationCtor(int argc, char **argv)
         new QtSignal(SIGNAL(editingFinished()), nullptr));
     signalDict->insert("timeout()",
         new QtSignal(SIGNAL(timeout()), nullptr));
+    //END_INSERTION_HERE
 
 
 //     signalDict->insert("localToLocal(int)", new QtSignal(SIGNAL(localToLocal(int)),
@@ -152,6 +159,8 @@ void * QWApplicationCtor(int argc, char **argv)
     // Create Qt standard slots dictionnary
     slotDict = new QMap<QString, QString>;
     slotDict->clear();
+    //BEGIN_INSERTION_HERE
+    //SLOTS_DICTIONARY
     slotDict->insert("click()", SLOT(click()));
     slotDict->insert("trigger()", SLOT(trigger()));
     slotDict->insert("setEnabled(bool)", SLOT(setEnabled(bool)));
@@ -168,6 +177,7 @@ void * QWApplicationCtor(int argc, char **argv)
     slotDict->insert("setFocus()", SLOT(setFocus()));
     slotDict->insert("update()", SLOT(update()));
     slotDict->insert("show()", SLOT(show()));
+    //END_INSERTION_HERE
 
     slotDict->insert("QWSlot()", SLOT(QWSlot()));
     slotDict->insert("QWSlot(int)", SLOT(QWSlot(int)));
@@ -175,29 +185,14 @@ void * QWApplicationCtor(int argc, char **argv)
     slotDict->insert("QWSlot(bool)", SLOT(QWSlot(bool)));
     slotDict->insert("QWLocalToLocalSlot(int)", SLOT(QWLocalToLocalSlot(int)));
 
-
-
-
-
-
-
     // For debug
-//     printf("argc = %d\n", cc);
-//     for (int i = 0; i < cc; i++) printf("argv[%d] = \"%s\"\n", i, vv[i]);
+    // printf("argc = %d\n", cc);
+    // for (int i = 0; i < cc; i++) printf("argv[%d] = \"%s\"\n", i, vv[i]);
     
     // For debug
-//     connectLog = fopen("connect.log", "w+");
-    
-
-    QCoreApplication * inst = QCoreApplication::instance();
-//     std::cerr << "QWApplicationCtor inst before = " << inst << "\n";
+    // connectLog = fopen("connect.log", "w+");
 
     QApplication *app = new QApplication(cc, vv);
-
-    inst = QCoreApplication::instance();
-//     std::cerr << "QWApplicationCtor inst after =  " << inst << "\n";
-//     std::cerr << "                  qApp = " << qApp << "\n";
-
     return reinterpret_cast<void *>(app);
 }
 
@@ -216,6 +211,8 @@ void * QWApplicationInstance()
 ////////
 
 
+//BEGIN_INSERTION_HERE
+//MAIN_CLASSES_CPP_CODE
 void QWQAbstractButtonsetText(void * obj, char * text)
 {
     QAbstractButton * ptr = reinterpret_cast<QAbstractButton *>(obj);
@@ -351,10 +348,6 @@ void QWQLabelsetAlignment(void * obj, int  arg1)
     QLabel * ptr = reinterpret_cast<QLabel *>(obj);
     Qt::Alignment xarg1 = static_cast<Qt::Alignment>(arg1);
     ptr->setAlignment(xarg1);
-    /* WARNING:
-Can't find any postcall conversion for COMPOSITE
-from QLabel  Qt::Alignment  xarg1 to int  arg1
-><  */
 }
 
 void QWQLabelsetMargin(void * obj, int32_t  arg1)
@@ -402,10 +395,6 @@ int8_t QWQLayoutsetAlignment_1(void * obj, void * w, int  alignment)
     QWidget * xw = reinterpret_cast<QWidget *>(w);
     Qt::Alignment xalignment = static_cast<Qt::Alignment>(alignment);
      bool  retVal = ptr->setAlignment(xw, xalignment);
-    /* WARNING:
-Can't find any postcall conversion for COMPOSITE
-from QLayout  Qt::Alignment  xalignment to int  alignment
-><  */
     return retVal;
 }
 
@@ -415,10 +404,6 @@ int8_t QWQLayoutsetAlignment_2(void * obj, void * l, int  alignment)
     QLayout * xl = reinterpret_cast<QLayout *>(l);
     Qt::Alignment xalignment = static_cast<Qt::Alignment>(alignment);
      bool  retVal = ptr->setAlignment(xl, xalignment);
-    /* WARNING:
-Can't find any postcall conversion for COMPOSITE
-from QLayout  Qt::Alignment  xalignment to int  alignment
-><  */
     return retVal;
 }
 
@@ -472,10 +457,6 @@ void QWQLineEditsetAlignment(void * obj, int  flag)
     QLineEdit * ptr = reinterpret_cast<QLineEdit *>(obj);
     Qt::Alignment xflag = static_cast<Qt::Alignment>(flag);
     ptr->setAlignment(xflag);
-    /* WARNING:
-Can't find any postcall conversion for COMPOSITE
-from QLineEdit  Qt::Alignment  xflag to int  flag
-><  */
 }
 
 void QWQLineEditsetText(void * obj, char * arg1)
@@ -791,10 +772,6 @@ void QWQWidgetrender_1(void * obj, void * target, void * targetOffset, void * so
     QRegion & xsourceRegion = * reinterpret_cast<QRegion *>(sourceRegion);
     QWidget::RenderFlags xrenderFlags = static_cast<QWidget::RenderFlags>(renderFlags);
     ptr->render(xtarget, xtargetOffset, xsourceRegion, xrenderFlags);
-    /* WARNING:
-Can't find any postcall conversion for COMPOSITE
-from QWidget  RenderFlags  xrenderFlags to int  renderFlags
-><  */
 }
 
 void QWQWidgetsetWindowTitle(void * obj, char * arg1)
@@ -970,6 +947,7 @@ void QWQRegionDtor(void * obj)
     delete ptr;
 }
 
+//END_INSERTION_HERE
 
 
 
@@ -1035,7 +1013,7 @@ void QWEmit_Bool(void * source, char * signalName, int32_t data)
 
 
 
-void QWconnect(void * source, char *signal, void * destination, char *slot)
+int8_t QWconnect(void * source, char *signal, void * destination, char *slot)
 {
     QObject *src = reinterpret_cast<QObject *>(source);
     QObject *dst = reinterpret_cast<QObject *>(destination);
@@ -1061,8 +1039,9 @@ void QWconnect(void * source, char *signal, void * destination, char *slot)
 //               << "        0x" << std::hex << destination << " "
 //               << slot << " => " << qslot.toLocal8Bit().data() << "\n";
 
-    if (!(QObject::connect(src, qsignal.toLocal8Bit().data(),
-                           dst, qslot.toLocal8Bit().data()))) {
+    bool ok = QObject::connect(src, qsignal.toLocal8Bit().data(),
+                               dst, qslot.toLocal8Bit().data());
+    if (!ok) {
         std::cerr << "Can't connect "
                             << src << ":\"" << signal << "\""
                   << " to " << dst << ":\"" << slot   << "\"\n";
@@ -1074,13 +1053,14 @@ void QWconnect(void * source, char *signal, void * destination, char *slot)
 //                         (ulong) dst, qslot.toLocal8Bit().data());
 //     fflush(connectLog);
     
+    return ok;
 }
 
 
 
 
 
-void QWdisconnect(void * source, char *signal, void * destination, char *slot)
+int8_t QWdisconnect(void * source, char *signal, void * destination, char *slot)
 {
     QObject *src = reinterpret_cast<QObject *>(source);
     QObject *dst = reinterpret_cast<QObject *>(destination);
@@ -1106,8 +1086,9 @@ void QWdisconnect(void * source, char *signal, void * destination, char *slot)
 //               << "        0x" << std::hex << destination << " "
 //               << slot << " => " << qslot.toLocal8Bit().data() << "\n";
 
-    if (!(QObject::disconnect(src, qsignal.toLocal8Bit().data(),
-                           dst, qslot.toLocal8Bit().data()))) {
+    bool ok = QObject::disconnect(src, qsignal.toLocal8Bit().data(),
+                                  dst, qslot.toLocal8Bit().data());
+    if (!ok) {
         std::cerr << "Can't disconnect "
                             << src << ":\"" << signal << "\""
                   << " to " << dst << ":\"" << slot   << "\"\n";
@@ -1118,7 +1099,8 @@ void QWdisconnect(void * source, char *signal, void * destination, char *slot)
 //                         (ulong) src, qsignal.toLocal8Bit().data(),
 //                         (ulong) dst, qslot.toLocal8Bit().data());
 //     fflush(connectLog);
-    
+
+    return ok;
 }
 
 
@@ -1325,6 +1307,8 @@ void QWSetupSlotCallbackPointer(void (*f)(int32_t objId, char *slotName, void *p
     slotCallbackPointer = f;
 }
 
+//BEGIN_INSERTION_HERE
+//CALLBACKS_SETUP
 void QWSetupSlotCallbackQEvent(
     void (*f)(int32_t objId, const char *slotName, QEvent* event))
 {
@@ -1343,6 +1327,7 @@ void QWSetupSlotCallbackQPaintEvent(
     slotCallbackQPaintEvent = f;
 }
 
+//END_INSERTION_HERE
 
 
 
@@ -1387,6 +1372,8 @@ void QWDump()
 //////////////////////////////////////////////////////////////////////////////
 // Subclasses
 
+//BEGIN_INSERTION_HERE
+//SUBCLASSES_CTORS
 void * QWQBrushCtor_1()
 {
     QBrush * ptr = new QBrush();
@@ -1602,6 +1589,7 @@ void * QWQRegionCtor_1()
     return reinterpret_cast<void *>(ptr);
 }
 
+//END_INSERTION_HERE
 
 // YGYGYG PB : Reférence à "SCQTextEdit" ci-dessus !!!!!!!
 
@@ -1626,6 +1614,8 @@ void QWvalidateEvent(void *obj, int32_t objId, char *methodName)
 //////////////////////////////////////////////////////////////////////////////
 // SubAPI
 
+//BEGIN_INSERTION_HERE
+//SUBAPI_CLASSES_CPP_CODE
 void QWQBrushsetStyle(void * obj, int  arg1)
 {
     QBrush * ptr = reinterpret_cast<QBrush *>(obj);
@@ -2037,4 +2027,5 @@ int32_t QWQRectheight(void * obj)
     return retVal;
 }
 
+//END_INSERTION_HERE
 

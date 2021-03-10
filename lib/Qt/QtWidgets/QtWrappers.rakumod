@@ -14,6 +14,8 @@ unit module QtWrappers;
 use NativeCall;
 use Qt::QtWidgets::QtHelpers;
 
+#BEGIN_INSERTION_HERE
+#LIST_OF_QT_CLASSES_NATIVE_WRAPPERS
 ### Beginning of the main API part ###
 sub QWQActionCtor_1(Pointer)
     returns Pointer is native(&libwrapper) is export { * }
@@ -79,12 +81,6 @@ sub QWQTimerstart_2(Pointer)
     is native(&libwrapper) is export { * }
 
 sub QWQTimerstop(Pointer)
-    is native(&libwrapper) is export { * }
-
-
-################################################################################
-
-sub QWQBoxLayoutaddLayout(Pointer, Pointer, int32)
     is native(&libwrapper) is export { * }
 
 
@@ -180,16 +176,7 @@ sub QWQAbstractButtonclick(Pointer)
 
 ################################################################################
 
-sub QWQHBoxLayoutCtor_1()
-    returns Pointer is native(&libwrapper) is export { * }
-
-sub SCWQHBoxLayoutCtor_1()
-    returns Pointer is native(&libwrapper) is export { * }
-
-sub QWvalidateCB_QHBoxLayout(Pointer, int32, Str)
-    is native(&libwrapper) is export { * }
-
-sub QWQHBoxLayoutDtor(Pointer)
+sub QWQBoxLayoutaddLayout(Pointer, Pointer, int32)
     is native(&libwrapper) is export { * }
 
 
@@ -255,16 +242,16 @@ sub QWQMenuexec_1(Pointer)
 
 ################################################################################
 
-sub QWQVBoxLayoutCtor_1()
+sub QWQHBoxLayoutCtor_1()
     returns Pointer is native(&libwrapper) is export { * }
 
-sub SCWQVBoxLayoutCtor_1()
+sub SCWQHBoxLayoutCtor_1()
     returns Pointer is native(&libwrapper) is export { * }
 
-sub QWvalidateCB_QVBoxLayout(Pointer, int32, Str)
+sub QWvalidateCB_QHBoxLayout(Pointer, int32, Str)
     is native(&libwrapper) is export { * }
 
-sub QWQVBoxLayoutDtor(Pointer)
+sub QWQHBoxLayoutDtor(Pointer)
     is native(&libwrapper) is export { * }
 
 
@@ -319,6 +306,21 @@ sub QWQPushButtonDtor(Pointer)
     is native(&libwrapper) is export { * }
 
 sub QWQPushButtonsetMenu(Pointer, Pointer)
+    is native(&libwrapper) is export { * }
+
+
+################################################################################
+
+sub QWQVBoxLayoutCtor_1()
+    returns Pointer is native(&libwrapper) is export { * }
+
+sub SCWQVBoxLayoutCtor_1()
+    returns Pointer is native(&libwrapper) is export { * }
+
+sub QWvalidateCB_QVBoxLayout(Pointer, int32, Str)
+    is native(&libwrapper) is export { * }
+
+sub QWQVBoxLayoutDtor(Pointer)
     is native(&libwrapper) is export { * }
 
 
@@ -676,6 +678,7 @@ sub QWQImagefill_2(Pointer, Pointer)
 ################################################################################
 
 ### End of the sub API part ###
+#END_INSERTION_HERE
 
 
 
@@ -745,6 +748,8 @@ sub QWEmit_Bool(Pointer, Str, int32)
 
 
 
+#BEGIN_INSERTION_HERE
+#SETUP_CALLBACK_WRAPPERS
 sub QWSetupSlotCallbackQEvent(&f (int32, Str, Pointer))
         is native(&libwrapper) is export { * }
 
@@ -754,6 +759,7 @@ sub QWSetupSlotCallbackQMouseEvent(&f (int32, Str, Pointer))
 sub QWSetupSlotCallbackQPaintEvent(&f (int32, Str, Pointer))
         is native(&libwrapper) is export { * }
 
+#END_INSERTION_HERE
 
 
 sub QWSetupSlotCallbackComplexSig(&f (int32, Str, uint32))

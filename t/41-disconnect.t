@@ -151,7 +151,12 @@ start {
     @states[7] = State.new(:$value, :$ivalue, :$svalue, :$bvalue);
     # Should be: False, 42, "Good bye", True
     
-    say "Stopping...";
+    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    # Test error message
+    # $s.iemettre(24);
+    # sleep $dt;
+
+    # say "Stopping...";
     $t.finish;
 }
 

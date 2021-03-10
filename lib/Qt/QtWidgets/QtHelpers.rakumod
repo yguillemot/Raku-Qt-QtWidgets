@@ -21,23 +21,26 @@ our constant %qType = {
 our constant $qtClasses is export = set
     "RaQt::" <<~<<  <
 
+        #BEGIN_INSERTION_HERE
+        #LIST_OF_MAIN_QT_CLASSES
         QAction
         QCoreApplication
         QLayout
         QTimer
-        QBoxLayout
-        QGuiApplication
         QWidget
         QAbstractButton
+        QBoxLayout
         QFrame
-        QHBoxLayout
+        QGuiApplication
         QLineEdit
         QMenu
-        QVBoxLayout
         QAbstractScrollArea
+        QHBoxLayout
         QLabel
         QPushButton
+        QVBoxLayout
         QTextEdit
+        #END_INSERTION_HERE
 
     >;
 
@@ -45,13 +48,15 @@ our constant $qtClasses is export = set
 our constant $simpleSignatures is export = set <
     ()
     (Int)
-    (Int,Int)
     (Str)
-    (Str,Str)
-    (Int,Str)
-    (Str,Int)
     (Bool)
 >;
+
+# Not implemented yet
+#     (Int,Int)
+#     (Str,Str)
+#     (Int,Str)
+#     (Str,Int)
 
 
 our constant %qSigSig is export = {
@@ -67,7 +72,7 @@ our constant %qSigSig is export = {
 
 
 sub libwrapper is export {
-  my $lib-name = sprintf($*VM.config<dll>, "QtWidgetsWrapper");
+  my $lib-name = sprintf($*VM.config<dll>, "RakuQtWidgets");
   my $installed-lib = ~(%?RESOURCES{$lib-name});
   return $installed-lib ?? $installed-lib !! "resources/$lib-name";
 }
@@ -195,177 +200,31 @@ sub removeInvocant(Signature $s --> Signature) is export
 }
 
 
-
-# Simplified signature :Replace the Signature class of Raku
-# which currently have some issues making it unusable here
-
-#| Simplified Parameter
-class SParameter is export
+# Returns 0 if applying a capture coming from $src to the $dst Signature works
+# Returns a negative value if it doesn't work
+# Returns n>0 if n parameters having default values must be removed
+# from the destination signature to allow the Qt connection
+sub slotAcceptsSig(Signature $dst, Signature $src --> Int) is export
 {
-    has Str $.type = "Any";
-    has Str $.name = "";;
-    has Code $.default;
+    # A method without any argument may have no signature
+    my $slot = $dst ?? $dst !! :();
+    my $sig = $src ?? $src !! :();
 
-    # Only for debug
-    method dump
-    {
-        say "    T='", $!type, "' N='", $!name,
-                "' D=", $!default ?? &($!default)() !! $!default;
+    # Each parameter without default must receive an argument
+    return -1 if $sig.count < $slot.arity;
+
+    # Related parameters must have the same type
+    for $sig.params Z $slot.params -> ($a, $b) {
+        return -1 if $a.type !~~ $b.type;
     }
 
-    method str returns Str
-    {
-        my Str $out = self.type;
-        $out ~= " " ~ self.name if self.name;
-        $out ~= " = " ~ &(self.default)() if self.default;
-        return $out;
-    }
+    # Sig may have less params than slot if slot params have default values
+    return 0 if $slot.arity <= $sig.count <= $slot.count;
+    
+    # Return the number of parameters in $sig without
+    # a related parameter in $slot
+    return $sig.count - $slot.count;
 }
-
-#| Simplified Signature
-class SSignature is export
-{
-    has Int $.count;
-    has Int $.arity;
-    has @.params;       # List of SParameter
-
-    #| Return 0 if applying a capture from $s to the SSignature works
-    #  Returns -1 if it doesn't work
-    #  Return n>0 if n parameters having default values must be removed
-    # from the destination signature to allow the Qt connection
-    method accepts(SSignature $sig --> Int)
-    {
-        # Each parameter without default must receive an argument
-        return -1 if $sig.count < self.arity;
-
-        # Related parameters must have the same type
-        for $sig.params Z self.params -> ($a, $b) {
-            return -1 if $a.type !~~ $b.type;
-        }
-
-        # Return the number of defaulted parameters without
-        # related parameter in $sig
-        my $delta = self.count - $sig.count;
-        return $delta > 0 ?? $delta !! 0;
-    }
-
-    # Only for debug
-    method dump
-    {
-        say "count = ", $!count;
-        say "arity = ", $!arity;
-        for @!params -> $p {
-            $p.dump;
-        }
-    }
-
-    method str returns Str
-    {
-        my Str $out = "";
-        my Str $sep = "";
-        for self.params -> $p {
-            $out ~= $sep ~ $p.str;
-            $sep ~= ", ";
-        }
-        return $out;
-    }
-}
-
-
-# Create a SSignature object from a list.
-#
-# Each parameter in the list is described by :
-#    - A Str containing the type of the parameter if there is no default value
-#    - Or a sublist of three elements :
-#          - A Str containing the type of the parameter
-#          - A Str containing the name of the parameter (without sigil)
-#          - The default value of this parameter
-#
-# WARNING: To get a valid SSignature with a correct arity:
-#   - When a name is provided, a valid default must be provided
-#   - The named parameters must be at the end of the parameter list
-#     (i.e. an unnamed parameter must never follow a named one)
-#
-multi sub createSignature(@s --> SSignature) is export
-{
-    # How many parameters ?
-    my Int $count = @s.elems;
-    my Int $arity = [+] @s>>.elems <<~~>> 1;
-
-    # Create the list of Parameters
-    my @p = ();
-    for @s -> $pl {
-        if $pl.elems == 3 {
-
-            if $pl[1] !~~ "" {
-                @p.push(SParameter.new(
-                    type => $pl[0],
-                    name => '$' ~ $pl[1],
-                    default => createDefault($pl[2])
-                ));
-            } else {
-                @p.push(SParameter.new(
-                    type => $pl[0]
-                ));
-            }
-
-        } else {
-            # $pl should be a string and not a list
-            @p.push(SParameter.new(type => $pl));
-        }
-    }
-
-    # Create the signature
-    return SSignature.new(
-        arity => $arity,
-        count => $count,
-        params => @p
-    );
-
-    # Return a closure returning the default value
-    sub createDefault($v) { my $d = $v; return &{ $d } }
-}
-
-# Create a SSignature object from a Signature one.
-# If the given Signature is coming from a method, its invocant is removed.
-multi sub createSignature(Signature $s --> SSignature) is export
-{
-    my Int $count = $s.count;
-    my Int $arity = $s.arity;
-    my @p = $s.params;
-    my @q = ();
-
-    # create a liste of SParameter from the list of Parameter
-    for @p -> $p {
-
-        if $p.invocant {
-            # Remove the invocant if any
-            $count--;
-            $arity--;
-            next;
-        }
-
-        if $p.slurpy {
-            # Ignore last parameter "*%_" of methods
-            next;
-        }
-
-        @q.push(SParameter.new(
-            type => $p.type.raku,
-            name => ($p.name && $p.default) ?? $p.name !! '',
-            default => $p.default
-        ));
-    }
-
-    # Create the new SSignature
-    my $ss = SSignature.new(
-        arity => $arity,
-        count => $count,
-        params => @q
-    );
-    return $ss;
-}
-
 
 
 # Remove $n args from the stringified Raku signature $sig

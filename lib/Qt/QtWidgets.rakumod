@@ -27,13 +27,15 @@ class SigSlot {
     has Str $.sig;      # Raku reduced signature string
     has Str $.qSig;     # Qt C++ reduced signature string
     has Bool $.sigIsSimple;
-    has SSignature $.sSignature is rw;
+    has Signature $.signature is rw;
     has Bool $.isSlot;
     has Bool $.isPlainQt;
     has Bool $.isPrivate = False;        # Only for signals
 }
 
 BEGIN {
+#BEGIN_INSERTION_HERE
+#SIGNALS_HASH
     %signals<QtWidgets::QAction>.push(SigSlot.new(
         name => "triggered",
         sig => "(Bool)",
@@ -41,8 +43,7 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => False,
-        isPrivate => False,
-        sSignature => createSignature((("Bool" ,"checked", False), ))
+        isPrivate => False
     ));
     %signals<QtWidgets::QTimer>.push(SigSlot.new(
         name => "timeout",
@@ -51,8 +52,7 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => False,
-        isPrivate => True,
-        sSignature => createSignature(())
+        isPrivate => True
     ));
     %signals<QtWidgets::QAbstractButton>.push(SigSlot.new(
         name => "pressed",
@@ -61,8 +61,7 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => False,
-        isPrivate => False,
-        sSignature => createSignature(())
+        isPrivate => False
     ));
     %signals<QtWidgets::QAbstractButton>.push(SigSlot.new(
         name => "clicked",
@@ -71,8 +70,7 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => False,
-        isPrivate => False,
-        sSignature => createSignature((("Bool" ,"checked", False), ))
+        isPrivate => False
     ));
     %signals<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "returnPressed",
@@ -81,8 +79,7 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => False,
-        isPrivate => False,
-        sSignature => createSignature(())
+        isPrivate => False
     ));
     %signals<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "editingFinished",
@@ -91,11 +88,13 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => False,
-        isPrivate => False,
-        sSignature => createSignature(())
+        isPrivate => False
     ));
+#END_INSERTION_HERE
 
 
+#BEGIN_INSERTION_HERE
+#SLOTS_HASH
     %slots<QtWidgets::QAction>.push(SigSlot.new(
         name => "trigger",
         sig => "()",
@@ -103,7 +102,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
     %slots<QtWidgets::QAction>.push(SigSlot.new(
         name => "setEnabled",
@@ -112,7 +110,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(("Bool", ))
     ));
     %slots<QtWidgets::QAction>.push(SigSlot.new(
         name => "setDisabled",
@@ -121,7 +118,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(("Bool", ))
     ));
     %slots<QtWidgets::QCoreApplication>.push(SigSlot.new(
         name => "quit",
@@ -130,7 +126,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
     %slots<QtWidgets::QTimer>.push(SigSlot.new(
         name => "start",
@@ -139,7 +134,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
     %slots<QtWidgets::QTimer>.push(SigSlot.new(
         name => "stop",
@@ -148,7 +142,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
     %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "setDisabled",
@@ -157,7 +150,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(("Bool", ))
     ));
     %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "setWindowTitle",
@@ -166,7 +158,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(("Str", ))
     ));
     %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "setFocus",
@@ -175,7 +166,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
     %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "update",
@@ -184,7 +174,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
     %slots<QtWidgets::QWidget>.push(SigSlot.new(
         name => "show",
@@ -193,7 +182,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
     %slots<QtWidgets::QAbstractButton>.push(SigSlot.new(
         name => "click",
@@ -202,7 +190,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
     %slots<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "setText",
@@ -211,7 +198,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(("Str", ))
     ));
     %slots<QtWidgets::QLineEdit>.push(SigSlot.new(
         name => "clear",
@@ -220,7 +206,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
     %slots<QtWidgets::QLabel>.push(SigSlot.new(
         name => "setText",
@@ -229,7 +214,6 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(("Str", ))
     ));
     %slots<QtWidgets::QLabel>.push(SigSlot.new(
         name => "clear",
@@ -238,8 +222,8 @@ BEGIN {
         sigIsSimple => True,
         isPlainQt => True,
         isSlot => True,
-        sSignature => createSignature(())
     ));
+#END_INSERTION_HERE
 
 }
 
@@ -251,6 +235,8 @@ BEGIN {
 
 # Predeclaration of classes to avoid problems with potential cross references
 
+#BEGIN_INSERTION_HERE
+#QT_CLASSES_STUBS
 class QAbstractButton { ... }
 class QAbstractScrollArea { ... }
 class QAction { ... }
@@ -286,6 +272,7 @@ class QTimer { ... }
 class QVBoxLayout { ... }
 class QWidget { ... }
 class Qt { ... }
+#END_INSERTION_HERE
 
 
 class ConnectionsManager { ... };
@@ -324,6 +311,8 @@ class QtBase {
 ###############################################################################
 ####### Part 1 : sub API ######################################################
 
+#BEGIN_INSERTION_HERE
+#SUBAPI_RAKU_CODE
 ### Beginning of the sub API part ###
 class Qt is QtBase is export {
     enum AlignmentFlag (
@@ -1525,6 +1514,7 @@ class QImage is QPaintDevice is export {
     }
 }
 ### End of the sub API part ###
+#END_INSERTION_HERE
 
 
 
@@ -1564,24 +1554,39 @@ class Sigsloty is QtBase is export {
             }
         }
 
-        # If the signal is already registered (is a plainQt one) do nothing
-        # else register it
-        if !$ss {
+        # If the signal is already registered (is a plainQt one) add
+        # its signature else register the signal
+        if $ss {
+            $ss.signature = removeInvocant $meth.signature;
+        } else {
             %signals{$class}.push(SigSlot.new(
                     name => $meth.name,
                     sig => $signature,
                     sigIsSimple => $hasSimpleSig,
-                    sSignature =>
-                            createSignature($meth.signature),
+                    signature => removeInvocant($meth.signature),
                     isPlainQt => False,
                     isSlot => False));
         }
 
 # say "METH SIGNAL : ", $meth.name,
 #     "   Signature : ", $meth.signature.params,
-#     "   Soit : ", $signature;
+#     "   i.e. : ", $signature;
 
         $meth.wrap: -> $f, |a {
+        
+# Need a test here to fail with a clear message where the signal is called
+# rather than with some cryptic message far away inside the VM.
+#
+# Currently not working because removeInvocant returns an unusable signature.
+# See rakudo issue #4241.
+#
+#             say "WRAP f : ", $f.WHAT, " : ", $f.raku;
+#             if |a !~~ removeInvocant($meth.signature) {
+#                 say '|a = ', |a;
+#                 say 'Sig = ', removeInvocant($meth.signature);
+#                 die "Qt signal called with wrong parameters";
+#             }
+
             $f.qtEmit($meth.name, a, $signature, $hasSimpleSig)
         };
     }
@@ -1609,19 +1614,21 @@ class Sigsloty is QtBase is export {
             }
         }
 
-        # If the signal is already registered (is a plainQt one) do nothing
-        # else register it
-        if !$ss {
+        # If the signal is already registered (is a plainQt one) add
+        # its signature else register the signal
+        if $ss {
+            $ss.signature = removeInvocant $meth.signature;
+        } else {
             %signals{$class}.push(SigSlot.new(
                     name => $meth.name,
                     sig => $signature,
                     sigIsSimple => $hasSimpleSig,
-                    sSignature =>
-                            createSignature($meth.signature),
+                    signature => removeInvocant($meth.signature),
                     isPlainQt => False,
                     isSlot => False,
                     isPrivate => True));
         }
+
 
 
 # say "METH PRIVATE SIGNAL : ", $meth.name,
@@ -1656,15 +1663,16 @@ class Sigsloty is QtBase is export {
             }
         }
 
-        # If the slot is already registered (is a plainQt one) do nothing
-        # else register it
-        if !$ss {
+        # If the slot is already registered (is a plainQt one) add
+        # its signature else register the slot
+        if $ss {
+            $ss.signature = removeInvocant $meth.signature;
+        } else {
             %slots{$class}.push(SigSlot.new(
                     name => $meth.name,
                     sig => $signature,
                     sigIsSimple => $hasSimpleSig,
-                    sSignature =>
-                            createSignature($meth.signature),
+                    signature => removeInvocant($meth.signature),
                     isPlainQt => False,
                     isSlot => True));
         }
@@ -1885,9 +1893,11 @@ class QtObject is Sigsloty is export {
 ##############################################################################
 
 
-sub QWconnect(Pointer, Str, Pointer, Str) is native(&libwrapper) { * }
+sub QWconnect(Pointer, Str, Pointer, Str)
+        returns int8 is native(&libwrapper) { * }
 
-sub QWdisconnect(Pointer, Str, Pointer, Str) is native(&libwrapper) { * }
+sub QWdisconnect(Pointer, Str, Pointer, Str)                                                                          
+        returns int8 is native(&libwrapper) { * }  
 
 
 class ConnectionsManager {
@@ -2086,9 +2096,6 @@ sub connect(Sigsloty $src, $sigName, Sigsloty $dst, $slotName)
 {
     my Bool $simple;  # True if signature is "simple"
 
-#     say "    signalStrSig = \"$signalStrSig\"";
-#     say "    slotStrSig = \"$slotStrSig\"";
-
     my SigSlot $source;
     my SigSlot $destination;
 
@@ -2158,16 +2165,19 @@ sub connect(Sigsloty $src, $sigName, Sigsloty $dst, $slotName)
                         $dst.^name, ".", $slotName, $destination.sig;
     }
 
+#     say "    source = {$source.name} {$source.sig} simple={$source.sigIsSimple}";
+#     say "    destination = {$destination.name} {$destination.sig} simple={$destination.sigIsSimple}";
+
     # Are source and destination compatible ?
-    my $nbp = $destination.sSignature.accepts($source.sSignature);
+    my $nbp = slotAcceptsSig $destination.signature, $source.signature;
     # say "NBP = $nbp";
     if $nbp < 0 {
         my Str $destNature = $destination.isSlot ?? "slot" !! "signal";
         die "connect : incompatible source and destination\n",
             "source is signal ", $src.^name, "::", $sigName, $source.sig,
-            " [", $source.sSignature.str, "]\n",
+           " [", $source.signature.raku, "]\n",
             "destination is $destNature ", $dst.^name, "::", $slotName, $destination.sig,
-            " [", ~$destination.sSignature.str, "]\n";
+            " [", ~$destination.signature.raku, "]\n";
     }
 
     my $slotStrSig = $destination.sig;
@@ -2237,7 +2247,9 @@ sub connect(Sigsloty $src, $sigName, Sigsloty $dst, $slotName)
     # say "CONNECT : $signal --> $slot";
 
     # Then connect inside Qt
-    QWconnect($srcObj, $signal, $dstObj, $slot);
+    if !QWconnect($srcObj, $signal, $dstObj, $slot) {
+        die "Can't connect $sigName to $slotName";
+    }
 }
 
 #------------------------------------------------------------------
@@ -2322,15 +2334,15 @@ sub disconnect(Sigsloty $src, $sigName, Sigsloty $dst, $slotName)
     }
 
     # Are source and destination compatible ?
-    my $nbp = $destination.sSignature.accepts($source.sSignature);
+    my $nbp = slotAcceptsSig $destination.signature, $source.signature;
     # say "NBP = $nbp";
     if $nbp < 0 {
         my Str $destNature = $destination.isSlot ?? "slot" !! "signal";
         die "disconnect : incompatible source and destination\n",
             "source is signal ", $src.^name, "::", $sigName, $source.sig,
-            " [", $source.sSignature.str, "]\n",
+            " [", $source.signature.raku, "]\n",
             "destination is $destNature ", $dst.^name, "::", $slotName, $destination.sig,
-            " [", ~$destination.sSignature.str, "]\n";
+            " [", ~$destination.signature.raku, "]\n";
     }
 
     my $slotStrSig = $destination.sig;
@@ -2455,6 +2467,8 @@ sub slotCallbackPointer(int32 $objectId, Str $slotName, Pointer $p)
     $CM.objs{$objectId}."$slotName"($p);
 }
 
+#BEGIN_INSERTION_HERE
+#CALLBACK_HANDLERS
 sub slotCallbackQEvent(int32 $objectId, Str $slotName, Pointer $event)
 {
     my QEvent $a1 = QEvent.new($event);
@@ -2473,6 +2487,7 @@ sub slotCallbackQPaintEvent(int32 $objectId, Str $slotName, Pointer $event)
     $CM.objs{$objectId}."$slotName"($a1)
 }
 
+#END_INSERTION_HERE
 
 
 sub slotCallbackComplexSig(int32 $objectId, Str $slotName, int32 $dataId)
@@ -2516,6 +2531,8 @@ class QObject is QtObject is export {
 ###############################################################################
 ####### Part 2 : main API #####################################################
 
+#BEGIN_INSERTION_HERE
+#MAINAPI_RAKU_CODE
 ### Beginning of the main API part ###
 class QAction is QObject is export {
     multi sub ctor(QtBase $this, QObject $parent = (QObject)) {
@@ -2680,23 +2697,6 @@ class QTimer is QObject is export {
     }
     method timeout()
         is QtPrivateSignal { ... }
-}
-
-class QBoxLayout is QLayout is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QBoxLayout");
-    }
-    method addLayout(QLayout $layout, Int $stretch = 0)
-    {
-        my $a1 = ?$layout ?? $layout.address !! QWInt2Pointer(0);
-        QWQBoxLayoutaddLayout(self.address, $a1, $stretch);
-    }
-}
-
-class QGuiApplication is QCoreApplication is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QGuiApplication");
-    }
 }
 
 class QWidget is QObject is QPaintDevice is export {
@@ -2880,53 +2880,26 @@ class QAbstractButton is QWidget is export {
         is QtSignal { ... }
 }
 
+class QBoxLayout is QLayout is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QBoxLayout");
+    }
+    method addLayout(QLayout $layout, Int $stretch = 0)
+    {
+        my $a1 = ?$layout ?? $layout.address !! QWInt2Pointer(0);
+        QWQBoxLayoutaddLayout(self.address, $a1, $stretch);
+    }
+}
+
 class QFrame is QWidget is export {
     submethod new(|capture) is hidden-from-backtrace {
         unimplementedCtor("QFrame");
     }
 }
 
-class QHBoxLayout is QBoxLayout is export {
-    multi sub ctor(QtBase $this) {
-        $this.address = QWQHBoxLayoutCtor_1();
-        $this.ownedByRaku = True;
-    }
-    multi sub subClassCtor(QtBase $this) {
-        $this.address = SCWQHBoxLayoutCtor_1();
-        $this.ownedByRaku = True;
-    }
-    method validateCB(Str $m) {
-        QWvalidateCB_QHBoxLayout(self.address, self.id, $m);
-    }
-    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
-        # Get access to a preexisting Qt object
-        $this.address = $p;
-        $this.ownedByRaku = $obr;
-    }
-    multi sub ctor(|capture) {
-        note "QtWidgets ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod new(|capture) {
-        my QHBoxLayout $rObj = self.bless;
-        ctor($rObj, |capture);
-        return $rObj;
-    }
-    multi sub subClassCtor(|capture) {
-        note "QtWidgets subclass ", ::?CLASS.^name,
-             " ctor called with unsupported args";
-        die "Bad args";
-    }
-    submethod subClass(|capture) {
-        subClassCtor(self, |capture);
-        self.validateCallBacks();
-    }
-    submethod DESTROY {
-        if self.ownedByRaku {
-            QWQHBoxLayoutDtor(self.address);
-            self.ownedByRaku = False;
-        }
+class QGuiApplication is QCoreApplication is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QGuiApplication");
     }
 }
 
@@ -3075,17 +3048,23 @@ class QMenu is QWidget is export {
     }
 }
 
-class QVBoxLayout is QBoxLayout is export {
+class QAbstractScrollArea is QFrame is export {
+    submethod new(|capture) is hidden-from-backtrace {
+        unimplementedCtor("QAbstractScrollArea");
+    }
+}
+
+class QHBoxLayout is QBoxLayout is export {
     multi sub ctor(QtBase $this) {
-        $this.address = QWQVBoxLayoutCtor_1();
+        $this.address = QWQHBoxLayoutCtor_1();
         $this.ownedByRaku = True;
     }
     multi sub subClassCtor(QtBase $this) {
-        $this.address = SCWQVBoxLayoutCtor_1();
+        $this.address = SCWQHBoxLayoutCtor_1();
         $this.ownedByRaku = True;
     }
     method validateCB(Str $m) {
-        QWvalidateCB_QVBoxLayout(self.address, self.id, $m);
+        QWvalidateCB_QHBoxLayout(self.address, self.id, $m);
     }
     multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
         # Get access to a preexisting Qt object
@@ -3098,7 +3077,7 @@ class QVBoxLayout is QBoxLayout is export {
         die "Bad args";
     }
     submethod new(|capture) {
-        my QVBoxLayout $rObj = self.bless;
+        my QHBoxLayout $rObj = self.bless;
         ctor($rObj, |capture);
         return $rObj;
     }
@@ -3113,15 +3092,9 @@ class QVBoxLayout is QBoxLayout is export {
     }
     submethod DESTROY {
         if self.ownedByRaku {
-            QWQVBoxLayoutDtor(self.address);
+            QWQHBoxLayoutDtor(self.address);
             self.ownedByRaku = False;
         }
-    }
-}
-
-class QAbstractScrollArea is QFrame is export {
-    submethod new(|capture) is hidden-from-backtrace {
-        unimplementedCtor("QAbstractScrollArea");
     }
 }
 
@@ -3252,6 +3225,50 @@ class QPushButton is QAbstractButton is export {
     }
 }
 
+class QVBoxLayout is QBoxLayout is export {
+    multi sub ctor(QtBase $this) {
+        $this.address = QWQVBoxLayoutCtor_1();
+        $this.ownedByRaku = True;
+    }
+    multi sub subClassCtor(QtBase $this) {
+        $this.address = SCWQVBoxLayoutCtor_1();
+        $this.ownedByRaku = True;
+    }
+    method validateCB(Str $m) {
+        QWvalidateCB_QVBoxLayout(self.address, self.id, $m);
+    }
+    multi sub ctor(QtBase $this, NativeCall::Types::Pointer $p, Bool :$obr = False) {
+        # Get access to a preexisting Qt object
+        $this.address = $p;
+        $this.ownedByRaku = $obr;
+    }
+    multi sub ctor(|capture) {
+        note "QtWidgets ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod new(|capture) {
+        my QVBoxLayout $rObj = self.bless;
+        ctor($rObj, |capture);
+        return $rObj;
+    }
+    multi sub subClassCtor(|capture) {
+        note "QtWidgets subclass ", ::?CLASS.^name,
+             " ctor called with unsupported args";
+        die "Bad args";
+    }
+    submethod subClass(|capture) {
+        subClassCtor(self, |capture);
+        self.validateCallBacks();
+    }
+    submethod DESTROY {
+        if self.ownedByRaku {
+            QWQVBoxLayoutDtor(self.address);
+            self.ownedByRaku = False;
+        }
+    }
+}
+
 class QTextEdit is QAbstractScrollArea is export {
     multi sub ctor(QtBase $this, QWidget $parent = (QWidget)) {
         my $a1 = ?$parent ?? $parent.address !! QWInt2Pointer(0);
@@ -3303,6 +3320,7 @@ class QTextEdit is QAbstractScrollArea is export {
     }
 }
 ### End of the main API part ###
+#END_INSERTION_HERE
 
 
 

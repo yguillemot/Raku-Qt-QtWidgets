@@ -110,6 +110,11 @@ start {
     $s.emettre( 92, "Red", < g h i j >, %(< X 33 Z 34 Y 35 >), XObj.new(a => 89, b => 98));
     sleep $dt;
     $r3 = $d.dataCopy;
+    
+    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    # Test error message
+    # $s.emettre("Blue", 24, < a b >, %(< X 33 >), XObj.new(a => 8, b => 9));
+    # sleep $dt;
 
     # say "Stopping...";
     $t.finish;

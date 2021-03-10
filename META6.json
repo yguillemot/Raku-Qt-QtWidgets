@@ -15,9 +15,9 @@
     "depends" : [  ],
     "build-depends" : [  ],
     "test-depends" : [  ],
-    "resources" : [ "libQtWidgetsWrapper.so" ],
+    "resources" : [ "libRakuQtWidgets.so" ],
     "tags": [
-      "QT", "GRAPHICS", "GUI"
+      "QT", "GUI", "GRAPHICS"
     ],
     "source-url" : "https://github.com/yguillemot/Qt-QtWidgets.git"
 }
