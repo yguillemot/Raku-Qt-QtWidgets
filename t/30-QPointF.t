@@ -1,9 +1,8 @@
 
 use Test;
-
 plan 4;
 
-use Qt::QtWidgets;
+use Qt::QtWidgets::QPointF;
 
 my ($x1, $y1) = (100.22, 200.87);
 my $a = QPointF.new($x1, $y1);

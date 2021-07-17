@@ -5,42 +5,42 @@
 #`{{
 
 The most usual case : 
-method sgn1(Int $a, Str $b, Bool $c) is Qt_signal { ... }
-method slt1(Int $x, Str $y, Bool $z) is Qt_slot {  }
+method sgn1(Int $a, Str $b, Bool $c) is QtSignal { ... }
+method slt1(Int $x, Str $y, Bool $z) is QtSlot {  }
 connect($src, "sgn1", $dst, "slt1") works
     C++ Qt connect call :
         QObject::connect(src, SIGNAL(sgn4(int, QString, bool)),
                          dst, SLOT(slt4(int, QString, bool)));
                          
 Arguments are wrongly paired :
-method sgn6(Int $a, Str $b, Bool $c) is Qt_signal { ... }
-method slt6(Int $x, Bool $y, Str $z) is Qt_slot {  }
+method sgn6(Int $a, Str $b, Bool $c) is QtSignal { ... }
+method slt6(Int $x, Bool $y, Str $z) is QtSlot {  }
 connect($src, "sgn6", $dst, "slt6") can't work
 
 Slot has too much arguments :
-method sgn2(Int $a, Str $b) is Qt_signal { ... }
-method slt2(Int $x, Str $y, Bool $z) is Qt_slot {  }
+method sgn2(Int $a, Str $b) is QtSignal { ... }
+method slt2(Int $x, Str $y, Bool $z) is QtSlot {  }
 connect($src, "sgn2", $dst, "slt2") doesn't work : $z has no value
 
 Slot additional arguments have default values
-method sgn3(Int $a, Str $b) is Qt_signal { ... }
-method slt3(Int $x, Str $y, Bool $z = True) is Qt_slot {  }
+method sgn3(Int $a, Str $b) is QtSignal { ... }
+method slt3(Int $x, Str $y, Bool $z = True) is QtSlot {  }
 connect($src, "sgn3", $dst, "slt3") should work : $z has a default value
     The defaulted value must be imitted in the C++ Qt connect call :
         QObject::connect(src, SIGNAL(sgn3(int, QString)),
                          dst, SLOT(slt3(int, QString)));
 
 Signal has too much arguments :
-method sgn4(Int $a, Str $b, Bool $c) is Qt_signal { ... }
-method slt4(Int $x, Str $y) is Qt_slot {  }
+method sgn4(Int $a, Str $b, Bool $c) is QtSignal { ... }
+method slt4(Int $x, Str $y) is QtSlot {  }
 connect($src, "sgn4", $dst, "slt4") should work : $c argument should be ignored
    This additional argument must be omitted in the C++ Qt connect call :
         QObject::connect(src, SIGNAL(sgn4(int, QString)),
                          dst, SLOT(slt4(int, QString)));
         
 A default value of the signal argument doesn't change anything :
-method sgn5(Int $a, Str $b, Bool $c = False) is Qt_signal { ... }
-method slt5(Int $x, Str $y) is Qt_slot {  }
+method sgn5(Int $a, Str $b, Bool $c = False) is QtSignal { ... }
+method slt5(Int $x, Str $y) is QtSlot {  }
 connect($src, "sgn5", $dst, "slt5") should work : $c argument should be ignored
    This additional argument must be omitted in the C++ Qt connect call :
         QObject::connect(src, SIGNAL(sgn5(int, QString)),
@@ -48,8 +48,9 @@ connect($src, "sgn5", $dst, "slt5") should work : $c argument should be ignored
 }}
 
 
-use lib <.>;
+
 use Test;
+
 use Qt::QtWidgets::QtHelpers;
 
 

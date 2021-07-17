@@ -1,9 +1,9 @@
  
 use Test;
-
 #plan 6;
 
 use Qt::QtWidgets;
+use Qt::QtWidgets::QApplication;
 
 
 class XObj {

@@ -1,11 +1,8 @@
 
 use Test;
-
 plan 6;
 
-
-use Qt::QtWidgets;
-
+use Qt::QtWidgets::QPoint;
 
 my $a = QPoint.new(100, 200);
 my $b = QPoint.new($a.x, $a.y);    # clone

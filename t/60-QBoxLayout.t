@@ -2,10 +2,20 @@
 # Test QVBoxLayout and QHBoxLayout using QLabel
 
 use Test;
-
 plan 12;
 
 use Qt::QtWidgets;
+use Qt::QtWidgets::QApplication;
+use Qt::QtWidgets::QBrush;
+use Qt::QtWidgets::QColor;
+use Qt::QtWidgets::QHBoxLayout;
+use Qt::QtWidgets::QImage;
+use Qt::QtWidgets::QLabel;
+use Qt::QtWidgets::QPaintEvent;
+use Qt::QtWidgets::QPainter;
+use Qt::QtWidgets::QVBoxLayout;
+use Qt::QtWidgets::QWidget;
+use Qt::QtWidgets::Qt;
 
 my $count = 0;
 

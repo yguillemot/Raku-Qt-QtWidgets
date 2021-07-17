@@ -2,6 +2,23 @@
 # A tiny graphic editor
 
 use Qt::QtWidgets;
+use Qt::QtWidgets::QAction;
+use Qt::QtWidgets::QApplication;
+use Qt::QtWidgets::QBrush;
+use Qt::QtWidgets::QColor;
+use Qt::QtWidgets::QHBoxLayout;
+use Qt::QtWidgets::QMenu;
+use Qt::QtWidgets::QMouseEvent;
+use Qt::QtWidgets::QPaintEvent;
+use Qt::QtWidgets::QPainter;
+use Qt::QtWidgets::QPen;
+use Qt::QtWidgets::QPushButton;
+use Qt::QtWidgets::QVBoxLayout;
+use Qt::QtWidgets::QWidget;
+use Qt::QtWidgets::Qt;
+
+
+
 
 
 # Objects creation

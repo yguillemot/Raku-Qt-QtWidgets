@@ -2,6 +2,13 @@
 # A second degree equation solver
 
 use Qt::QtWidgets;
+use Qt::QtWidgets::QApplication;
+use Qt::QtWidgets::QHBoxLayout;
+use Qt::QtWidgets::QLabel;
+use Qt::QtWidgets::QLineEdit;
+use Qt::QtWidgets::QPushButton;
+use Qt::QtWidgets::QVBoxLayout;
+use Qt::QtWidgets::QWidget;
 
 
 # Objects creation

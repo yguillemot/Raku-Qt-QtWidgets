@@ -3,45 +3,88 @@ Qt::QtWidgets
 
 A Raku module and native wrapper providing an interface to the Qt5 GUI.
 
-## DESCRIPTION
+## CONTENT
+
+- 1\. DESCRIPTION  
+- 2\. LIMITATIONS  
+- 3\. IMPLEMENTED FUNCTIONALITIES  
+- 4\. DOCUMENTATION  
+    - 4.1 Classes and methods  
+    - 4.2 Instantiation  
+    - 4.3 Calling a method  
+    - 4.4 Enums  
+    - 4.5 Signals and slots  
+    - 4.6 Connect  
+    - 4.7 Disconnect  
+    - 4.8 Emit a QtSignal  
+    - 4.9 Subclassing a Qt object  
+- 5\. EXAMPLES  
+    - 5.1 clock.raku  
+    - 5.2 2deg_eqn_solver.raku  
+    - 5.3 sketch_board.raku  
+- 6\. TOOL  
+- 7\. PREREQUISITES  
+- 8\. INSTALLATION  
+- 9\. SOURCE CODE  
+- 10\. AUTHOR  
+- 11\. COPYRIGHT AND LICENSE  
+
+## 1. DESCRIPTION
 
 This module defines Raku classes trying to mimic the Qt GUI C++ classes.
 Qt objects are created and used through the Raku classes with native calls.
 
-This is a work in progress and, currently, only a few classes are defines.
-Nevertheless, this module is already usable.
+This is a work in progress and, currently, only a few classes and methods are
+defined. Nevertheless, this module is already usable (see paragraph 5 *EXAMPLES*
+below).
 
-## Examples
+## 2. LIMITATIONS
 
-### clock.raku
+Currently, this module is only working with Linux.
 
-A very simple clock displaying the current time.
+Although already usable, this interface is still limited to a few of the
+most basic objects of the Qt GUI.
 
-### 2deg_eqn_solver.raku
-
-A graphical interface to solve quadratic equations.
-
-### sketch_board.raku
-
-A small example showing how to draw with the mouse. 
-
-## Implemented functionnalities
+  
+## 3. IMPLEMENTED FUNCTIONALITIES
 
 The list of Qt classes and methods already ported is given in the
-file doc/Qt/Classes.md
+file doc/Qt/QtWidgets/Classes.html included in the distribution.
 
-## Classes and methods
 
-The Raku API aims to be as close as possible of the C++ one.
+## 4. DOCUMENTATION
+
+### 4.1 Classes and methods
+
+The Raku API aims to be as close as possible to the C++ one.
 
 Classes defined by the Raku API implement the Qt C++ classes and the Raku
 methods have the same arguments as their related C++ methods.
 
-Therefore the Qt C++ documentation applies to its Raku interface.
+Therefore the Qt C++ documentation should apply to its Raku interface.
 
-[ TODO : Reference, pointers, etc...]
+The list of implemented classes and methods is given in the
+**doc/Qt/QtWidgets/Classes.html** file which comes with this module.
 
-### Instantiation
+The Raku API hides the C++ passing mode of the parameters. 
+
+Each class resides in its own compunit. So, before using a class, an **use**
+instruction have to be provided for the related module.
+
+For example, the following line:
+
+```
+use Qt::QtWidgets::QPushButton;
+```
+
+has to be issued before using any instruction related to a QPushButton.
+
+The script **guessuse** is provided to help writing the needed **use**
+instructions.  
+See the paragraph 6 *TOOL* below.
+
+
+### 4.2 Instantiation
 
 To instantiate a Qt class object from Raku, just use new with the same arguments
 than the C++ constructor.
@@ -54,7 +97,7 @@ the raku equivalent is:
 
 `my $button = QPushButton.new("some text");`
 
-### Calling a method
+### 4.3 Calling a method
 
 Raku methods are called exactly as the original C++ method.
 
@@ -66,7 +109,7 @@ is translated to Raku as :
 
 `$button.setDisable(True);`
 
-### Enums 
+### 4.4 Enums 
 
 Similarly the C++ enums have their Raku equivalent :
 
@@ -79,19 +122,25 @@ is translated to Raku as :
 `my $pen = QPen.new(Qt::DashLine);`
 
 
-### Signals and slots
+### 4.5 Signals and slots
 
 The signals and slots mechanism used by Qt allows unrelated objects to
 communicate.
 
-A C++ Qt object can have slots and/or signals if it inherits from the
-C++ class "QObject".
+A C++ Qt object can have **slots** and/or **signals** if it inherits from the
+C++ class **QObject**.
 
-Similarly, a Raku object can have slots
-and/or signals if it inherits from the Raku class "QtObject".
+Similarly, a Raku object can have **QtSlots** and/or **QtSignals** if it
+inherits from the Raku class **QtObject**.
 
-A Raku Qt::QtWidgets slot is an ordinary method defined with the trait
-"is QtSlot".
+The class **QtObject** and the related subroutines **connect** and
+**disconnect** are exported from the compunit **Qt::QtWidgets** and have to
+be imported with:
+
+`use Qt::QtWidgets;` 
+
+A Raku Qt::QtWidgets **Qtslot** is an ordinary method defined with the trait
+**is QtSlot**.
 
 ```
 class MyClass is Qt::QtWidgetsObject {
@@ -103,8 +152,10 @@ class MyClass is Qt::QtWidgetsObject {
 }
 ```
 
-As well, a Qt::QtWidgets signal is a method defined with the trait "is QtSignal".
-Its associated code will never be executed; so a stub is used.
+As well, a Raku Qt::QtWidgets **Qtsignal** is a method defined with the trait
+**is QtSignal**.  
+Its associated code will never be executed. So a stub should be used when
+defining the method.
 
 ```
 class MyClass2 is Qt::QtWidgetsObject {
@@ -114,9 +165,10 @@ class MyClass2 is Qt::QtWidgetsObject {
 }
 ```
 
-### Connect
+### 4.6 Connect
 
-The sub "connect" connects a QtSignal to a QtSlot (or to another QtSignal).
+The subroutine **connect** connects a QtSignal to a QtSlot (or to another
+QtSignal).
 
 `sub connect(QtObject $src, Str $signal, QtObject $dst, Str $slot)`
 
@@ -124,7 +176,7 @@ The names of signal and slot are passed to connect in strings.
 
 The signal and slot must have compatible signatures.
 
-    [!!! TODO: explanations needed]
+> TODO: explanations needed
     
 
 Example:
@@ -135,42 +187,58 @@ my $dst = MyClass.new;
 connect $src, "mySignal", $dst, "mySlot";
 ```
 
-### Emit a QtSignal
+### 4.7 Disconnect
 
-In C++ Qt, the keyword "emit" is used to emit a signal.
+The subroutine **disconnect** does the opposite of **connect**.
+
+`sub disconnect(QtObject $src, Str $signal, QtObject $dst, Str $slot)`
+
+Example:
+
+`disconnect $src, "mySignal", $dst, "mySlot";`
+
+
+### 4.8 Emit a QtSignal
+
+In C++ Qt, the keyword **emit** is used to emit a signal.
 
 `emit mySignal(some_arg);`
 
-In Raku Qt::QtWidgets, you only have to execute the signal method. 
+In Raku Qt::QtWidgets, you only have to execute the method to emit the
+associated **QtSignal**.
+
 
 `self.mySignal(some_arg);`
 
-### Subclassing a Qt object
+### 4.9 Subclassing a Qt object
 
 When programming with Qt and C++, some features can only be accessed
-by overriding some Qt C++ virtual methods.
+by overriding a Qt C++ virtual method.
 
 A parallel mechanism is implemented in the Qt::QtWidgets module.
 
-Subclassing a Qt object needs three step :
+Subclassing a Qt object needs three steps:
 
-    * Define a Raku class inheriting the Qt class
-        
-    * Call the "subClass" method of the parent class from the TWEAK submethod 
-    of the new class.
+- Define a Raku class inheriting the Qt class
     
-    * Override the virtual methods. They just have to be defined with the
-    right signature and dont need any specific syntax.
+- Call the **subClass** method of the parent class from the BUILD or TWEAK
+submethod of the new class.
     
-    
-The first step is obvious. The second is used to instantiate the C++ 
+- Override the virtual methods. The overriding method must have
+the same name and signature that the overrided method and doesn't need
+any specific syntax.
+
+
+The first and third steps are obvious.
+
+The second one is used to instantiate the C++
 counterpart of the Raku class and to pass it the parameters its constructor
 needs. In this second step, the parent class whose the subClass method is
-called must be explicitely specified : 
+called must be explicitely specified:  
 `self.ParentClass::subClass($param, ...);`
 
 The following example shows how to subclass a QLabel and override its
-QMouseMoveEvent method.
+QMousePressEvent method.
 
 **Pure C++ version:**
 
@@ -198,6 +266,8 @@ MyLabel * label = new MyLabel("text on the label");
 
 ``` Raku
 use Qt::QtWidgets;
+use Qt::QtWidgets::QLabel;
+use Qt::QtWidgets::QMouseEvent;
 
 class MyLabel is QLabel
 {
@@ -217,52 +287,118 @@ class MyLabel is QLabel
 my $label = MyLabel.new(txt => "text on the label");
 ```
 
-## Versions of involved software
 
-## Issues
 
-## Limitations
 
-Currently, this module is only working with Linux.
+## 5. EXAMPLES
 
-Although already usable, this interface is still limited to a few of the
-most basic objects of the Qt GUI.
+### 5.1 clock.raku
 
-## Prerequisite
+A very simple clock displaying the current time.
+
+`raku examples/clock.raku`
+
+### 5.2 2deg_eqn_solver.raku
+
+A graphical interface to solve quadratic equations.
+
+`raku examples/2deg_eqn_solver.raku`
+
+### 5.3 sketch_board.raku
+
+A small example showing how to draw with the mouse. 
+
+`raku examples/sketch_board.raku`
+
+
+## 6. TOOL
+
+Ideally, inserting "use Qt::QtWidgets;" at the beginning of a script should be
+sufficient to import all the elements of the Qt::QtWidgets module.  
+Unfortunately it's not the case and seems not to be possible with the current
+version of Raku (except by gathering all the classes of this API inside a single
+huge source file).  
+Currently a specific **use** instruction is needed for each Qt class used in
+a script.
+
+That's why a tool named **guessuse** is provided to help the user to find what
+**use** instructions a given script needs.
+
+When called with the name of a raku file as argument, it writes out the
+list of **use** instructions related to **Qt::QtWidgets** needed by this script.
+
+For example, the command:
+
+```
+guessUse examples/sketch_board.raku
+```
+
+prints out the following lines:
+
+```
+use Qt::QtWidgets;
+use Qt::QtWidgets::QAction;
+use Qt::QtWidgets::QBrush;
+use Qt::QtWidgets::QColor;
+use Qt::QtWidgets::QHBoxLayout;
+use Qt::QtWidgets::QMenu;
+use Qt::QtWidgets::QMouseEvent;
+use Qt::QtWidgets::QPaintEvent;
+use Qt::QtWidgets::QPainter;
+use Qt::QtWidgets::QPen;
+use Qt::QtWidgets::QPushButton;
+use Qt::QtWidgets::QVBoxLayout;
+use Qt::QtWidgets::QWidget;
+use Qt::QtWidgets::Qt;
+```
+
+Beware that this tool, when scanning a source file, doesn't make any difference
+between code, comments and character strings and may very well print out "use"
+instruction for some unneeded compunit.
+
+**guessuse** resides in the the bin directory of the distribution and is
+installed by **zef** along with the **Qt::QtWidgets** module.
+
+
+## 7. PREREQUISITES
 
  * Linux OS
  * Qt5 development package
  * C++ compiler
+ 
+This module has been tested with **Qt 5.9.4** and **gcc 5.5.0**
+and with **Qt 5.15.2** and **gcc 10.3.0**.  
+Many other versions should be usable as well.
 
-## Installation
 
-The Qt5 developpment package and the gcc compiler are needed.
+## 8. INSTALLATION
 
 `zef install Qt::QtWidgets`
 
-## Testing
 
-```
-export RAKULIB=lib
-export LD_LIBRARY_PATH=resources
-for t in t/*.t; do raku $t; done
-```
+## 9. SOURCE CODE
 
-## Source
+The source code is available here:
+<https://github.com/yguillemot/Raku-Qt-QtWidgets.git>
 
-The sources and documentation are automatically generated from the
-Qt C++ headers files.
+Given the large number of Qt Classes and methods, manually writing such a
+code is very tedious and error prone.  
+That's why this source and its associated documentation have been
+automatically generated from the Qt C++ headers files coming with the Qt
+development package.
 
-The building tools are available here :
-<https://github.com/yguillemot/RaQt_maker>
+The building tools are available here:
+<https://github.com/yguillemot/RaQt_maker.git>
 
 
-## Author
+
+## 10. AUTHOR
 
 Yves Guillemot
+\<<yc.guillemot@wanadoo.fr>\>
 
 
-## COPYRIGHT AND LICENSE
+## 11. COPYRIGHT AND LICENSE
 
 Copyright (C) 2021 Yves Guillemot
 

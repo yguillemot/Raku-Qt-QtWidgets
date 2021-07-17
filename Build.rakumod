@@ -23,7 +23,7 @@ method build($workdir) {
     my $destdir = "$workdir/resources";
     $destdir.IO.mkdir;
 
-  # IS THIS USEFUL ???
+  # Is this really useful ???
     # Create empty resources files for all platforms so that package managers
     # do not complain
     for <dll dylib so> -> $ext {

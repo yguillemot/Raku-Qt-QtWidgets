@@ -2,6 +2,8 @@
 # A digital clock
 
 use Qt::QtWidgets;
+use Qt::QtWidgets::QApplication;
+use Qt::QtWidgets::QLabel;
 
 # Objects creation
 

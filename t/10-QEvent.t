@@ -1,9 +1,8 @@
 
 use Test;
-
 plan 4;
 
-use Qt::QtWidgets;
+use Qt::QtWidgets::QEvent;
 
 my $a = QEvent.new(QEvent::FocusOut);
 my $b = QEvent.new($a.address);

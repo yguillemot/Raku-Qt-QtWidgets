@@ -2,10 +2,12 @@
 # Test QPushButton
  
 use Test;
-
 plan 6;
 
 use Qt::QtWidgets;
+use Qt::QtWidgets::QApplication;
+use Qt::QtWidgets::QPushButton;
+
 
 my $count = 0;
 
