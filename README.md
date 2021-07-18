@@ -63,8 +63,7 @@ methods have the same arguments as their related C++ methods.
 
 Therefore the Qt C++ documentation should apply to its Raku interface.
 
-The list of implemented classes and methods is given in the
-**doc/Qt/QtWidgets/Classes.html** file which comes with this module.
+This documentation is available here: <https://doc.qt.io/qt-5>.
 
 The Raku API hides the C++ passing mode of the parameters. 
 
