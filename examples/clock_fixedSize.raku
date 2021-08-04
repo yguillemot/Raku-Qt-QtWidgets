@@ -20,6 +20,9 @@ $label.setMargin(10);
 
 $label.show;
 
+# Make resizing the window impossible
+$label.setFixedSize($label.width, $label.height);
+
 # Thread which refreshes the displayed time
 start {
     loop {

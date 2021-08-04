@@ -19,9 +19,10 @@ A Raku module and native wrapper providing an interface to the Qt5 GUI.
     - 4.8 Emit a QtSignal  
     - 4.9 Subclassing a Qt object  
 - 5\. EXAMPLES  
-    - 5.1 clock.raku  
-    - 5.2 2deg_eqn_solver.raku  
-    - 5.3 sketch_board.raku  
+    - 5.1 clock_fixedSize.raku  
+    - 5.2 clock_resizable.raku  
+    - 5.3 2deg_eqn_solver.raku  
+    - 5.4 sketch_board.raku  
 - 6\. TOOL  
 - 7\. PREREQUISITES  
 - 8\. INSTALLATION  
@@ -291,11 +292,17 @@ my $label = MyLabel.new(txt => "text on the label");
 
 ## 5. EXAMPLES
 
-### 5.1 clock.raku
+### 5.1 clock_fixedSize.raku
 
 A very simple clock displaying the current time.
 
-`raku examples/clock.raku`
+`raku examples/clock_fixedSize.raku`
+
+### 5.2 clock_resizable.raku
+
+The same clock inside a resizable window.
+
+`raku examples/clock_resizable.raku`
 
 ### 5.2 2deg_eqn_solver.raku
 
@@ -305,7 +312,8 @@ A graphical interface to solve quadratic equations.
 
 ### 5.3 sketch_board.raku
 
-A small example showing how to draw with the mouse. 
+A small example showing how to draw with the mouse and how to get file names
+using QFileDialog methods.
 
 `raku examples/sketch_board.raku`
 
@@ -337,8 +345,10 @@ prints out the following lines:
 ```
 use Qt::QtWidgets;
 use Qt::QtWidgets::QAction;
+use Qt::QtWidgets::QApplication;
 use Qt::QtWidgets::QBrush;
 use Qt::QtWidgets::QColor;
+use Qt::QtWidgets::QFileDialog;
 use Qt::QtWidgets::QHBoxLayout;
 use Qt::QtWidgets::QMenu;
 use Qt::QtWidgets::QMouseEvent;

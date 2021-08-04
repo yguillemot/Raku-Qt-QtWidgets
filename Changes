@@ -1,0 +1,14 @@
+
+
+v0.0.3  2020/08/04
+    * Fix guessuse which was missing QApplication
+    * Add QResizeEvent and some associated methods
+    * Add QFileDialog.getOpenFileName and QFileDialog.getSaveFileName static
+      methods
+    * Update examples
+
+v0.0.2  2021/07/18
+    * First released version
+    * Implement the Qt signal/slot mechanism
+    * Implement the subclassing and overriding mechanism
+    * Implement a minimum of Qt classes and methods

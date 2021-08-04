@@ -3,7 +3,7 @@
     "name" : "Qt::QtWidgets",
     "api" : "2",
     "auth" : "cpan:YGUILLEMO",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
     "description" : "A wrapper to the Qt Widgets GUI",
     "authors" : [ "Yves Guillemot <yc.guillemot@wanadoo.fr>" ],
     "license" : "GPL-3.0-or-later",
@@ -19,7 +19,9 @@
         "Qt::QtWidgets::QBrush" : "lib/Qt/QtWidgets/QBrush.rakumod",
         "Qt::QtWidgets::QColor" : "lib/Qt/QtWidgets/QColor.rakumod",
         "Qt::QtWidgets::QCoreApplication" : "lib/Qt/QtWidgets/QCoreApplication.rakumod",
+        "Qt::QtWidgets::QDialog" : "lib/Qt/QtWidgets/QDialog.rakumod",
         "Qt::QtWidgets::QEvent" : "lib/Qt/QtWidgets/QEvent.rakumod",
+        "Qt::QtWidgets::QFileDialog" : "lib/Qt/QtWidgets/QFileDialog.rakumod",
         "Qt::QtWidgets::QFont" : "lib/Qt/QtWidgets/QFont.rakumod",
         "Qt::QtWidgets::QFrame" : "lib/Qt/QtWidgets/QFrame.rakumod",
         "Qt::QtWidgets::QGuiApplication" : "lib/Qt/QtWidgets/QGuiApplication.rakumod",
@@ -42,6 +44,8 @@
         "Qt::QtWidgets::QPushButton" : "lib/Qt/QtWidgets/QPushButton.rakumod",
         "Qt::QtWidgets::QRect" : "lib/Qt/QtWidgets/QRect.rakumod",
         "Qt::QtWidgets::QRegion" : "lib/Qt/QtWidgets/QRegion.rakumod",
+        "Qt::QtWidgets::QResizeEvent" : "lib/Qt/QtWidgets/QResizeEvent.rakumod",
+        "Qt::QtWidgets::QSize" : "lib/Qt/QtWidgets/QSize.rakumod",
         "Qt::QtWidgets::QTextEdit" : "lib/Qt/QtWidgets/QTextEdit.rakumod",
         "Qt::QtWidgets::QTimer" : "lib/Qt/QtWidgets/QTimer.rakumod",
         "Qt::QtWidgets::QVBoxLayout" : "lib/Qt/QtWidgets/QVBoxLayout.rakumod",
@@ -55,6 +59,8 @@
         "Qt::QtWidgets::RQAction" : "lib/Qt/QtWidgets/RQAction.rakumod",
         "Qt::QtWidgets::RQBoxLayout" : "lib/Qt/QtWidgets/RQBoxLayout.rakumod",
         "Qt::QtWidgets::RQCoreApplication" : "lib/Qt/QtWidgets/RQCoreApplication.rakumod",
+        "Qt::QtWidgets::RQDialog" : "lib/Qt/QtWidgets/RQDialog.rakumod",
+        "Qt::QtWidgets::RQFileDialog" : "lib/Qt/QtWidgets/RQFileDialog.rakumod",
         "Qt::QtWidgets::RQFrame" : "lib/Qt/QtWidgets/RQFrame.rakumod",
         "Qt::QtWidgets::RQGuiApplication" : "lib/Qt/QtWidgets/RQGuiApplication.rakumod",
         "Qt::QtWidgets::RQHBoxLayout" : "lib/Qt/QtWidgets/RQHBoxLayout.rakumod",
@@ -76,6 +82,6 @@
     "tags": [
         "QT", "GUI", "GRAPHICS"
     ],
-    "source-url" : "https://github.com/yguillemot/Qt-QtWidgets.git"
+    "source-url" : "https://github.com/yguillemot/Raku-Qt-QtWidgets.git"
 }
 
