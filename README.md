@@ -300,17 +300,17 @@ A very simple clock displaying the current time.
 
 ### 5.2 clock_resizable.raku
 
-The same clock inside a resizable window.
+The same clock with a resizable window.
 
 `raku examples/clock_resizable.raku`
 
-### 5.2 2deg_eqn_solver.raku
+### 5.3 2deg_eqn_solver.raku
 
 A graphical interface to solve quadratic equations.
 
 `raku examples/2deg_eqn_solver.raku`
 
-### 5.3 sketch_board.raku
+### 5.4 sketch_board.raku
 
 A small example showing how to draw with the mouse and how to get file names
 using QFileDialog methods.
