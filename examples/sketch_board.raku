@@ -257,7 +257,7 @@ class DrawPlace is QWidget {
                 self, "Load a file", "", "sketch_board files ( *.skbo )");
 
         # Then read the file and use its content as the current graphics
-        if $fileName !~~ "" {
+        if ?$fileName && $fileName !~~ "" {
             self.unserialize(slurp $fileName);
         }
     }
@@ -270,7 +270,7 @@ class DrawPlace is QWidget {
                 "", "sketch_board files ( *.skbo )");
         
         # Then serialize the current graphics and copy it into this file
-        if $fileName !~~ "" {
+        if ?$fileName && $fileName !~~ "" {
             spurt $fileName, self.serialize;
         }
     }
