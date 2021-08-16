@@ -23,6 +23,7 @@ A Raku module and native wrapper providing an interface to the Qt5 GUI.
     - 5.2 clock_resizable.raku  
     - 5.3 2deg_eqn_solver.raku  
     - 5.4 sketch_board.raku  
+    - 5.5 editor.raku  
 - 6\. TOOL  
 - 7\. PREREQUISITES  
 - 8\. INSTALLATION  
@@ -316,6 +317,12 @@ A small example showing how to draw with the mouse and how to get file names
 using QFileDialog methods.
 
 `raku examples/sketch_board.raku`
+
+### 5.5 editor.raku
+
+A tiny text editor build with QTextEdit
+
+`raku examples/editor.raku`
 
 
 ## 6. TOOL

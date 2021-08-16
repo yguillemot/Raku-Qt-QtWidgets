@@ -1,6 +1,11 @@
 
+v0.0.4  2021/08/16
+    * Fix corrupt strings returned by methods from the Qt API
+    * Fix signal/slot to/from Qt with non default arguments
+    * Add a few methods in QTextEdit
+    * Update an old example a add a new one
 
-v0.0.3  2020/08/04
+v0.0.3  2021/08/04
     * Fix guessuse which was missing QApplication
     * Add QResizeEvent and some associated methods
     * Add QFileDialog.getOpenFileName and QFileDialog.getSaveFileName static

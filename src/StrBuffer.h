@@ -1,6 +1,6 @@
 
 // 
-// This file has been automatically copied by RaQt_maker V0.0.3.
+// This file has been automatically copied by RaQt_maker V0.0.4.
 // To modify and regenerate it, see the source code available here: 
 //         https://github.com/yguillemot/RaQt_maker
 // 

@@ -2027,6 +2027,13 @@ Class QTextEdit
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
 
+#### Method setPlainText(Str $text)
+	[slot] 
+	calls Qt method void setPlainText(const QString& text)
+
+#### Method setReadOnly(Bool $ro)
+	calls Qt method void setReadOnly(bool ro)
+
 #### Method setToolTip(Str $arg1)
 	inherited from QWidget
 	calls Qt method void setToolTip(const QString& arg1)
@@ -2038,6 +2045,13 @@ Class QTextEdit
 #### Method show()
 	[slot] inherited from QWidget
 	calls Qt method void show()
+
+#### Method textChanged()
+	[signal] 
+	calls Qt method void textChanged()
+
+#### Method toPlainText( --> Str)
+	calls Qt method QString toPlainText()
 
 #### Method update()
 	[slot] inherited from QWidget

@@ -3,7 +3,7 @@
     "name" : "Qt::QtWidgets",
     "api" : "2",
     "auth" : "cpan:YGUILLEMO",
-    "version" : "0.0.3",
+    "version" : "0.0.4",
     "description" : "A wrapper to the Qt Widgets GUI",
     "authors" : [ "Yves Guillemot <yc.guillemot@wanadoo.fr>" ],
     "license" : "GPL-3.0-or-later",
