@@ -7,7 +7,7 @@ Class QAbstractButton
 
 	inherits QWidget
 
-	inherited by QPushButton
+	inherited by QCheckBox, QPushButton, QRadioButton
 
 
 #### Method activateWindow()
@@ -21,6 +21,10 @@ Class QAbstractButton
 #### Method clicked(Bool $checked = False)
 	[signal] 
 	calls Qt method void clicked(bool checked = false)
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -38,9 +42,42 @@ Class QAbstractButton
 	inherited from QWidget
 	calls Qt method bool isActiveWindow()
 
+#### Method isCheckable( --> Bool)
+	calls Qt method bool isCheckable()
+
+#### Method isChecked( --> Bool)
+	calls Qt method bool isChecked()
+
+#### Method isDown( --> Bool)
+	calls Qt method bool isDown()
+
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -62,6 +99,10 @@ Class QAbstractButton
 	[signal] 
 	calls Qt method void pressed()
 
+#### Method released()
+	[signal] 
+	calls Qt method void released()
+
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
@@ -70,9 +111,22 @@ Class QAbstractButton
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void resizeEvent(QResizeEvent* event)
 
+#### Method setAutoExclusive(Bool $arg1)
+	calls Qt method void setAutoExclusive(bool arg1)
+
+#### Method setCheckable(Bool $arg1)
+	calls Qt method void setCheckable(bool arg1)
+
+#### Method setChecked(Bool $arg1)
+	[slot] 
+	calls Qt method void setChecked(bool arg1)
+
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
 	calls Qt method void setDisabled(bool arg1)
+
+#### Method setDown(Bool $arg1)
+	calls Qt method void setDown(bool arg1)
 
 #### Method setFixedHeight(Int $h)
 	inherited from QWidget
@@ -106,9 +160,29 @@ Class QAbstractButton
 	inherited from QWidget
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setText(Str $text)
 	calls Qt method void setText(const QString& text)
@@ -127,6 +201,14 @@ Class QAbstractButton
 
 #### Method text( --> Str)
 	calls Qt method QString text()
+
+#### Method toggle()
+	[slot] 
+	calls Qt method void toggle()
+
+#### Method toggled(Bool $checked)
+	[signal] 
+	calls Qt method void toggled(bool checked)
 
 #### Method update()
 	[slot] inherited from QWidget
@@ -155,6 +237,10 @@ Class QAbstractScrollArea
 	inherited from QWidget
 	calls Qt method void activateWindow()
 
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void enterEvent(QEvent* event)
@@ -174,6 +260,30 @@ Class QAbstractScrollArea
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -235,9 +345,29 @@ Class QAbstractScrollArea
 	inherited from QWidget
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setToolTip(Str $arg1)
 	inherited from QWidget
@@ -264,6 +394,262 @@ Class QAbstractScrollArea
 	calls Qt method int width()
 
 
+Class QAbstractSlider
+---------------------
+	imported by
+		use Qt::QtWidgets::QAbstractSlider;
+
+	inherits QWidget
+
+	inherited by QDial, QSlider
+
+
+#### Method activateWindow()
+	inherited from QWidget
+	calls Qt method void activateWindow()
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
+#### Method enterEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void enterEvent(QEvent* event)
+
+#### Method font( --> QFont)
+	inherited from QWidget
+	calls Qt method QFont & font()
+
+#### Method hasTracking( --> Bool)
+	calls Qt method bool hasTracking()
+
+#### Method height( --> Int)
+	inherited from QWidget
+	calls Qt method int height()
+
+#### Method invertedAppearance( --> Bool)
+	calls Qt method bool invertedAppearance()
+
+#### Method invertedControls( --> Bool)
+	calls Qt method bool invertedControls()
+
+#### Method isActiveWindow( --> Bool)
+	inherited from QWidget
+	calls Qt method bool isActiveWindow()
+
+#### Method leaveEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
+
+#### Method maximum( --> Int)
+	calls Qt method int maximum()
+
+#### Method minimum( --> Int)
+	calls Qt method int minimum()
+
+#### Method mouseMoveEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+
+#### Method mousePressEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mousePressEvent(QMouseEvent* event)
+
+#### Method mouseReleaseEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method orientation( --> Qt::Orientation)
+	calls Qt method Qt::Orientation orientation()
+
+#### Method pageStep( --> Int)
+	calls Qt method int pageStep()
+
+#### Method paintEvent(QPaintEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void paintEvent(QPaintEvent* event)
+
+#### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
+	inherited from QWidget
+	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
+
+#### Method resizeEvent(QResizeEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method setDisabled(Bool $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setDisabled(bool arg1)
+
+#### Method setFixedHeight(Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedHeight(int h)
+
+#### Method setFixedSize(Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedSize(int w, int h)
+
+#### Method setFixedWidth(Int $w)
+	inherited from QWidget
+	calls Qt method void setFixedWidth(int w)
+
+#### Method setFocus()
+	[slot] inherited from QWidget
+	calls Qt method void setFocus()
+
+#### Method setFocus(Qt::FocusReason $reason)
+	inherited from QWidget
+	calls Qt method void setFocus(Qt::FocusReason reason)
+
+#### Method setFocusPolicy(Qt::FocusPolicy $policy)
+	inherited from QWidget
+	calls Qt method void setFocusPolicy(Qt::FocusPolicy policy)
+
+#### Method setFont(QFont $arg1)
+	inherited from QWidget
+	calls Qt method void setFont(const QFont& arg1)
+
+#### Method setInvertedAppearance(Bool $arg1)
+	calls Qt method void setInvertedAppearance(bool arg1)
+
+#### Method setInvertedControls(Bool $arg1)
+	calls Qt method void setInvertedControls(bool arg1)
+
+#### Method setLayout(QLayout $arg1)
+	inherited from QWidget
+	calls Qt method void setLayout(QLayout* arg1)
+
+#### Method setMaximum(Int $arg1)
+	calls Qt method void setMaximum(int arg1)
+
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimum(Int $arg1)
+	calls Qt method void setMinimum(int arg1)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
+#### Method setMinimumSize(Int $minw, Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
+
+#### Method setOrientation(Qt::Orientation $arg1)
+	[slot] 
+	calls Qt method void setOrientation(Qt::Orientation arg1)
+
+#### Method setPageStep(Int $arg1)
+	calls Qt method void setPageStep(int arg1)
+
+#### Method setRange(Int $min, Int $max)
+	[slot] 
+	calls Qt method void setRange(int min, int max)
+
+#### Method setSingleStep(Int $arg1)
+	calls Qt method void setSingleStep(int arg1)
+
+#### Method setSliderDown(Bool $arg1)
+	calls Qt method void setSliderDown(bool arg1)
+
+#### Method setSliderPosition(Int $arg1)
+	calls Qt method void setSliderPosition(int arg1)
+
+#### Method setToolTip(Str $arg1)
+	inherited from QWidget
+	calls Qt method void setToolTip(const QString& arg1)
+
+#### Method setTracking(Bool $enable)
+	calls Qt method void setTracking(bool enable)
+
+#### Method setValue(Int $arg1)
+	[slot] 
+	calls Qt method void setValue(int arg1)
+
+#### Method setWindowTitle(Str $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setWindowTitle(const QString& arg1)
+
+#### Method show()
+	[slot] inherited from QWidget
+	calls Qt method void show()
+
+#### Method singleStep( --> Int)
+	calls Qt method int singleStep()
+
+#### Method sliderMoved(Int $position)
+	[signal] 
+	calls Qt method void sliderMoved(int position)
+
+#### Method sliderPosition( --> Int)
+	calls Qt method int sliderPosition()
+
+#### Method sliderPressed()
+	[signal] 
+	calls Qt method void sliderPressed()
+
+#### Method sliderReleased()
+	[signal] 
+	calls Qt method void sliderReleased()
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
+
+#### Method update(Int $x, Int $y, Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method value( --> Int)
+	calls Qt method int value()
+
+#### Method valueChanged(Int $value)
+	[signal] 
+	calls Qt method void valueChanged(int value)
+
+#### Method width( --> Int)
+	inherited from QWidget
+	calls Qt method int width()
+
+
 Class QAction
 -------------
 	imported by
@@ -284,6 +670,9 @@ Class QAction
 #### Method setEnabled(Bool $arg1)
 	[slot] 
 	calls Qt method void setEnabled(bool arg1)
+
+#### Method text( --> Str)
+	calls Qt method QString text()
 
 #### Method trigger()
 	[slot] 
@@ -345,6 +734,290 @@ Class QBrush
 	calls Qt method void setStyle(Qt::BrushStyle arg1)
 
 
+Class QCheckBox
+---------------
+	imported by
+		use Qt::QtWidgets::QCheckBox;
+
+	inherits QAbstractButton
+
+
+
+
+#### Method activateWindow()
+	inherited from QWidget
+	calls Qt method void activateWindow()
+
+#### Method checkState( --> Qt::CheckState)
+	calls Qt method Qt::CheckState checkState()
+
+#### Method click()
+	[slot] inherited from QAbstractButton
+	calls Qt method void click()
+
+#### Method clicked(Bool $checked = False)
+	[signal] inherited from QAbstractButton
+	calls Qt method void clicked(bool checked = false)
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
+#### Method QCheckBox.new(QWidget $parent = (QWidget) --> QCheckBox))
+	calls Qt method  QCheckBox(QWidget* parent = nullptr)
+
+#### Method QCheckBox.new(Str $text, QWidget $parent = (QWidget) --> QCheckBox))
+	calls Qt method  QCheckBox(const QString& text, QWidget* parent = nullptr)
+
+#### Method enterEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void enterEvent(QEvent* event)
+
+#### Method font( --> QFont)
+	inherited from QWidget
+	calls Qt method QFont & font()
+
+#### Method height( --> Int)
+	inherited from QWidget
+	calls Qt method int height()
+
+#### Method isActiveWindow( --> Bool)
+	inherited from QWidget
+	calls Qt method bool isActiveWindow()
+
+#### Method isCheckable( --> Bool)
+	inherited from QAbstractButton
+	calls Qt method bool isCheckable()
+
+#### Method isChecked( --> Bool)
+	inherited from QAbstractButton
+	calls Qt method bool isChecked()
+
+#### Method isDown( --> Bool)
+	inherited from QAbstractButton
+	calls Qt method bool isDown()
+
+#### Method isTristate( --> Bool)
+	calls Qt method bool isTristate()
+
+#### Method leaveEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
+
+#### Method mouseMoveEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+
+#### Method mousePressEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mousePressEvent(QMouseEvent* event)
+
+#### Method mouseReleaseEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method paintEvent(QPaintEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void paintEvent(QPaintEvent* event)
+
+#### Method pressed()
+	[signal] inherited from QAbstractButton
+	calls Qt method void pressed()
+
+#### Method released()
+	[signal] inherited from QAbstractButton
+	calls Qt method void released()
+
+#### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
+	inherited from QWidget
+	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
+
+#### Method resizeEvent(QResizeEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method setAutoExclusive(Bool $arg1)
+	inherited from QAbstractButton
+	calls Qt method void setAutoExclusive(bool arg1)
+
+#### Method setCheckState(Qt::CheckState $state)
+	calls Qt method void setCheckState(Qt::CheckState state)
+
+#### Method setCheckable(Bool $arg1)
+	inherited from QAbstractButton
+	calls Qt method void setCheckable(bool arg1)
+
+#### Method setChecked(Bool $arg1)
+	[slot] inherited from QAbstractButton
+	calls Qt method void setChecked(bool arg1)
+
+#### Method setDisabled(Bool $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setDisabled(bool arg1)
+
+#### Method setDown(Bool $arg1)
+	inherited from QAbstractButton
+	calls Qt method void setDown(bool arg1)
+
+#### Method setFixedHeight(Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedHeight(int h)
+
+#### Method setFixedSize(Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedSize(int w, int h)
+
+#### Method setFixedWidth(Int $w)
+	inherited from QWidget
+	calls Qt method void setFixedWidth(int w)
+
+#### Method setFocus()
+	[slot] inherited from QWidget
+	calls Qt method void setFocus()
+
+#### Method setFocus(Qt::FocusReason $reason)
+	inherited from QWidget
+	calls Qt method void setFocus(Qt::FocusReason reason)
+
+#### Method setFocusPolicy(Qt::FocusPolicy $policy)
+	inherited from QWidget
+	calls Qt method void setFocusPolicy(Qt::FocusPolicy policy)
+
+#### Method setFont(QFont $arg1)
+	inherited from QWidget
+	calls Qt method void setFont(const QFont& arg1)
+
+#### Method setLayout(QLayout $arg1)
+	inherited from QWidget
+	calls Qt method void setLayout(QLayout* arg1)
+
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
+#### Method setMinimumSize(Int $minw, Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
+
+#### Method setText(Str $text)
+	inherited from QAbstractButton
+	calls Qt method void setText(const QString& text)
+
+#### Method setToolTip(Str $arg1)
+	inherited from QWidget
+	calls Qt method void setToolTip(const QString& arg1)
+
+#### Method setTristate(Bool $y = True)
+	calls Qt method void setTristate(bool y = true)
+
+#### Method setWindowTitle(Str $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setWindowTitle(const QString& arg1)
+
+#### Method show()
+	[slot] inherited from QWidget
+	calls Qt method void show()
+
+#### Method stateChanged(Int $arg1)
+	[signal] 
+	calls Qt method void stateChanged(int arg1)
+
+#### Method text( --> Str)
+	inherited from QAbstractButton
+	calls Qt method QString text()
+
+#### Method toggle()
+	[slot] inherited from QAbstractButton
+	calls Qt method void toggle()
+
+#### Method toggled(Bool $checked)
+	[signal] inherited from QAbstractButton
+	calls Qt method void toggled(bool checked)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
+
+#### Method update(Int $x, Int $y, Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method width( --> Int)
+	inherited from QWidget
+	calls Qt method int width()
+
+
+Class QCloseEvent
+-----------------
+	imported by
+		use Qt::QtWidgets::QCloseEvent;
+
+	inherits QEvent
+
+
+
+
+#### Method accept()
+	inherited from QEvent
+	calls Qt method void accept()
+
+#### Method ignore()
+	inherited from QEvent
+	calls Qt method void ignore()
+
+#### Method isAccepted( --> Bool)
+	inherited from QEvent
+	calls Qt method bool isAccepted()
+
+#### Method spontaneous( --> Bool)
+	inherited from QEvent
+	calls Qt method bool spontaneous()
+
+#### Method type( --> QEvent::Type)
+	inherited from QEvent
+	calls Qt method Type type()
+
+
 Class QColor
 ------------
 	imported by
@@ -392,6 +1065,307 @@ Class QCoreApplication
 	calls Qt method bool sendEvent(QObject* receiver, QEvent* event)
 
 
+Class QDial
+-----------
+	imported by
+		use Qt::QtWidgets::QDial;
+
+	inherits QAbstractSlider
+
+
+
+
+#### Method activateWindow()
+	inherited from QWidget
+	calls Qt method void activateWindow()
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
+#### Method QDial.new(QWidget $parent = (QWidget) --> QDial))
+	calls Qt method  QDial(QWidget* parent = nullptr)
+
+#### Method enterEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void enterEvent(QEvent* event)
+
+#### Method font( --> QFont)
+	inherited from QWidget
+	calls Qt method QFont & font()
+
+#### Method hasTracking( --> Bool)
+	inherited from QAbstractSlider
+	calls Qt method bool hasTracking()
+
+#### Method height( --> Int)
+	inherited from QWidget
+	calls Qt method int height()
+
+#### Method invertedAppearance( --> Bool)
+	inherited from QAbstractSlider
+	calls Qt method bool invertedAppearance()
+
+#### Method invertedControls( --> Bool)
+	inherited from QAbstractSlider
+	calls Qt method bool invertedControls()
+
+#### Method isActiveWindow( --> Bool)
+	inherited from QWidget
+	calls Qt method bool isActiveWindow()
+
+#### Method leaveEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
+
+#### Method maximum( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int maximum()
+
+#### Method minimum( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int minimum()
+
+#### Method mouseMoveEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+
+#### Method mousePressEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mousePressEvent(QMouseEvent* event)
+
+#### Method mouseReleaseEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method notchSize( --> Int)
+	calls Qt method int notchSize()
+
+#### Method notchTarget( --> Real)
+	calls Qt method qreal notchTarget()
+
+#### Method notchesVisible( --> Bool)
+	calls Qt method bool notchesVisible()
+
+#### Method orientation( --> Qt::Orientation)
+	inherited from QAbstractSlider
+	calls Qt method Qt::Orientation orientation()
+
+#### Method pageStep( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int pageStep()
+
+#### Method paintEvent(QPaintEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void paintEvent(QPaintEvent* event)
+
+#### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
+	inherited from QWidget
+	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
+
+#### Method resizeEvent(QResizeEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method setDisabled(Bool $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setDisabled(bool arg1)
+
+#### Method setFixedHeight(Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedHeight(int h)
+
+#### Method setFixedSize(Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedSize(int w, int h)
+
+#### Method setFixedWidth(Int $w)
+	inherited from QWidget
+	calls Qt method void setFixedWidth(int w)
+
+#### Method setFocus()
+	[slot] inherited from QWidget
+	calls Qt method void setFocus()
+
+#### Method setFocus(Qt::FocusReason $reason)
+	inherited from QWidget
+	calls Qt method void setFocus(Qt::FocusReason reason)
+
+#### Method setFocusPolicy(Qt::FocusPolicy $policy)
+	inherited from QWidget
+	calls Qt method void setFocusPolicy(Qt::FocusPolicy policy)
+
+#### Method setFont(QFont $arg1)
+	inherited from QWidget
+	calls Qt method void setFont(const QFont& arg1)
+
+#### Method setInvertedAppearance(Bool $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setInvertedAppearance(bool arg1)
+
+#### Method setInvertedControls(Bool $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setInvertedControls(bool arg1)
+
+#### Method setLayout(QLayout $arg1)
+	inherited from QWidget
+	calls Qt method void setLayout(QLayout* arg1)
+
+#### Method setMaximum(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setMaximum(int arg1)
+
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimum(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setMinimum(int arg1)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
+#### Method setMinimumSize(Int $minw, Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
+
+#### Method setNotchTarget(Real $target)
+	calls Qt method void setNotchTarget(double target)
+
+#### Method setNotchesVisible(Bool $visible)
+	[slot] 
+	calls Qt method void setNotchesVisible(bool visible)
+
+#### Method setOrientation(Qt::Orientation $arg1)
+	[slot] inherited from QAbstractSlider
+	calls Qt method void setOrientation(Qt::Orientation arg1)
+
+#### Method setPageStep(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setPageStep(int arg1)
+
+#### Method setRange(Int $min, Int $max)
+	[slot] inherited from QAbstractSlider
+	calls Qt method void setRange(int min, int max)
+
+#### Method setSingleStep(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setSingleStep(int arg1)
+
+#### Method setSliderDown(Bool $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setSliderDown(bool arg1)
+
+#### Method setSliderPosition(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setSliderPosition(int arg1)
+
+#### Method setToolTip(Str $arg1)
+	inherited from QWidget
+	calls Qt method void setToolTip(const QString& arg1)
+
+#### Method setTracking(Bool $enable)
+	inherited from QAbstractSlider
+	calls Qt method void setTracking(bool enable)
+
+#### Method setValue(Int $arg1)
+	[slot] inherited from QAbstractSlider
+	calls Qt method void setValue(int arg1)
+
+#### Method setWindowTitle(Str $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setWindowTitle(const QString& arg1)
+
+#### Method setWrapping(Bool $on)
+	[slot] 
+	calls Qt method void setWrapping(bool on)
+
+#### Method show()
+	[slot] inherited from QWidget
+	calls Qt method void show()
+
+#### Method singleStep( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int singleStep()
+
+#### Method sliderMoved(Int $position)
+	[signal] inherited from QAbstractSlider
+	calls Qt method void sliderMoved(int position)
+
+#### Method sliderPosition( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int sliderPosition()
+
+#### Method sliderPressed()
+	[signal] inherited from QAbstractSlider
+	calls Qt method void sliderPressed()
+
+#### Method sliderReleased()
+	[signal] inherited from QAbstractSlider
+	calls Qt method void sliderReleased()
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
+
+#### Method update(Int $x, Int $y, Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method value( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int value()
+
+#### Method valueChanged(Int $value)
+	[signal] inherited from QAbstractSlider
+	calls Qt method void valueChanged(int value)
+
+#### Method width( --> Int)
+	inherited from QWidget
+	calls Qt method int width()
+
+#### Method wrapping( --> Bool)
+	calls Qt method bool wrapping()
+
+
 Class QDialog
 -------------
 	imported by
@@ -399,16 +1373,24 @@ Class QDialog
 
 	inherits QWidget
 
-	inherited by QFileDialog
+	inherited by QFileDialog, QMessageBox
 
 
 #### Method activateWindow()
 	inherited from QWidget
 	calls Qt method void activateWindow()
 
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void enterEvent(QEvent* event)
+
+#### Method exec( --> Int)
+	[slot] [virtual] 
+	calls Qt method int exec()
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -425,6 +1407,30 @@ Class QDialog
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -486,9 +1492,29 @@ Class QDialog
 	inherited from QWidget
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setToolTip(Str $arg1)
 	inherited from QWidget
@@ -521,7 +1547,7 @@ Class QEvent
 		use Qt::QtWidgets::QEvent;
 
 
-	inherited by QInputEvent, QPaintEvent, QResizeEvent
+	inherited by QCloseEvent, QInputEvent, QPaintEvent, QResizeEvent
 
     enum Type 
 
@@ -562,9 +1588,17 @@ Class QFileDialog
 	inherited from QWidget
 	calls Qt method void activateWindow()
 
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void enterEvent(QEvent* event)
+
+#### Method exec( --> Int)
+	[slot] [virtual] inherited from QDialog
+	calls Qt method int exec()
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -589,6 +1623,30 @@ Class QFileDialog
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -650,9 +1708,29 @@ Class QFileDialog
 	inherited from QWidget
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setToolTip(Str $arg1)
 	inherited from QWidget
@@ -724,6 +1802,10 @@ Class QFrame
 	inherited from QWidget
 	calls Qt method void activateWindow()
 
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void enterEvent(QEvent* event)
@@ -743,6 +1825,30 @@ Class QFrame
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -804,9 +1910,29 @@ Class QFrame
 	inherited from QWidget
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setToolTip(Str $arg1)
 	inherited from QWidget
@@ -819,6 +1945,219 @@ Class QFrame
 #### Method show()
 	[slot] inherited from QWidget
 	calls Qt method void show()
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
+
+#### Method update(Int $x, Int $y, Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method width( --> Int)
+	inherited from QWidget
+	calls Qt method int width()
+
+
+Class QGroupBox
+---------------
+	imported by
+		use Qt::QtWidgets::QGroupBox;
+
+	inherits QWidget
+
+
+
+
+#### Method activateWindow()
+	inherited from QWidget
+	calls Qt method void activateWindow()
+
+#### Method clicked(Bool $checked = False)
+	[signal] 
+	calls Qt method void clicked(bool checked = false)
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
+#### Method QGroupBox.new(QWidget $parent = (QWidget) --> QGroupBox))
+	calls Qt method  QGroupBox(QWidget* parent = nullptr)
+
+#### Method QGroupBox.new(Str $title, QWidget $parent = (QWidget) --> QGroupBox))
+	calls Qt method  QGroupBox(const QString& title, QWidget* parent = nullptr)
+
+#### Method enterEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void enterEvent(QEvent* event)
+
+#### Method font( --> QFont)
+	inherited from QWidget
+	calls Qt method QFont & font()
+
+#### Method height( --> Int)
+	inherited from QWidget
+	calls Qt method int height()
+
+#### Method isActiveWindow( --> Bool)
+	inherited from QWidget
+	calls Qt method bool isActiveWindow()
+
+#### Method isCheckable( --> Bool)
+	calls Qt method bool isCheckable()
+
+#### Method isChecked( --> Bool)
+	calls Qt method bool isChecked()
+
+#### Method isFlat( --> Bool)
+	calls Qt method bool isFlat()
+
+#### Method leaveEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
+
+#### Method mouseMoveEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+
+#### Method mousePressEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mousePressEvent(QMouseEvent* event)
+
+#### Method mouseReleaseEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method paintEvent(QPaintEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void paintEvent(QPaintEvent* event)
+
+#### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
+	inherited from QWidget
+	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
+
+#### Method resizeEvent(QResizeEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method setAlignment(Int $alignment)
+	calls Qt method void setAlignment(int alignment)
+
+#### Method setCheckable(Bool $checkable)
+	calls Qt method void setCheckable(bool checkable)
+
+#### Method setChecked(Bool $checked)
+	[slot] 
+	calls Qt method void setChecked(bool checked)
+
+#### Method setDisabled(Bool $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setDisabled(bool arg1)
+
+#### Method setFixedHeight(Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedHeight(int h)
+
+#### Method setFixedSize(Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedSize(int w, int h)
+
+#### Method setFixedWidth(Int $w)
+	inherited from QWidget
+	calls Qt method void setFixedWidth(int w)
+
+#### Method setFlat(Bool $flat)
+	calls Qt method void setFlat(bool flat)
+
+#### Method setFocus()
+	[slot] inherited from QWidget
+	calls Qt method void setFocus()
+
+#### Method setFocus(Qt::FocusReason $reason)
+	inherited from QWidget
+	calls Qt method void setFocus(Qt::FocusReason reason)
+
+#### Method setFocusPolicy(Qt::FocusPolicy $policy)
+	inherited from QWidget
+	calls Qt method void setFocusPolicy(Qt::FocusPolicy policy)
+
+#### Method setFont(QFont $arg1)
+	inherited from QWidget
+	calls Qt method void setFont(const QFont& arg1)
+
+#### Method setLayout(QLayout $arg1)
+	inherited from QWidget
+	calls Qt method void setLayout(QLayout* arg1)
+
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
+#### Method setMinimumSize(Int $minw, Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
+
+#### Method setTitle(Str $title)
+	calls Qt method void setTitle(const QString& title)
+
+#### Method setToolTip(Str $arg1)
+	inherited from QWidget
+	calls Qt method void setToolTip(const QString& arg1)
+
+#### Method setWindowTitle(Str $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setWindowTitle(const QString& arg1)
+
+#### Method show()
+	[slot] inherited from QWidget
+	calls Qt method void show()
+
+#### Method title( --> Str)
+	calls Qt method QString title()
+
+#### Method toggled(Bool $arg1)
+	[signal] 
+	calls Qt method void toggled(bool arg1)
 
 #### Method update()
 	[slot] inherited from QWidget
@@ -958,6 +2297,10 @@ Class QLabel
 	[slot] 
 	calls Qt method void clear()
 
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
 #### Method QLabel.new(QWidget $parent = (QWidget), Int $f = Qt::WindowFlags() --> QLabel))
 	calls Qt method  QLabel(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags())
 
@@ -983,6 +2326,30 @@ Class QLabel
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -1050,9 +2417,29 @@ Class QLabel
 #### Method setMargin(Int $arg1)
 	calls Qt method void setMargin(int arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setText(Str $arg1)
 	[slot] 
@@ -1072,6 +2459,9 @@ Class QLabel
 #### Method show()
 	[slot] inherited from QWidget
 	calls Qt method void show()
+
+#### Method text( --> Str)
+	calls Qt method QString text()
 
 #### Method update()
 	[slot] inherited from QWidget
@@ -1135,6 +2525,10 @@ Class QLineEdit
 	[slot] 
 	calls Qt method void clear()
 
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
 #### Method QLineEdit.new(QWidget $parent = (QWidget) --> QLineEdit))
 	calls Qt method  QLineEdit(QWidget* parent = nullptr)
 
@@ -1164,6 +2558,30 @@ Class QLineEdit
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -1232,9 +2650,29 @@ Class QLineEdit
 	inherited from QWidget
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setText(Str $arg1)
 	[slot] 
@@ -1285,6 +2723,10 @@ Class QMenu
 #### Method addAction(Str $text --> QAction)
 	calls Qt method QAction * addAction(const QString& text)
 
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
 #### Method QMenu.new(QWidget $parent = (QWidget) --> QMenu))
 	calls Qt method  QMenu(QWidget* parent = nullptr)
 
@@ -1297,6 +2739,9 @@ Class QMenu
 
 #### Method exec( --> QAction)
 	calls Qt method QAction * exec()
+
+#### Method exec(QPoint $pos, QAction $at = (QAction) --> QAction)
+	calls Qt method QAction * exec(const QPoint& pos, QAction* at = nullptr)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -1313,6 +2758,30 @@ Class QMenu
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -1374,9 +2843,217 @@ Class QMenu
 	inherited from QWidget
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
+
+#### Method setToolTip(Str $arg1)
+	inherited from QWidget
+	calls Qt method void setToolTip(const QString& arg1)
+
+#### Method setWindowTitle(Str $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setWindowTitle(const QString& arg1)
+
+#### Method show()
+	[slot] inherited from QWidget
+	calls Qt method void show()
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
+
+#### Method update(Int $x, Int $y, Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method width( --> Int)
+	inherited from QWidget
+	calls Qt method int width()
+
+
+Class QMessageBox
+-----------------
+	imported by
+		use Qt::QtWidgets::QMessageBox;
+
+	inherits QDialog
+
+
+
+    enum StandardButton 
+
+#### Method activateWindow()
+	inherited from QWidget
+	calls Qt method void activateWindow()
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
+#### Method QMessageBox.new(QWidget $parent = (QWidget) --> QMessageBox))
+	calls Qt method  QMessageBox(QWidget* parent = nullptr)
+
+#### Method enterEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void enterEvent(QEvent* event)
+
+#### Method exec( --> Int)
+	[slot] [virtual] inherited from QDialog
+	calls Qt method int exec()
+
+#### Method font( --> QFont)
+	inherited from QWidget
+	calls Qt method QFont & font()
+
+#### Method height( --> Int)
+	inherited from QWidget
+	calls Qt method int height()
+
+#### Method isActiveWindow( --> Bool)
+	inherited from QWidget
+	calls Qt method bool isActiveWindow()
+
+#### Method leaveEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
+
+#### Method mouseMoveEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+
+#### Method mousePressEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mousePressEvent(QMouseEvent* event)
+
+#### Method mouseReleaseEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method paintEvent(QPaintEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void paintEvent(QPaintEvent* event)
+
+#### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
+	inherited from QWidget
+	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
+
+#### Method resizeEvent(QResizeEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method setDisabled(Bool $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setDisabled(bool arg1)
+
+#### Method setFixedHeight(Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedHeight(int h)
+
+#### Method setFixedSize(Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedSize(int w, int h)
+
+#### Method setFixedWidth(Int $w)
+	inherited from QWidget
+	calls Qt method void setFixedWidth(int w)
+
+#### Method setFocus()
+	[slot] inherited from QWidget
+	calls Qt method void setFocus()
+
+#### Method setFocus(Qt::FocusReason $reason)
+	inherited from QWidget
+	calls Qt method void setFocus(Qt::FocusReason reason)
+
+#### Method setFocusPolicy(Qt::FocusPolicy $policy)
+	inherited from QWidget
+	calls Qt method void setFocusPolicy(Qt::FocusPolicy policy)
+
+#### Method setFont(QFont $arg1)
+	inherited from QWidget
+	calls Qt method void setFont(const QFont& arg1)
+
+#### Method setInformativeText(Str $text)
+	calls Qt method void setInformativeText(const QString& text)
+
+#### Method setLayout(QLayout $arg1)
+	inherited from QWidget
+	calls Qt method void setLayout(QLayout* arg1)
+
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
+#### Method setMinimumSize(Int $minw, Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
+
+#### Method setStandardButtons(Int $buttons)
+	calls Qt method void setStandardButtons(StandardButtons buttons)
+
+#### Method setText(Str $text)
+	calls Qt method void setText(const QString& text)
 
 #### Method setToolTip(Str $arg1)
 	inherited from QWidget
@@ -1529,6 +3206,15 @@ Class QPainter
 #### Method drawRect(Int $x1, Int $y1, Int $w, Int $h)
 	calls Qt method void drawRect(int x1, int y1, int w, int h)
 
+#### Method drawRect(QRect $rect)
+	calls Qt method void drawRect(const QRect& rect)
+
+#### Method drawText(Int $x, Int $y, Str $s)
+	calls Qt method void drawText(int x, int y, const QString& s)
+
+#### Method drawText(QRect $r, Int $flags, Str $text, QRect $br = (QRect))
+	calls Qt method void drawText(const QRect& r, int flags, const QString& text, QRect* br = nullptr)
+
 #### Method end( --> Bool)
 	calls Qt method bool end()
 
@@ -1540,6 +3226,9 @@ Class QPainter
 
 #### Method setBrush(QBrush $brush)
 	calls Qt method void setBrush(const QBrush& brush)
+
+#### Method setFont(QFont $f)
+	calls Qt method void setFont(const QFont& f)
 
 #### Method setPen(QColor $color)
 	calls Qt method void setPen(const QColor& color)
@@ -1672,6 +3361,10 @@ Class QPushButton
 	[signal] inherited from QAbstractButton
 	calls Qt method void clicked(bool checked = false)
 
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
 #### Method QPushButton.new(Str $text, QWidget $parent = (QWidget) --> QPushButton))
 	calls Qt method  QPushButton(const QString& text, QWidget* parent = nullptr)
 
@@ -1691,9 +3384,45 @@ Class QPushButton
 	inherited from QWidget
 	calls Qt method bool isActiveWindow()
 
+#### Method isCheckable( --> Bool)
+	inherited from QAbstractButton
+	calls Qt method bool isCheckable()
+
+#### Method isChecked( --> Bool)
+	inherited from QAbstractButton
+	calls Qt method bool isChecked()
+
+#### Method isDown( --> Bool)
+	inherited from QAbstractButton
+	calls Qt method bool isDown()
+
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -1715,6 +3444,10 @@ Class QPushButton
 	[signal] inherited from QAbstractButton
 	calls Qt method void pressed()
 
+#### Method released()
+	[signal] inherited from QAbstractButton
+	calls Qt method void released()
+
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
@@ -1723,9 +3456,25 @@ Class QPushButton
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void resizeEvent(QResizeEvent* event)
 
+#### Method setAutoExclusive(Bool $arg1)
+	inherited from QAbstractButton
+	calls Qt method void setAutoExclusive(bool arg1)
+
+#### Method setCheckable(Bool $arg1)
+	inherited from QAbstractButton
+	calls Qt method void setCheckable(bool arg1)
+
+#### Method setChecked(Bool $arg1)
+	[slot] inherited from QAbstractButton
+	calls Qt method void setChecked(bool arg1)
+
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
 	calls Qt method void setDisabled(bool arg1)
+
+#### Method setDown(Bool $arg1)
+	inherited from QAbstractButton
+	calls Qt method void setDown(bool arg1)
 
 #### Method setFixedHeight(Int $h)
 	inherited from QWidget
@@ -1759,12 +3508,32 @@ Class QPushButton
 	inherited from QWidget
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
 #### Method setMenu(QMenu $menu)
 	calls Qt method void setMenu(QMenu* menu)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
 
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setText(Str $text)
 	inherited from QAbstractButton
@@ -1785,6 +3554,251 @@ Class QPushButton
 #### Method text( --> Str)
 	inherited from QAbstractButton
 	calls Qt method QString text()
+
+#### Method toggle()
+	[slot] inherited from QAbstractButton
+	calls Qt method void toggle()
+
+#### Method toggled(Bool $checked)
+	[signal] inherited from QAbstractButton
+	calls Qt method void toggled(bool checked)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
+
+#### Method update(Int $x, Int $y, Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method width( --> Int)
+	inherited from QWidget
+	calls Qt method int width()
+
+
+Class QRadioButton
+------------------
+	imported by
+		use Qt::QtWidgets::QRadioButton;
+
+	inherits QAbstractButton
+
+
+
+
+#### Method activateWindow()
+	inherited from QWidget
+	calls Qt method void activateWindow()
+
+#### Method click()
+	[slot] inherited from QAbstractButton
+	calls Qt method void click()
+
+#### Method clicked(Bool $checked = False)
+	[signal] inherited from QAbstractButton
+	calls Qt method void clicked(bool checked = false)
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
+#### Method QRadioButton.new(QWidget $parent = (QWidget) --> QRadioButton))
+	calls Qt method  QRadioButton(QWidget* parent = nullptr)
+
+#### Method QRadioButton.new(Str $text, QWidget $parent = (QWidget) --> QRadioButton))
+	calls Qt method  QRadioButton(const QString& text, QWidget* parent = nullptr)
+
+#### Method enterEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void enterEvent(QEvent* event)
+
+#### Method font( --> QFont)
+	inherited from QWidget
+	calls Qt method QFont & font()
+
+#### Method height( --> Int)
+	inherited from QWidget
+	calls Qt method int height()
+
+#### Method isActiveWindow( --> Bool)
+	inherited from QWidget
+	calls Qt method bool isActiveWindow()
+
+#### Method isCheckable( --> Bool)
+	inherited from QAbstractButton
+	calls Qt method bool isCheckable()
+
+#### Method isChecked( --> Bool)
+	inherited from QAbstractButton
+	calls Qt method bool isChecked()
+
+#### Method isDown( --> Bool)
+	inherited from QAbstractButton
+	calls Qt method bool isDown()
+
+#### Method leaveEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
+
+#### Method mouseMoveEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+
+#### Method mousePressEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mousePressEvent(QMouseEvent* event)
+
+#### Method mouseReleaseEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method paintEvent(QPaintEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void paintEvent(QPaintEvent* event)
+
+#### Method pressed()
+	[signal] inherited from QAbstractButton
+	calls Qt method void pressed()
+
+#### Method released()
+	[signal] inherited from QAbstractButton
+	calls Qt method void released()
+
+#### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
+	inherited from QWidget
+	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
+
+#### Method resizeEvent(QResizeEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method setAutoExclusive(Bool $arg1)
+	inherited from QAbstractButton
+	calls Qt method void setAutoExclusive(bool arg1)
+
+#### Method setCheckable(Bool $arg1)
+	inherited from QAbstractButton
+	calls Qt method void setCheckable(bool arg1)
+
+#### Method setChecked(Bool $arg1)
+	[slot] inherited from QAbstractButton
+	calls Qt method void setChecked(bool arg1)
+
+#### Method setDisabled(Bool $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setDisabled(bool arg1)
+
+#### Method setDown(Bool $arg1)
+	inherited from QAbstractButton
+	calls Qt method void setDown(bool arg1)
+
+#### Method setFixedHeight(Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedHeight(int h)
+
+#### Method setFixedSize(Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedSize(int w, int h)
+
+#### Method setFixedWidth(Int $w)
+	inherited from QWidget
+	calls Qt method void setFixedWidth(int w)
+
+#### Method setFocus()
+	[slot] inherited from QWidget
+	calls Qt method void setFocus()
+
+#### Method setFocus(Qt::FocusReason $reason)
+	inherited from QWidget
+	calls Qt method void setFocus(Qt::FocusReason reason)
+
+#### Method setFocusPolicy(Qt::FocusPolicy $policy)
+	inherited from QWidget
+	calls Qt method void setFocusPolicy(Qt::FocusPolicy policy)
+
+#### Method setFont(QFont $arg1)
+	inherited from QWidget
+	calls Qt method void setFont(const QFont& arg1)
+
+#### Method setLayout(QLayout $arg1)
+	inherited from QWidget
+	calls Qt method void setLayout(QLayout* arg1)
+
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
+#### Method setMinimumSize(Int $minw, Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
+
+#### Method setText(Str $text)
+	inherited from QAbstractButton
+	calls Qt method void setText(const QString& text)
+
+#### Method setToolTip(Str $arg1)
+	inherited from QWidget
+	calls Qt method void setToolTip(const QString& arg1)
+
+#### Method setWindowTitle(Str $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setWindowTitle(const QString& arg1)
+
+#### Method show()
+	[slot] inherited from QWidget
+	calls Qt method void show()
+
+#### Method text( --> Str)
+	inherited from QAbstractButton
+	calls Qt method QString text()
+
+#### Method toggle()
+	[slot] inherited from QAbstractButton
+	calls Qt method void toggle()
+
+#### Method toggled(Bool $checked)
+	[signal] inherited from QAbstractButton
+	calls Qt method void toggled(bool checked)
 
 #### Method update()
 	[slot] inherited from QWidget
@@ -1926,6 +3940,300 @@ Class QSize
 	calls Qt method int width()
 
 
+Class QSlider
+-------------
+	imported by
+		use Qt::QtWidgets::QSlider;
+
+	inherits QAbstractSlider
+
+
+
+    enum TickPosition 
+
+#### Method activateWindow()
+	inherited from QWidget
+	calls Qt method void activateWindow()
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
+
+#### Method QSlider.new(QWidget $parent = (QWidget) --> QSlider))
+	calls Qt method  QSlider(QWidget* parent = nullptr)
+
+#### Method QSlider.new(Qt::Orientation $orientation, QWidget $parent = (QWidget) --> QSlider))
+	calls Qt method  QSlider(Qt::Orientation orientation, QWidget* parent = nullptr)
+
+#### Method enterEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void enterEvent(QEvent* event)
+
+#### Method font( --> QFont)
+	inherited from QWidget
+	calls Qt method QFont & font()
+
+#### Method hasTracking( --> Bool)
+	inherited from QAbstractSlider
+	calls Qt method bool hasTracking()
+
+#### Method height( --> Int)
+	inherited from QWidget
+	calls Qt method int height()
+
+#### Method invertedAppearance( --> Bool)
+	inherited from QAbstractSlider
+	calls Qt method bool invertedAppearance()
+
+#### Method invertedControls( --> Bool)
+	inherited from QAbstractSlider
+	calls Qt method bool invertedControls()
+
+#### Method isActiveWindow( --> Bool)
+	inherited from QWidget
+	calls Qt method bool isActiveWindow()
+
+#### Method leaveEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
+
+#### Method maximum( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int maximum()
+
+#### Method minimum( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int minimum()
+
+#### Method mouseMoveEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+
+#### Method mousePressEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mousePressEvent(QMouseEvent* event)
+
+#### Method mouseReleaseEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method orientation( --> Qt::Orientation)
+	inherited from QAbstractSlider
+	calls Qt method Qt::Orientation orientation()
+
+#### Method pageStep( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int pageStep()
+
+#### Method paintEvent(QPaintEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void paintEvent(QPaintEvent* event)
+
+#### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
+	inherited from QWidget
+	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
+
+#### Method resizeEvent(QResizeEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method setDisabled(Bool $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setDisabled(bool arg1)
+
+#### Method setFixedHeight(Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedHeight(int h)
+
+#### Method setFixedSize(Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedSize(int w, int h)
+
+#### Method setFixedWidth(Int $w)
+	inherited from QWidget
+	calls Qt method void setFixedWidth(int w)
+
+#### Method setFocus()
+	[slot] inherited from QWidget
+	calls Qt method void setFocus()
+
+#### Method setFocus(Qt::FocusReason $reason)
+	inherited from QWidget
+	calls Qt method void setFocus(Qt::FocusReason reason)
+
+#### Method setFocusPolicy(Qt::FocusPolicy $policy)
+	inherited from QWidget
+	calls Qt method void setFocusPolicy(Qt::FocusPolicy policy)
+
+#### Method setFont(QFont $arg1)
+	inherited from QWidget
+	calls Qt method void setFont(const QFont& arg1)
+
+#### Method setInvertedAppearance(Bool $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setInvertedAppearance(bool arg1)
+
+#### Method setInvertedControls(Bool $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setInvertedControls(bool arg1)
+
+#### Method setLayout(QLayout $arg1)
+	inherited from QWidget
+	calls Qt method void setLayout(QLayout* arg1)
+
+#### Method setMaximum(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setMaximum(int arg1)
+
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimum(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setMinimum(int arg1)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
+#### Method setMinimumSize(Int $minw, Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
+
+#### Method setOrientation(Qt::Orientation $arg1)
+	[slot] inherited from QAbstractSlider
+	calls Qt method void setOrientation(Qt::Orientation arg1)
+
+#### Method setPageStep(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setPageStep(int arg1)
+
+#### Method setRange(Int $min, Int $max)
+	[slot] inherited from QAbstractSlider
+	calls Qt method void setRange(int min, int max)
+
+#### Method setSingleStep(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setSingleStep(int arg1)
+
+#### Method setSliderDown(Bool $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setSliderDown(bool arg1)
+
+#### Method setSliderPosition(Int $arg1)
+	inherited from QAbstractSlider
+	calls Qt method void setSliderPosition(int arg1)
+
+#### Method setTickInterval(Int $ti)
+	calls Qt method void setTickInterval(int ti)
+
+#### Method setTickPosition(QSlider::TickPosition $position)
+	calls Qt method void setTickPosition(TickPosition position)
+
+#### Method setToolTip(Str $arg1)
+	inherited from QWidget
+	calls Qt method void setToolTip(const QString& arg1)
+
+#### Method setTracking(Bool $enable)
+	inherited from QAbstractSlider
+	calls Qt method void setTracking(bool enable)
+
+#### Method setValue(Int $arg1)
+	[slot] inherited from QAbstractSlider
+	calls Qt method void setValue(int arg1)
+
+#### Method setWindowTitle(Str $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setWindowTitle(const QString& arg1)
+
+#### Method show()
+	[slot] inherited from QWidget
+	calls Qt method void show()
+
+#### Method singleStep( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int singleStep()
+
+#### Method sliderMoved(Int $position)
+	[signal] inherited from QAbstractSlider
+	calls Qt method void sliderMoved(int position)
+
+#### Method sliderPosition( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int sliderPosition()
+
+#### Method sliderPressed()
+	[signal] inherited from QAbstractSlider
+	calls Qt method void sliderPressed()
+
+#### Method sliderReleased()
+	[signal] inherited from QAbstractSlider
+	calls Qt method void sliderReleased()
+
+#### Method tickInterval( --> Int)
+	calls Qt method int tickInterval()
+
+#### Method tickPosition( --> QSlider::TickPosition)
+	calls Qt method TickPosition tickPosition()
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
+
+#### Method update(Int $x, Int $y, Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method value( --> Int)
+	inherited from QAbstractSlider
+	calls Qt method int value()
+
+#### Method valueChanged(Int $value)
+	[signal] inherited from QAbstractSlider
+	calls Qt method void valueChanged(int value)
+
+#### Method width( --> Int)
+	inherited from QWidget
+	calls Qt method int width()
+
+
 Class QTextEdit
 ---------------
 	imported by
@@ -1939,6 +4247,10 @@ Class QTextEdit
 #### Method activateWindow()
 	inherited from QWidget
 	calls Qt method void activateWindow()
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	calls Qt method void closeEvent(QCloseEvent* event)
 
 #### Method QTextEdit.new(QWidget $parent = (QWidget) --> QTextEdit))
 	calls Qt method  QTextEdit(QWidget* parent = nullptr)
@@ -1962,6 +4274,30 @@ Class QTextEdit
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
@@ -2023,9 +4359,29 @@ Class QTextEdit
 	inherited from QWidget
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	inherited from QWidget
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setPlainText(Str $text)
 	[slot] 
@@ -2133,12 +4489,16 @@ Class QWidget
 	inherits QObject
 	inherits QPaintDevice
 
-	inherited by QAbstractButton, QDialog, QFrame, QLineEdit, QMenu
+	inherited by QAbstractButton, QAbstractSlider, QDialog, QFrame, QGroupBox, QLineEdit, QMenu
 
     enum RenderFlag 
 
 #### Method activateWindow()
 	calls Qt method void activateWindow()
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] 
+	calls Qt method void closeEvent(QCloseEvent* event)
 
 #### Method QWidget.new(QWidget $parent = (QWidget), Int $f = Qt::WindowFlags() --> QWidget))
 	calls Qt method  QWidget(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags())
@@ -2159,6 +4519,24 @@ Class QWidget
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] 
 	calls Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] 
@@ -2212,8 +4590,23 @@ Class QWidget
 #### Method setLayout(QLayout $arg1)
 	calls Qt method void setLayout(QLayout* arg1)
 
+#### Method setMaximumHeight(Int $maxh)
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	calls Qt method void setMinimumHeight(int minh)
+
 #### Method setMinimumSize(Int $minw, Int $minh)
 	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	calls Qt method void setMinimumWidth(int minw)
 
 #### Method setToolTip(Str $arg1)
 	calls Qt method void setToolTip(const QString& arg1)
@@ -2247,12 +4640,14 @@ Class Qt
 
     enum AlignmentFlag 
     enum BrushStyle 
+    enum CheckState 
     enum FocusPolicy 
     enum FocusReason 
     enum GlobalColor 
     enum KeyboardModifier 
     enum MouseButton 
     enum MouseEventSource 
+    enum Orientation 
     enum PenStyle 
     enum TextFormat 
     enum WindowType 

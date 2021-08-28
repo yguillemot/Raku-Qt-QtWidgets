@@ -24,6 +24,7 @@ A Raku module and native wrapper providing an interface to the Qt5 GUI.
     - 5.3 2deg_eqn_solver.raku  
     - 5.4 sketch_board.raku  
     - 5.5 editor.raku  
+    - 5.6 sliders.raku  
 - 6\. TOOL  
 - 7\. PREREQUISITES  
 - 8\. INSTALLATION  
@@ -323,6 +324,12 @@ using QFileDialog methods.
 A tiny text editor build with QTextEdit
 
 `raku examples/editor.raku`
+
+### 5.6 sliders.raku
+
+A demonstration of QSlider, QDial, QCheckBox and QRadioButton widgets.
+
+`raku examples/sliders.raku`
 
 
 ## 6. TOOL

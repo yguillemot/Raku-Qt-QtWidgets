@@ -1,4 +1,9 @@
 
+v0.0.5  2021/28/08
+    * Fix a bug in event handlers
+    * Add QSlider, QDial, QCheckBox and QRadioButton classes
+    * Add sliders.raku example
+    
 v0.0.4  2021/08/16
     * Fix corrupt strings returned by methods from the Qt API
     * Fix signal/slot to/from Qt with non default arguments
