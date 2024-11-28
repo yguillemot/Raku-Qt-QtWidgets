@@ -1,0 +1,43 @@
+
+use Test;
+plan 10;
+
+use Qt::QtWidgets::QApplication;
+use Qt::QtWidgets::QFont;
+
+my $app = QApplication.new;
+
+my $font1 = QFont.new;
+$font1.setPointSize(20);
+ok $font1.pointSize == 20, "Font size set to a first value";
+
+$font1.setPointSize(33);
+ok $font1.pointSize == 33, "Font size set to another value";
+
+$font1.setItalic(False);
+ok !$font1.italic, "Font not set to italic";
+
+$font1.setItalic(True);
+ok $font1.italic, "Font set to italic";
+
+$font1.setItalic(False);
+ok !$font1.italic, "Font no nore set to italic";
+
+$font1.setBold(False);
+ok !$font1.bold, "Font not set to bold";
+
+$font1.setBold(True);
+ok $font1.bold, "Font set to bold";
+
+$font1.setBold(False);
+ok !$font1.bold, "Font no nore set to bold";
+
+$font1.setStretch(42);
+ok $font1.stretch == 42, "Font stretch set to a first value";
+
+$font1.setStretch(100);
+ok $font1.stretch == 100, "Font stretch set to another value";
+
+
+done-testing;
+

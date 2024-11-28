@@ -1,0 +1,96 @@
+ 
+# Basic tests
+ 
+use v6;
+use Test;
+ 
+if ?%*ENV<AUTHOR_TESTING> {
+    require Test::META <&meta-ok>;
+    meta-ok;
+}     
+ 
+use-ok "Qt::QtWidgets";
+ 
+use-ok "Qt::QtWidgets::QAbstractButton";
+use-ok "Qt::QtWidgets::QAbstractGraphicsShapeItem";
+use-ok "Qt::QtWidgets::QAbstractScrollArea";
+use-ok "Qt::QtWidgets::QAbstractSlider";
+use-ok "Qt::QtWidgets::QAction";
+use-ok "Qt::QtWidgets::QActionGroup";
+use-ok "Qt::QtWidgets::QBoxLayout";
+use-ok "Qt::QtWidgets::QBrush";
+use-ok "Qt::QtWidgets::QCheckBox";
+use-ok "Qt::QtWidgets::QCloseEvent";
+use-ok "Qt::QtWidgets::QColor";
+use-ok "Qt::QtWidgets::QContextMenuEvent";
+use-ok "Qt::QtWidgets::QCoreApplication";
+use-ok "Qt::QtWidgets::QDial";
+use-ok "Qt::QtWidgets::QDialog";
+use-ok "Qt::QtWidgets::QEvent";
+use-ok "Qt::QtWidgets::QFileDialog";
+use-ok "Qt::QtWidgets::QFont";
+use-ok "Qt::QtWidgets::QFrame";
+use-ok "Qt::QtWidgets::QGraphicsEllipseItem";
+use-ok "Qt::QtWidgets::QGraphicsItem";
+use-ok "Qt::QtWidgets::QGraphicsLayoutItem";
+use-ok "Qt::QtWidgets::QGraphicsLineItem";
+use-ok "Qt::QtWidgets::QGraphicsObject";
+use-ok "Qt::QtWidgets::QGraphicsPathItem";
+use-ok "Qt::QtWidgets::QGraphicsPixmapItem";
+use-ok "Qt::QtWidgets::QGraphicsProxyWidget";
+use-ok "Qt::QtWidgets::QGraphicsRectItem";
+use-ok "Qt::QtWidgets::QGraphicsScene";
+use-ok "Qt::QtWidgets::QGraphicsSceneEvent";
+use-ok "Qt::QtWidgets::QGraphicsSceneMouseEvent";
+use-ok "Qt::QtWidgets::QGraphicsSimpleTextItem";
+use-ok "Qt::QtWidgets::QGraphicsTextItem";
+use-ok "Qt::QtWidgets::QGraphicsView";
+use-ok "Qt::QtWidgets::QGraphicsWidget";
+use-ok "Qt::QtWidgets::QGridLayout";
+use-ok "Qt::QtWidgets::QGroupBox";
+use-ok "Qt::QtWidgets::QGuiApplication";
+use-ok "Qt::QtWidgets::QHBoxLayout";
+use-ok "Qt::QtWidgets::QImage";
+use-ok "Qt::QtWidgets::QInputEvent";
+use-ok "Qt::QtWidgets::QKeyEvent";
+use-ok "Qt::QtWidgets::QLabel";
+use-ok "Qt::QtWidgets::QLayout";
+use-ok "Qt::QtWidgets::QLayoutItem";
+use-ok "Qt::QtWidgets::QLineEdit";
+use-ok "Qt::QtWidgets::QLineF";
+use-ok "Qt::QtWidgets::QMainWindow";
+use-ok "Qt::QtWidgets::QMatrix";
+use-ok "Qt::QtWidgets::QMenu";
+use-ok "Qt::QtWidgets::QMenuBar";
+use-ok "Qt::QtWidgets::QMessageBox";
+use-ok "Qt::QtWidgets::QMouseEvent";
+use-ok "Qt::QtWidgets::QPaintDevice";
+use-ok "Qt::QtWidgets::QPaintEvent";
+use-ok "Qt::QtWidgets::QPainter";
+use-ok "Qt::QtWidgets::QPainterPath";
+use-ok "Qt::QtWidgets::QPen";
+use-ok "Qt::QtWidgets::QPixmap";
+use-ok "Qt::QtWidgets::QPoint";
+use-ok "Qt::QtWidgets::QPointF";
+use-ok "Qt::QtWidgets::QPushButton";
+use-ok "Qt::QtWidgets::QRadioButton";
+use-ok "Qt::QtWidgets::QRect";
+use-ok "Qt::QtWidgets::QRectF";
+use-ok "Qt::QtWidgets::QRegion";
+use-ok "Qt::QtWidgets::QResizeEvent";
+use-ok "Qt::QtWidgets::QSize";
+use-ok "Qt::QtWidgets::QSizeF";
+use-ok "Qt::QtWidgets::QSizePolicy";
+use-ok "Qt::QtWidgets::QSlider";
+use-ok "Qt::QtWidgets::QStatusBar";
+use-ok "Qt::QtWidgets::QTextEdit";
+use-ok "Qt::QtWidgets::QTimer";
+use-ok "Qt::QtWidgets::QTimerEvent";
+use-ok "Qt::QtWidgets::QToolBar";
+use-ok "Qt::QtWidgets::QToolButton";
+use-ok "Qt::QtWidgets::QVBoxLayout";
+use-ok "Qt::QtWidgets::QWidget";
+use-ok "Qt::QtWidgets::Qt";
+
+done-testing;
+

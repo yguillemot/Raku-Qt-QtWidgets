@@ -1,3 +1,10 @@
+v0.0.6  2024/11/28
+    * Move to zef ecosystem
+    * Add new Qt classes (QGridLayout, QMainWindow, some QGraphics classes ...)
+    * Add QGridLayout class
+    * Add some new examples
+    * Fix the deprecated use of method Str in class Distribution::Resource
+    * Fix the definition of a QtSignal in a forward declared class
 
 v0.0.5  2021/28/08
     * Fix a bug in event handlers

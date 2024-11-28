@@ -16,15 +16,19 @@ A Raku module and native wrapper providing an interface to the Qt5 GUI.
     - 4.5 Signals and slots  
     - 4.6 Connect  
     - 4.7 Disconnect  
-    - 4.8 Emit a QtSignal  
-    - 4.9 Subclassing a Qt object  
+    - 4.8 Emit a QtSignal__
+    - 4.9 Subclassing a Qt object__
 - 5\. EXAMPLES  
     - 5.1 clock_fixedSize.raku  
     - 5.2 clock_resizable.raku  
-    - 5.3 2deg_eqn_solver.raku  
+    - 5.3 2deg_eqn_solver.raku__
     - 5.4 sketch_board.raku  
     - 5.5 editor.raku  
-    - 5.6 sliders.raku  
+    - 5.6 sliders.raku
+    - 5.7 sudoku_grid.raku
+    - 5.8 QMainWindow examples__
+    - 5.9 show_mouse_events.raku__
+    - 5.10 moving_objects.raku__
 - 6\. TOOL  
 - 7\. PREREQUISITES  
 - 8\. INSTALLATION  
@@ -179,7 +183,6 @@ The names of signal and slot are passed to connect in strings.
 The signal and slot must have compatible signatures.
 
 > TODO: explanations needed
-    
 
 Example:
 
@@ -290,9 +293,9 @@ my $label = MyLabel.new(txt => "text on the label");
 ```
 
 
-
-
 ## 5. EXAMPLES
+
+They are available in the **examples** directory of the distribution.
 
 ### 5.1 clock_fixedSize.raku
 
@@ -330,6 +333,35 @@ A tiny text editor build with QTextEdit
 A demonstration of QSlider, QDial, QCheckBox and QRadioButton widgets.
 
 `raku examples/sliders.raku`
+
+### 5.7 sudoku_grids.raku
+
+A QGrid layout usage example.
+
+`raku examples/sudoku_grid.raku`
+
+### 5.8 QMainWindow examples
+
+editor_mv.raku and sketch_board_mw.raku are modifications of the previous
+editor and sketch_board examples which show how to use main window menus
+and status bar.
+
+`raku examples/editor_mw.raku`
+
+`raku examples/sketch_board_mw.raku`
+
+### 5.9 show_mouse_events.raku
+
+A small example which shows how to read mouse events.
+
+`raku examples/show_mouse_events.raku`
+
+### 5.10 moving_objects.raku
+
+An example showing how to create QGraphics objects and move them on
+a QGraphicsScene.
+
+`raku examples/moving_objects.raku`
 
 
 ## 6. TOOL
@@ -389,14 +421,18 @@ installed by **zef** along with the **Qt::QtWidgets** module.
  * Qt5 development package
  * C++ compiler
  
-This module has been tested with **Qt 5.9.4** and **gcc 5.5.0**
-and with **Qt 5.15.2** and **gcc 10.3.0**.  
+This module has been tested with **Qt 5.15.7** and **gcc 12.3.0**.
 Many other versions should be usable as well.
 
 
 ## 8. INSTALLATION
 
 `zef install Qt::QtWidgets`
+
+Warning: Given the many classes and methods provided, the
+installation may need several minutes.
+
+Please, be patient.
 
 
 ## 9. SOURCE CODE
@@ -418,12 +454,12 @@ The building tools are available here:
 ## 10. AUTHOR
 
 Yves Guillemot
-\<<yc.guillemot@wanadoo.fr>\>
+<<yc.guillemot@wanadoo.fr>\>
 
 
 ## 11. COPYRIGHT AND LICENSE
 
-Copyright (C) 2021 Yves Guillemot
+Copyright (C) 2021-2024 Yves Guillemot
 
 This software is free: you can redistribute and/or modify it under
 the GNU General Public License as published by the Free Software
