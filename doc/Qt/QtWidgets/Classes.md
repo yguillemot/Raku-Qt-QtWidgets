@@ -26,7 +26,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -34,7 +34,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -42,7 +42,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -54,7 +54,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -75,7 +75,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -103,23 +103,23 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method nextCheckState()
 	[virtual] [protected] 
-	calls Qt method void nextCheckState()
+	called as Qt method void nextCheckState()
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method pressed()
 	[signal] 
@@ -143,7 +143,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setAutoExclusive(Bool $arg1)
 	calls Qt method void setAutoExclusive(bool arg1)
@@ -240,13 +240,13 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	[signal] 
 	calls Qt method void toggled(bool checked)
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -274,7 +274,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method contains(QPointF $point --> Bool)
 	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
 	inherited from QGraphicsItem
@@ -368,7 +368,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -376,7 +376,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -404,7 +404,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -416,7 +416,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -428,7 +428,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method lineWidth( --> Int)
 	inherited from QFrame
@@ -464,35 +464,35 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
@@ -590,13 +590,13 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	[override] inherited from QFrame
 	calls Qt method QSize sizeHint()
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -621,7 +621,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -629,7 +629,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -637,7 +637,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -652,7 +652,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -670,7 +670,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -704,15 +704,15 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method orientation( --> Qt::Orientation)
 	calls Qt method Qt::Orientation orientation()
@@ -722,23 +722,23 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
@@ -865,13 +865,13 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	[signal] 
 	calls Qt method void sliderReleased()
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method value( --> Int)
 	calls Qt method int value()
@@ -982,11 +982,11 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 #### Method setStretch(Int $index, Int $stretch)
 	calls Qt method void setStretch(int index, int stretch)
 
-#### Method setStretchFactor(QWidget $w, Int $stretch --> Bool)
-	calls Qt method bool setStretchFactor(QWidget* w, int stretch)
-
 #### Method setStretchFactor(QLayout $l, Int $stretch --> Bool)
 	calls Qt method bool setStretchFactor(QLayout* l, int stretch)
+
+#### Method setStretchFactor(QWidget $w, Int $stretch --> Bool)
+	calls Qt method bool setStretchFactor(QWidget* w, int stretch)
 
 #### Method spacing( --> Int)
 	calls Qt method int spacing()
@@ -1007,11 +1007,11 @@ Class QBrush
 #### Method QBrush.new( --> QBrush))
 	calls Qt method  QBrush()
 
-#### Method QBrush.new(Qt::BrushStyle $bs --> QBrush))
-	calls Qt method  QBrush(Qt::BrushStyle bs)
-
 #### Method QBrush.new(QColor $color, Qt::BrushStyle $bs = Qt::SolidPattern --> QBrush))
 	calls Qt method  QBrush(const QColor& color, Qt::BrushStyle bs = Qt::SolidPattern)
+
+#### Method QBrush.new(Qt::BrushStyle $bs --> QBrush))
+	calls Qt method  QBrush(Qt::BrushStyle bs)
 
 #### Method setColor(QColor $color)
 	calls Qt method void setColor(const QColor& color)
@@ -1047,7 +1047,7 @@ Class QCheckBox
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -1061,7 +1061,7 @@ Class QCheckBox
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -1069,7 +1069,7 @@ Class QCheckBox
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -1081,7 +1081,7 @@ Class QCheckBox
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -1108,7 +1108,7 @@ Class QCheckBox
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -1136,23 +1136,23 @@ Class QCheckBox
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method nextCheckState()
 	[virtual] [protected] inherited from QAbstractButton
-	calls Qt method void nextCheckState()
+	called as Qt method void nextCheckState()
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method pressed()
 	[signal] inherited from QAbstractButton
@@ -1166,17 +1166,17 @@ Class QCheckBox
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setAutoExclusive(Bool $arg1)
 	inherited from QAbstractButton
@@ -1349,11 +1349,11 @@ Class QColor
 #### Method blue( --> Int)
 	calls Qt method int blue()
 
-#### Method QColor.new(Qt::GlobalColor $color --> QColor))
-	calls Qt method  QColor(Qt::GlobalColor color)
-
 #### Method QColor.new(Int $r, Int $g, Int $b, Int $a = 255 --> QColor))
 	calls Qt method  QColor(int r, int g, int b, int a = 255)
+
+#### Method QColor.new(Qt::GlobalColor $color --> QColor))
+	calls Qt method  QColor(Qt::GlobalColor color)
 
 #### Method green( --> Int)
 	calls Qt method int green()
@@ -1432,7 +1432,7 @@ Class QDial
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -1443,7 +1443,7 @@ Class QDial
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -1451,7 +1451,7 @@ Class QDial
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -1467,7 +1467,7 @@ Class QDial
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -1487,7 +1487,7 @@ Class QDial
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -1523,15 +1523,15 @@ Class QDial
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method notchSize( --> Int)
 	calls Qt method int notchSize()
@@ -1552,7 +1552,7 @@ Class QDial
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
@@ -1568,7 +1568,7 @@ Class QDial
 
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
@@ -1717,13 +1717,13 @@ Class QDial
 	[signal] inherited from QAbstractSlider
 	calls Qt method void sliderReleased()
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method value( --> Int)
 	inherited from QAbstractSlider
@@ -1751,27 +1751,51 @@ Class QDialog
 	inherited by QFileDialog, QMessageBox
 
 
-WARNING: This class has no constructor. So it can't be used to create an object explicitely.
+#### Method accept()
+	[slot] [virtual] 
+	called as Qt method void accept()
+
+#### Method accepted()
+	[signal] 
+	calls Qt method void accepted()
 
 #### Method activateWindow()
 	inherited from QWidget
 	calls Qt method void activateWindow()
 
-#### Method closeEvent(QCloseEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+#### Method adjustPosition(QWidget $arg1)
+	[protected] 
+	calls Qt method void adjustPosition(QWidget* arg1)
+
+#### Method closeEvent(QCloseEvent $arg1)
+	[virtual] [protected] [override] 
+	called as Qt method void closeEvent(QCloseEvent* arg1)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
 	calls Qt method QRect contentsRect()
 
+#### Method QDialog.new(QWidget $parent = (QWidget), Int $f = Qt::WindowFlags() --> QDialog))
+	calls Qt method  QDialog(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags())
+
+#### Method done(Int $arg1)
+	[slot] [virtual] 
+	called as Qt method void done(int arg1)
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method exec( --> Int)
 	[slot] [virtual] 
-	calls Qt method int exec()
+	called as Qt method int exec()
+
+#### Method extension( --> QWidget)
+	calls Qt method QWidget * extension()
+
+#### Method finished(Int $result)
+	[signal] 
+	calls Qt method void finished(int result)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -1779,7 +1803,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -1791,7 +1815,293 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
+
+#### Method hide()
+	[slot] inherited from QWidget
+	calls Qt method void hide()
+
+#### Method isActiveWindow( --> Bool)
+	inherited from QWidget
+	calls Qt method bool isActiveWindow()
+
+#### Method isSizeGripEnabled( --> Bool)
+	calls Qt method bool isSizeGripEnabled()
+
+#### Method keyPressEvent(QKeyEvent $arg1)
+	[protected] [override] 
+	calls Qt method void keyPressEvent(QKeyEvent* arg1)
+
+#### Method leaveEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	called as Qt method void leaveEvent(QEvent* event)
+
+#### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapFromGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromGlobal(const QPoint& arg1)
+
+#### Method mapFromParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapFromParent(const QPoint& arg1)
+
+#### Method mapTo(QWidget $arg1, QPoint $arg2 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapTo(const QWidget* arg1, const QPoint& arg2)
+
+#### Method mapToGlobal(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToGlobal(const QPoint& arg1)
+
+#### Method mapToParent(QPoint $arg1 --> QPoint)
+	inherited from QWidget
+	calls Qt method QPoint mapToParent(const QPoint& arg1)
+
+#### Method minimumSizeHint( --> QSize)
+	[override] 
+	calls Qt method QSize minimumSizeHint()
+
+#### Method mouseMoveEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
+
+#### Method mousePressEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	called as Qt method void mousePressEvent(QMouseEvent* event)
+
+#### Method mouseReleaseEvent(QMouseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method open()
+	[slot] [virtual] 
+	called as Qt method void open()
+
+#### Method orientation( --> Qt::Orientation)
+	calls Qt method Qt::Orientation orientation()
+
+#### Method paintEvent(QPaintEvent $event)
+	[virtual] [protected] inherited from QWidget
+	called as Qt method void paintEvent(QPaintEvent* event)
+
+#### Method reject()
+	[slot] [virtual] 
+	called as Qt method void reject()
+
+#### Method rejected()
+	[signal] 
+	calls Qt method void rejected()
+
+#### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
+	inherited from QWidget
+	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
+
+#### Method repaint(Int $x, Int $y, Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void repaint(int x, int y, int w, int h)
+
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
+#### Method resizeEvent(QResizeEvent $arg1)
+	[virtual] [protected] [override] 
+	called as Qt method void resizeEvent(QResizeEvent* arg1)
+
+#### Method result( --> Int)
+	calls Qt method int result()
+
+#### Method setDisabled(Bool $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setDisabled(bool arg1)
+
+#### Method setExtension(QWidget $extension)
+	calls Qt method void setExtension(QWidget* extension)
+
+#### Method setFixedHeight(Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedHeight(int h)
+
+#### Method setFixedSize(Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void setFixedSize(int w, int h)
+
+#### Method setFixedWidth(Int $w)
+	inherited from QWidget
+	calls Qt method void setFixedWidth(int w)
+
+#### Method setFont(QFont $arg1)
+	inherited from QWidget
+	calls Qt method void setFont(const QFont& arg1)
+
+#### Method setLayout(QLayout $arg1)
+	inherited from QWidget
+	calls Qt method void setLayout(QLayout* arg1)
+
+#### Method setMaximumHeight(Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumHeight(int maxh)
+
+#### Method setMaximumSize(Int $maxw, Int $maxh)
+	inherited from QWidget
+	calls Qt method void setMaximumSize(int maxw, int maxh)
+
+#### Method setMaximumWidth(Int $maxw)
+	inherited from QWidget
+	calls Qt method void setMaximumWidth(int maxw)
+
+#### Method setMinimumHeight(Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumHeight(int minh)
+
+#### Method setMinimumSize(Int $minw, Int $minh)
+	inherited from QWidget
+	calls Qt method void setMinimumSize(int minw, int minh)
+
+#### Method setMinimumWidth(Int $minw)
+	inherited from QWidget
+	calls Qt method void setMinimumWidth(int minw)
+
+#### Method setModal(Bool $modal)
+	calls Qt method void setModal(bool modal)
+
+#### Method setMouseTracking(Bool $enable)
+	inherited from QWidget
+	calls Qt method void setMouseTracking(bool enable)
+
+#### Method setOrientation(Qt::Orientation $orientation)
+	calls Qt method void setOrientation(Qt::Orientation orientation)
+
+#### Method setResult(Int $r)
+	calls Qt method void setResult(int r)
+
+#### Method setSizeGripEnabled(Bool $arg1)
+	calls Qt method void setSizeGripEnabled(bool arg1)
+
+#### Method setSizePolicy(QSizePolicy::Policy $horizontal, QSizePolicy::Policy $vertical)
+	inherited from QWidget
+	calls Qt method void setSizePolicy(QSizePolicy::Policy horizontal, QSizePolicy::Policy vertical)
+
+#### Method setToolTip(Str $arg1)
+	inherited from QWidget
+	calls Qt method void setToolTip(const QString& arg1)
+
+#### Method setVisible(Bool $visible)
+	[override] 
+	calls Qt method void setVisible(bool visible)
+
+#### Method setWindowTitle(Str $arg1)
+	[slot] inherited from QWidget
+	calls Qt method void setWindowTitle(const QString& arg1)
+
+#### Method show()
+	[slot] inherited from QWidget
+	calls Qt method void show()
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
+
+#### Method update(Int $x, Int $y, Int $w, Int $h)
+	inherited from QWidget
+	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method width( --> Int)
+	inherited from QWidget
+	calls Qt method int width()
+
+
+Class QDialogButtonBox
+----------------------
+	imported by
+		use Qt::QtWidgets::QDialogButtonBox;
+
+	inherits QWidget
+
+
+
+    enum ButtonRole 
+    enum StandardButton 
+
+#### Method accepted()
+	[signal] 
+	calls Qt method void accepted()
+
+#### Method activateWindow()
+	inherited from QWidget
+	calls Qt method void activateWindow()
+
+#### Method addButton(QAbstractButton $button, QDialogButtonBox::ButtonRole $role)
+	calls Qt method void addButton(QAbstractButton* button, ButtonRole role)
+
+#### Method addButton(QDialogButtonBox::StandardButton $button --> QPushButton)
+	calls Qt method QPushButton * addButton(StandardButton button)
+
+#### Method addButton(Str $text, QDialogButtonBox::ButtonRole $role --> QPushButton)
+	calls Qt method QPushButton * addButton(const QString& text, ButtonRole role)
+
+#### Method button(QDialogButtonBox::StandardButton $which --> QPushButton)
+	calls Qt method QPushButton * button(StandardButton which)
+
+#### Method buttonRole(QAbstractButton $button --> QDialogButtonBox::ButtonRole)
+	calls Qt method ButtonRole buttonRole(QAbstractButton* button)
+
+#### Method centerButtons( --> Bool)
+	calls Qt method bool centerButtons()
+
+#### Method clear()
+	calls Qt method void clear()
+
+#### Method clicked(QAbstractButton $button)
+	[signal] 
+	calls Qt method void clicked(QAbstractButton* button)
+
+#### Method closeEvent(QCloseEvent $event)
+	[virtual] [protected] inherited from QWidget
+	called as Qt method void closeEvent(QCloseEvent* event)
+
+#### Method contentsRect( --> QRect)
+	inherited from QWidget
+	calls Qt method QRect contentsRect()
+
+#### Method QDialogButtonBox.new(Qt::Orientation $orientation, QWidget $parent = (QWidget) --> QDialogButtonBox))
+	calls Qt method  QDialogButtonBox(Qt::Orientation orientation, QWidget* parent = nullptr)
+
+#### Method QDialogButtonBox.new(Int $buttons, QWidget $parent = (QWidget) --> QDialogButtonBox))
+	calls Qt method  QDialogButtonBox(StandardButtons buttons, QWidget* parent = nullptr)
+
+#### Method QDialogButtonBox.new(Int $buttons, Qt::Orientation $orientation, QWidget $parent = (QWidget) --> QDialogButtonBox))
+	calls Qt method  QDialogButtonBox(StandardButtons buttons, Qt::Orientation orientation, QWidget* parent = nullptr)
+
+#### Method QDialogButtonBox.new(QWidget $parent = (QWidget) --> QDialogButtonBox))
+	calls Qt method  QDialogButtonBox(QWidget* parent = nullptr)
+
+#### Method enterEvent(QEvent $event)
+	[virtual] [protected] inherited from QWidget
+	called as Qt method void enterEvent(QEvent* event)
+
+#### Method font( --> QFont)
+	inherited from QWidget
+	calls Qt method QFont & font()
+
+#### Method hasHeightForWidth( --> Bool)
+	[virtual] inherited from QWidget
+	called as Qt method bool hasHeightForWidth()
+
+#### Method hasMouseTracking( --> Bool)
+	inherited from QWidget
+	calls Qt method bool hasMouseTracking()
+
+#### Method height( --> Int)
+	inherited from QWidget
+	calls Qt method int height()
+
+#### Method heightForWidth(Int $arg1 --> Int)
+	[virtual] inherited from QWidget
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -1803,7 +2113,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -1831,35 +2141,48 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method orientation( --> Qt::Orientation)
+	calls Qt method Qt::Orientation orientation()
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
+
+#### Method rejected()
+	[signal] 
+	calls Qt method void rejected()
+
+#### Method removeButton(QAbstractButton $button)
+	calls Qt method void removeButton(QAbstractButton* button)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method setCenterButtons(Bool $center)
+	calls Qt method void setCenterButtons(bool center)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
@@ -1913,9 +2236,15 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	inherited from QWidget
 	calls Qt method void setMouseTracking(bool enable)
 
+#### Method setOrientation(Qt::Orientation $orientation)
+	calls Qt method void setOrientation(Qt::Orientation orientation)
+
 #### Method setSizePolicy(QSizePolicy::Policy $horizontal, QSizePolicy::Policy $vertical)
 	inherited from QWidget
 	calls Qt method void setSizePolicy(QSizePolicy::Policy horizontal, QSizePolicy::Policy vertical)
+
+#### Method setStandardButtons(Int $buttons)
+	calls Qt method void setStandardButtons(StandardButtons buttons)
 
 #### Method setToolTip(Str $arg1)
 	inherited from QWidget
@@ -1928,6 +2257,9 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 #### Method show()
 	[slot] inherited from QWidget
 	calls Qt method void show()
+
+#### Method standardButton(QAbstractButton $button --> QDialogButtonBox::StandardButton)
+	calls Qt method StandardButton standardButton(QAbstractButton* button)
 
 #### Method update()
 	[slot] inherited from QWidget
@@ -1987,25 +2319,49 @@ Class QFileDialog
 
 WARNING: This class has no constructor. So it can't be used to create an object explicitely.
 
+#### Method accept()
+	[slot] [virtual] inherited from QDialog
+	called as Qt method void accept()
+
+#### Method accepted()
+	[signal] inherited from QDialog
+	calls Qt method void accepted()
+
 #### Method activateWindow()
 	inherited from QWidget
 	calls Qt method void activateWindow()
 
+#### Method adjustPosition(QWidget $arg1)
+	[protected] inherited from QDialog
+	calls Qt method void adjustPosition(QWidget* arg1)
+
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
 	calls Qt method QRect contentsRect()
 
+#### Method done(Int $arg1)
+	[slot] [virtual] inherited from QDialog
+	called as Qt method void done(int arg1)
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method exec( --> Int)
 	[slot] [virtual] inherited from QDialog
-	calls Qt method int exec()
+	called as Qt method int exec()
+
+#### Method extension( --> QWidget)
+	inherited from QDialog
+	calls Qt method QWidget * extension()
+
+#### Method finished(Int $result)
+	[signal] inherited from QDialog
+	calls Qt method void finished(int result)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -2021,7 +2377,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -2033,7 +2389,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -2043,9 +2399,17 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	inherited from QWidget
 	calls Qt method bool isActiveWindow()
 
+#### Method isSizeGripEnabled( --> Bool)
+	inherited from QDialog
+	calls Qt method bool isSizeGripEnabled()
+
+#### Method keyPressEvent(QKeyEvent $arg1)
+	[protected] [override] inherited from QDialog
+	calls Qt method void keyPressEvent(QKeyEvent* arg1)
+
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -2071,21 +2435,41 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	inherited from QWidget
 	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
+#### Method minimumSizeHint( --> QSize)
+	[override] inherited from QDialog
+	calls Qt method QSize minimumSizeHint()
+
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method open()
+	[slot] [virtual] inherited from QDialog
+	called as Qt method void open()
+
+#### Method orientation( --> Qt::Orientation)
+	inherited from QDialog
+	calls Qt method Qt::Orientation orientation()
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
+
+#### Method reject()
+	[slot] [virtual] inherited from QDialog
+	called as Qt method void reject()
+
+#### Method rejected()
+	[signal] inherited from QDialog
+	calls Qt method void rejected()
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
@@ -2101,11 +2485,19 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method result( --> Int)
+	inherited from QDialog
+	calls Qt method int result()
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
 	calls Qt method void setDisabled(bool arg1)
+
+#### Method setExtension(QWidget $extension)
+	inherited from QDialog
+	calls Qt method void setExtension(QWidget* extension)
 
 #### Method setFixedHeight(Int $h)
 	inherited from QWidget
@@ -2151,9 +2543,25 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	inherited from QWidget
 	calls Qt method void setMinimumWidth(int minw)
 
+#### Method setModal(Bool $modal)
+	inherited from QDialog
+	calls Qt method void setModal(bool modal)
+
 #### Method setMouseTracking(Bool $enable)
 	inherited from QWidget
 	calls Qt method void setMouseTracking(bool enable)
+
+#### Method setOrientation(Qt::Orientation $orientation)
+	inherited from QDialog
+	calls Qt method void setOrientation(Qt::Orientation orientation)
+
+#### Method setResult(Int $r)
+	inherited from QDialog
+	calls Qt method void setResult(int r)
+
+#### Method setSizeGripEnabled(Bool $arg1)
+	inherited from QDialog
+	calls Qt method void setSizeGripEnabled(bool arg1)
 
 #### Method setSizePolicy(QSizePolicy::Policy $horizontal, QSizePolicy::Policy $vertical)
 	inherited from QWidget
@@ -2163,6 +2571,10 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	inherited from QWidget
 	calls Qt method void setToolTip(const QString& arg1)
 
+#### Method setVisible(Bool $visible)
+	[override] inherited from QDialog
+	calls Qt method void setVisible(bool visible)
+
 #### Method setWindowTitle(Str $arg1)
 	[slot] inherited from QWidget
 	calls Qt method void setWindowTitle(const QString& arg1)
@@ -2171,13 +2583,13 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	[slot] inherited from QWidget
 	calls Qt method void show()
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -2242,7 +2654,7 @@ Class QFrame
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -2253,7 +2665,7 @@ Class QFrame
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -2276,7 +2688,7 @@ Class QFrame
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -2288,7 +2700,7 @@ Class QFrame
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -2300,7 +2712,7 @@ Class QFrame
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method lineWidth( --> Int)
 	calls Qt method int lineWidth()
@@ -2334,35 +2746,35 @@ Class QFrame
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
@@ -2454,13 +2866,13 @@ Class QFrame
 	[override] 
 	calls Qt method QSize sizeHint()
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -2478,8 +2890,8 @@ Class QGraphicsEllipseItem
 
 
 #### Method boundingRect( --> QRectF)
-	[override] 
-	calls Qt method QRectF boundingRect()
+	[virtual] [override] 
+	called as Qt method QRectF boundingRect()
 
 #### Method brush( --> QBrush)
 	inherited from QAbstractGraphicsShapeItem
@@ -2490,21 +2902,17 @@ Class QGraphicsEllipseItem
 	calls Qt method QRectF childrenBoundingRect()
 
 #### Method contains(QPointF $point --> Bool)
-	[override] 
-	calls Qt method bool contains(const QPointF& point)
-
-#### Method contains(QPointF $point --> Bool)
-	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
+	[virtual] [override] 
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method QGraphicsEllipseItem.new(QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsEllipseItem))
 	calls Qt method  QGraphicsEllipseItem(QGraphicsItem* parent = nullptr)
 
-#### Method QGraphicsEllipseItem.new(QRectF $rect, QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsEllipseItem))
-	calls Qt method  QGraphicsEllipseItem(const QRectF& rect, QGraphicsItem* parent = nullptr)
-
 #### Method QGraphicsEllipseItem.new(Real $x, Real $y, Real $w, Real $h, QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsEllipseItem))
 	calls Qt method  QGraphicsEllipseItem(qreal x, qreal y, qreal w, qreal h, QGraphicsItem* parent = nullptr)
+
+#### Method QGraphicsEllipseItem.new(QRectF $rect, QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsEllipseItem))
+	calls Qt method  QGraphicsEllipseItem(const QRectF& rect, QGraphicsItem* parent = nullptr)
 
 #### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
 	inherited from QGraphicsItem
@@ -2557,11 +2965,11 @@ Class QGraphicsEllipseItem
 	inherited from QGraphicsItem
 	calls Qt method void setPos(qreal x, qreal y)
 
-#### Method setRect(QRectF $rect)
-	calls Qt method void setRect(const QRectF& rect)
-
 #### Method setRect(Real $x, Real $y, Real $w, Real $h)
 	calls Qt method void setRect(qreal x, qreal y, qreal w, qreal h)
+
+#### Method setRect(QRectF $rect)
+	calls Qt method void setRect(const QRectF& rect)
 
 #### Method setSpanAngle(Int $angle)
 	calls Qt method void setSpanAngle(int angle)
@@ -2620,7 +3028,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method contains(QPointF $point --> Bool)
 	[virtual] 
-	calls Qt method bool contains(const QPointF& point)
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
 	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
@@ -2644,11 +3052,11 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 #### Method setParentItem(QGraphicsItem $parent)
 	calls Qt method void setParentItem(QGraphicsItem* parent)
 
-#### Method setPos(QPointF $pos)
-	calls Qt method void setPos(const QPointF& pos)
-
 #### Method setPos(Real $x, Real $y)
 	calls Qt method void setPos(qreal x, qreal y)
+
+#### Method setPos(QPointF $pos)
+	calls Qt method void setPos(const QPointF& pos)
 
 #### Method setX(Real $x)
 	calls Qt method void setX(qreal x)
@@ -2695,20 +3103,16 @@ Class QGraphicsLineItem
 
 
 #### Method boundingRect( --> QRectF)
-	[override] 
-	calls Qt method QRectF boundingRect()
+	[virtual] [override] 
+	called as Qt method QRectF boundingRect()
 
 #### Method childrenBoundingRect( --> QRectF)
 	inherited from QGraphicsItem
 	calls Qt method QRectF childrenBoundingRect()
 
 #### Method contains(QPointF $point --> Bool)
-	[override] 
-	calls Qt method bool contains(const QPointF& point)
-
-#### Method contains(QPointF $point --> Bool)
-	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
+	[virtual] [override] 
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method QGraphicsLineItem.new(Real $x1, Real $y1, Real $x2, Real $y2, QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsLineItem))
 	calls Qt method  QGraphicsLineItem(qreal x1, qreal y1, qreal x2, qreal y2, QGraphicsItem* parent = nullptr)
@@ -2803,15 +3207,15 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method contains(QPointF $point --> Bool)
 	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
-
-#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
-	inherited from QGraphicsItem
-	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method ensureVisible(Real $x, Real $y, Real $w, Real $h, Int $xmargin = 50, Int $ymargin = 50)
 	inherited from QGraphicsItem
 	calls Qt method void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin = 50, int ymargin = 50)
+
+#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
+	inherited from QGraphicsItem
+	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
 
 #### Method hide()
 	inherited from QGraphicsItem
@@ -2892,7 +3296,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method contains(QPointF $point --> Bool)
 	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
 	inherited from QGraphicsItem
@@ -2989,15 +3393,15 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method contains(QPointF $point --> Bool)
 	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
-
-#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
-	inherited from QGraphicsItem
-	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method ensureVisible(Real $x, Real $y, Real $w, Real $h, Int $xmargin = 50, Int $ymargin = 50)
 	inherited from QGraphicsItem
 	calls Qt method void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin = 50, int ymargin = 50)
+
+#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
+	inherited from QGraphicsItem
+	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
 
 #### Method hide()
 	inherited from QGraphicsItem
@@ -3019,13 +3423,13 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	inherited from QGraphicsItem
 	calls Qt method void setParentItem(QGraphicsItem* parent)
 
-#### Method setPos(QPointF $pos)
-	inherited from QGraphicsItem
-	calls Qt method void setPos(const QPointF& pos)
-
 #### Method setPos(Real $x, Real $y)
 	inherited from QGraphicsItem
 	calls Qt method void setPos(qreal x, qreal y)
+
+#### Method setPos(QPointF $pos)
+	inherited from QGraphicsItem
+	calls Qt method void setPos(const QPointF& pos)
 
 #### Method setX(Real $x)
 	inherited from QGraphicsItem
@@ -3074,15 +3478,15 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method contains(QPointF $point --> Bool)
 	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
-
-#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
-	inherited from QGraphicsItem
-	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method ensureVisible(Real $x, Real $y, Real $w, Real $h, Int $xmargin = 50, Int $ymargin = 50)
 	inherited from QGraphicsItem
 	calls Qt method void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin = 50, int ymargin = 50)
+
+#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
+	inherited from QGraphicsItem
+	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
 
 #### Method hide()
 	inherited from QGraphicsItem
@@ -3104,13 +3508,13 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	inherited from QGraphicsItem
 	calls Qt method void setParentItem(QGraphicsItem* parent)
 
-#### Method setPos(QPointF $pos)
-	inherited from QGraphicsItem
-	calls Qt method void setPos(const QPointF& pos)
-
 #### Method setPos(Real $x, Real $y)
 	inherited from QGraphicsItem
 	calls Qt method void setPos(qreal x, qreal y)
+
+#### Method setPos(QPointF $pos)
+	inherited from QGraphicsItem
+	calls Qt method void setPos(const QPointF& pos)
 
 #### Method setX(Real $x)
 	inherited from QGraphicsItem
@@ -3152,8 +3556,8 @@ Class QGraphicsRectItem
 
 
 #### Method boundingRect( --> QRectF)
-	[override] 
-	calls Qt method QRectF boundingRect()
+	[virtual] [override] 
+	called as Qt method QRectF boundingRect()
 
 #### Method brush( --> QBrush)
 	inherited from QAbstractGraphicsShapeItem
@@ -3164,12 +3568,8 @@ Class QGraphicsRectItem
 	calls Qt method QRectF childrenBoundingRect()
 
 #### Method contains(QPointF $point --> Bool)
-	[override] 
-	calls Qt method bool contains(const QPointF& point)
-
-#### Method contains(QPointF $point --> Bool)
-	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
+	[virtual] [override] 
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method QGraphicsRectItem.new(QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsRectItem))
 	calls Qt method  QGraphicsRectItem(QGraphicsItem* parent = nullptr)
@@ -3284,20 +3684,20 @@ Class QGraphicsScene
 #### Method activeWindow( --> QGraphicsWidget)
 	calls Qt method QGraphicsWidget * activeWindow()
 
-#### Method addEllipse(QRectF $rect, QPen $pen = QPen.new(), QBrush $brush = QBrush.new() --> QGraphicsEllipseItem)
-	calls Qt method QGraphicsEllipseItem * addEllipse(const QRectF& rect, const QPen& pen = QPen(), const QBrush& brush = QBrush())
-
 #### Method addEllipse(Real $x, Real $y, Real $w, Real $h, QPen $pen = QPen.new(), QBrush $brush = QBrush.new() --> QGraphicsEllipseItem)
 	calls Qt method QGraphicsEllipseItem * addEllipse(qreal x, qreal y, qreal w, qreal h, const QPen& pen = QPen(), const QBrush& brush = QBrush())
+
+#### Method addEllipse(QRectF $rect, QPen $pen = QPen.new(), QBrush $brush = QBrush.new() --> QGraphicsEllipseItem)
+	calls Qt method QGraphicsEllipseItem * addEllipse(const QRectF& rect, const QPen& pen = QPen(), const QBrush& brush = QBrush())
 
 #### Method addItem(QGraphicsItem $item)
 	calls Qt method void addItem(QGraphicsItem* item)
 
-#### Method addLine(QLineF $line, QPen $pen = QPen.new() --> QGraphicsLineItem)
-	calls Qt method QGraphicsLineItem * addLine(const QLineF& line, const QPen& pen = QPen())
-
 #### Method addLine(Real $x1, Real $y1, Real $x2, Real $y2, QPen $pen = QPen.new() --> QGraphicsLineItem)
 	calls Qt method QGraphicsLineItem * addLine(qreal x1, qreal y1, qreal x2, qreal y2, const QPen& pen = QPen())
+
+#### Method addLine(QLineF $line, QPen $pen = QPen.new() --> QGraphicsLineItem)
+	calls Qt method QGraphicsLineItem * addLine(const QLineF& line, const QPen& pen = QPen())
 
 #### Method addPath(QPainterPath $path, QPen $pen = QPen.new(), QBrush $brush = QBrush.new() --> QGraphicsPathItem)
 	calls Qt method QGraphicsPathItem * addPath(const QPainterPath& path, const QPen& pen = QPen(), const QBrush& brush = QBrush())
@@ -3305,11 +3705,11 @@ Class QGraphicsScene
 #### Method addPixmap(QPixmap $pixmap --> QGraphicsPixmapItem)
 	calls Qt method QGraphicsPixmapItem * addPixmap(const QPixmap& pixmap)
 
-#### Method addRect(QRectF $rect, QPen $pen = QPen.new(), QBrush $brush = QBrush.new() --> QGraphicsRectItem)
-	calls Qt method QGraphicsRectItem * addRect(const QRectF& rect, const QPen& pen = QPen(), const QBrush& brush = QBrush())
-
 #### Method addRect(Real $x, Real $y, Real $w, Real $h, QPen $pen = QPen.new(), QBrush $brush = QBrush.new() --> QGraphicsRectItem)
 	calls Qt method QGraphicsRectItem * addRect(qreal x, qreal y, qreal w, qreal h, const QPen& pen = QPen(), const QBrush& brush = QBrush())
+
+#### Method addRect(QRectF $rect, QPen $pen = QPen.new(), QBrush $brush = QBrush.new() --> QGraphicsRectItem)
+	calls Qt method QGraphicsRectItem * addRect(const QRectF& rect, const QPen& pen = QPen(), const QBrush& brush = QBrush())
 
 #### Method addSimpleText(Str $text, QFont $font = QFont.new() --> QGraphicsSimpleTextItem)
 	calls Qt method QGraphicsSimpleTextItem * addSimpleText(const QString& text, const QFont& font = QFont())
@@ -3327,11 +3727,11 @@ Class QGraphicsScene
 #### Method backgroundBrush( --> QBrush)
 	calls Qt method QBrush backgroundBrush()
 
-#### Method QGraphicsScene.new(QObject $parent = (QObject) --> QGraphicsScene))
-	calls Qt method  QGraphicsScene(QObject* parent = nullptr)
-
 #### Method QGraphicsScene.new(Real $x, Real $y, Real $width, Real $height, QObject $parent = (QObject) --> QGraphicsScene))
 	calls Qt method  QGraphicsScene(qreal x, qreal y, qreal width, qreal height, QObject* parent = nullptr)
+
+#### Method QGraphicsScene.new(QObject $parent = (QObject) --> QGraphicsScene))
+	calls Qt method  QGraphicsScene(QObject* parent = nullptr)
 
 #### Method height( --> Real)
 	calls Qt method qreal height()
@@ -3347,18 +3747,18 @@ Class QGraphicsScene
 
 #### Method keyPressEvent(QKeyEvent $event)
 	[virtual] [protected] 
-	calls Qt method void keyPressEvent(QKeyEvent* event)
+	called as Qt method void keyPressEvent(QKeyEvent* event)
 
 #### Method keyReleaseEvent(QKeyEvent $event)
 	[virtual] [protected] 
-	calls Qt method void keyReleaseEvent(QKeyEvent* event)
+	called as Qt method void keyReleaseEvent(QKeyEvent* event)
 
 #### Method minimumRenderSize( --> Real)
 	calls Qt method qreal minimumRenderSize()
 
 #### Method mouseDoubleClickEvent(QGraphicsSceneMouseEvent $event)
 	[virtual] [protected] 
-	calls Qt method void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event)
+	called as Qt method void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event)
 
 #### Method mouseGrabberItem( --> QGraphicsItem)
 	calls Qt method QGraphicsItem * mouseGrabberItem()
@@ -3447,8 +3847,8 @@ Class QGraphicsSimpleTextItem
 
 
 #### Method boundingRect( --> QRectF)
-	[override] 
-	calls Qt method QRectF boundingRect()
+	[virtual] [override] 
+	called as Qt method QRectF boundingRect()
 
 #### Method brush( --> QBrush)
 	inherited from QAbstractGraphicsShapeItem
@@ -3460,21 +3860,21 @@ Class QGraphicsSimpleTextItem
 
 #### Method contains(QPointF $point --> Bool)
 	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
-
-#### Method QGraphicsSimpleTextItem.new(QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsSimpleTextItem))
-	calls Qt method  QGraphicsSimpleTextItem(QGraphicsItem* parent = nullptr)
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method QGraphicsSimpleTextItem.new(Str $text, QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsSimpleTextItem))
 	calls Qt method  QGraphicsSimpleTextItem(const QString& text, QGraphicsItem* parent = nullptr)
 
-#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
-	inherited from QGraphicsItem
-	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
+#### Method QGraphicsSimpleTextItem.new(QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsSimpleTextItem))
+	calls Qt method  QGraphicsSimpleTextItem(QGraphicsItem* parent = nullptr)
 
 #### Method ensureVisible(Real $x, Real $y, Real $w, Real $h, Int $xmargin = 50, Int $ymargin = 50)
 	inherited from QGraphicsItem
 	calls Qt method void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin = 50, int ymargin = 50)
+
+#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
+	inherited from QGraphicsItem
+	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
 
 #### Method font( --> QFont)
 	calls Qt method QFont font()
@@ -3514,13 +3914,13 @@ Class QGraphicsSimpleTextItem
 	inherited from QAbstractGraphicsShapeItem
 	calls Qt method void setPen(const QPen& pen)
 
-#### Method setPos(QPointF $pos)
-	inherited from QGraphicsItem
-	calls Qt method void setPos(const QPointF& pos)
-
 #### Method setPos(Real $x, Real $y)
 	inherited from QGraphicsItem
 	calls Qt method void setPos(qreal x, qreal y)
+
+#### Method setPos(QPointF $pos)
+	inherited from QGraphicsItem
+	calls Qt method void setPos(const QPointF& pos)
 
 #### Method setText(Str $text)
 	calls Qt method void setText(const QString& text)
@@ -3571,8 +3971,8 @@ Class QGraphicsTextItem
 	calls Qt method void adjustSize()
 
 #### Method boundingRect( --> QRectF)
-	[override] 
-	calls Qt method QRectF boundingRect()
+	[virtual] [override] 
+	called as Qt method QRectF boundingRect()
 
 #### Method childrenBoundingRect( --> QRectF)
 	inherited from QGraphicsItem
@@ -3580,7 +3980,7 @@ Class QGraphicsTextItem
 
 #### Method contains(QPointF $point --> Bool)
 	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method QGraphicsTextItem.new(QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsTextItem))
 	calls Qt method  QGraphicsTextItem(QGraphicsItem* parent = nullptr)
@@ -3588,13 +3988,13 @@ Class QGraphicsTextItem
 #### Method QGraphicsTextItem.new(Str $text, QGraphicsItem $parent = (QGraphicsItem) --> QGraphicsTextItem))
 	calls Qt method  QGraphicsTextItem(const QString& text, QGraphicsItem* parent = nullptr)
 
-#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
-	inherited from QGraphicsItem
-	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
-
 #### Method ensureVisible(Real $x, Real $y, Real $w, Real $h, Int $xmargin = 50, Int $ymargin = 50)
 	inherited from QGraphicsItem
 	calls Qt method void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin = 50, int ymargin = 50)
+
+#### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
+	inherited from QGraphicsItem
+	calls Qt method void ensureVisible(const QRectF& rect = QRectF(), int xmargin = 50, int ymargin = 50)
 
 #### Method font( --> QFont)
 	calls Qt method QFont font()
@@ -3625,13 +4025,13 @@ Class QGraphicsTextItem
 #### Method setPlainText(Str $text)
 	calls Qt method void setPlainText(const QString& text)
 
-#### Method setPos(QPointF $pos)
-	inherited from QGraphicsItem
-	calls Qt method void setPos(const QPointF& pos)
-
 #### Method setPos(Real $x, Real $y)
 	inherited from QGraphicsItem
 	calls Qt method void setPos(qreal x, qreal y)
+
+#### Method setPos(QPointF $pos)
+	inherited from QGraphicsItem
+	calls Qt method void setPos(const QPointF& pos)
 
 #### Method setX(Real $x)
 	inherited from QGraphicsItem
@@ -3690,7 +4090,7 @@ Class QGraphicsView
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -3700,42 +4100,42 @@ Class QGraphicsView
 	[protected] [override] 
 	calls Qt method void contextMenuEvent(QContextMenuEvent* event)
 
-#### Method QGraphicsView.new(QWidget $parent = (QWidget) --> QGraphicsView))
-	calls Qt method  QGraphicsView(QWidget* parent = nullptr)
-
 #### Method QGraphicsView.new(QGraphicsScene $scene, QWidget $parent = (QWidget) --> QGraphicsView))
 	calls Qt method  QGraphicsView(QGraphicsScene* scene, QWidget* parent = nullptr)
 
+#### Method QGraphicsView.new(QWidget $parent = (QWidget) --> QGraphicsView))
+	calls Qt method  QGraphicsView(QWidget* parent = nullptr)
+
 #### Method drawBackground(QPainter $painter, QRectF $rect)
 	[virtual] [protected] 
-	calls Qt method void drawBackground(QPainter* painter, const QRectF& rect)
+	called as Qt method void drawBackground(QPainter* painter, const QRectF& rect)
 
 #### Method drawForeground(QPainter $painter, QRectF $rect)
 	[virtual] [protected] 
-	calls Qt method void drawForeground(QPainter* painter, const QRectF& rect)
-
-#### Method ensureVisible(QRectF $rect, Int $xmargin = 50, Int $ymargin = 50)
-	calls Qt method void ensureVisible(const QRectF& rect, int xmargin = 50, int ymargin = 50)
+	called as Qt method void drawForeground(QPainter* painter, const QRectF& rect)
 
 #### Method ensureVisible(Real $x, Real $y, Real $w, Real $h, Int $xmargin = 50, Int $ymargin = 50)
 	calls Qt method void ensureVisible(qreal x, qreal y, qreal w, qreal h, int xmargin = 50, int ymargin = 50)
+
+#### Method ensureVisible(QRectF $rect, Int $xmargin = 50, Int $ymargin = 50)
+	calls Qt method void ensureVisible(const QRectF& rect, int xmargin = 50, int ymargin = 50)
 
 #### Method ensureVisible(QGraphicsItem $item, Int $xmargin = 50, Int $ymargin = 50)
 	calls Qt method void ensureVisible(const QGraphicsItem* item, int xmargin = 50, int ymargin = 50)
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method event(QEvent $event --> Bool)
 	[protected] [override] 
 	calls Qt method bool event(QEvent* event)
 
-#### Method fitInView(QRectF $rect, Qt::AspectRatioMode $aspectRadioMode = Qt::IgnoreAspectRatio)
-	calls Qt method void fitInView(const QRectF& rect, Qt::AspectRatioMode aspectRadioMode = Qt::IgnoreAspectRatio)
-
 #### Method fitInView(Real $x, Real $y, Real $w, Real $h, Qt::AspectRatioMode $aspectRadioMode = Qt::IgnoreAspectRatio)
 	calls Qt method void fitInView(qreal x, qreal y, qreal w, qreal h, Qt::AspectRatioMode aspectRadioMode = Qt::IgnoreAspectRatio)
+
+#### Method fitInView(QRectF $rect, Qt::AspectRatioMode $aspectRadioMode = Qt::IgnoreAspectRatio)
+	calls Qt method void fitInView(const QRectF& rect, Qt::AspectRatioMode aspectRadioMode = Qt::IgnoreAspectRatio)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -3763,7 +4163,7 @@ Class QGraphicsView
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -3775,7 +4175,7 @@ Class QGraphicsView
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -3795,11 +4195,11 @@ Class QGraphicsView
 #### Method isTransformed( --> Bool)
 	calls Qt method bool isTransformed()
 
-#### Method itemAt(QPoint $pos --> QGraphicsItem)
-	calls Qt method QGraphicsItem * itemAt(const QPoint& pos)
-
 #### Method itemAt(Int $x, Int $y --> QGraphicsItem)
 	calls Qt method QGraphicsItem * itemAt(int x, int y)
+
+#### Method itemAt(QPoint $pos --> QGraphicsItem)
+	calls Qt method QGraphicsItem * itemAt(const QPoint& pos)
 
 #### Method keyPressEvent(QKeyEvent $event)
 	[protected] [override] 
@@ -3811,7 +4211,7 @@ Class QGraphicsView
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method lineWidth( --> Int)
 	inherited from QFrame
@@ -3850,35 +4250,35 @@ Class QGraphicsView
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method scene( --> QGraphicsScene)
 	calls Qt method QGraphicsScene * scene()
@@ -3965,11 +4365,11 @@ Class QGraphicsView
 #### Method setScene(QGraphicsScene $scene)
 	calls Qt method void setScene(QGraphicsScene* scene)
 
-#### Method setSceneRect(QRectF $rect)
-	calls Qt method void setSceneRect(const QRectF& rect)
-
 #### Method setSceneRect(Real $x, Real $y, Real $w, Real $h)
 	calls Qt method void setSceneRect(qreal x, qreal y, qreal w, qreal h)
+
+#### Method setSceneRect(QRectF $rect)
+	calls Qt method void setSceneRect(const QRectF& rect)
 
 #### Method setSizePolicy(QSizePolicy::Policy $horizontal, QSizePolicy::Policy $vertical)
 	inherited from QWidget
@@ -3989,10 +4389,6 @@ Class QGraphicsView
 
 #### Method sizeHint( --> QSize)
 	[override] 
-	calls Qt method QSize sizeHint()
-
-#### Method sizeHint( --> QSize)
-	[override] inherited from QFrame
 	calls Qt method QSize sizeHint()
 
 #### Method update()
@@ -4027,7 +4423,7 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 
 #### Method contains(QPointF $point --> Bool)
 	[virtual] inherited from QGraphicsItem
-	calls Qt method bool contains(const QPointF& point)
+	called as Qt method bool contains(const QPointF& point)
 
 #### Method ensureVisible(QRectF $rect = QRectF.new(), Int $xmargin = 50, Int $ymargin = 50)
 	inherited from QGraphicsItem
@@ -4057,13 +4453,13 @@ WARNING: This class has no constructor. So it can't be used to create an object 
 	inherited from QGraphicsItem
 	calls Qt method void setParentItem(QGraphicsItem* parent)
 
-#### Method setPos(QPointF $pos)
-	inherited from QGraphicsItem
-	calls Qt method void setPos(const QPointF& pos)
-
 #### Method setPos(Real $x, Real $y)
 	inherited from QGraphicsItem
 	calls Qt method void setPos(qreal x, qreal y)
+
+#### Method setPos(QPointF $pos)
+	inherited from QGraphicsItem
+	calls Qt method void setPos(const QPointF& pos)
 
 #### Method setX(Real $x)
 	inherited from QGraphicsItem
@@ -4104,21 +4500,21 @@ Class QGridLayout
 
 
 
-#### Method addLayout(QLayout $arg1, Int $row, Int $column, Int $arg4 = Qt::Alignment())
-	calls Qt method void addLayout(QLayout* arg1, int row, int column, Qt::Alignment arg4 = Qt::Alignment())
-
 #### Method addLayout(QLayout $arg1, Int $row, Int $column, Int $rowSpan, Int $columnSpan, Int $arg6 = Qt::Alignment())
 	calls Qt method void addLayout(QLayout* arg1, int row, int column, int rowSpan, int columnSpan, Qt::Alignment arg6 = Qt::Alignment())
 
-#### Method addWidget(QWidget $arg1, Int $row, Int $column, Int $arg4 = Qt::Alignment())
-	calls Qt method void addWidget(QWidget* arg1, int row, int column, Qt::Alignment arg4 = Qt::Alignment())
-
-#### Method addWidget(QWidget $arg1, Int $row, Int $column, Int $rowSpan, Int $columnSpan, Int $arg6 = Qt::Alignment())
-	calls Qt method void addWidget(QWidget* arg1, int row, int column, int rowSpan, int columnSpan, Qt::Alignment arg6 = Qt::Alignment())
+#### Method addLayout(QLayout $arg1, Int $row, Int $column, Int $arg4 = Qt::Alignment())
+	calls Qt method void addLayout(QLayout* arg1, int row, int column, Qt::Alignment arg4 = Qt::Alignment())
 
 #### Method addWidget(QWidget $w)
 	inherited from QLayout
 	calls Qt method void addWidget(QWidget* w)
+
+#### Method addWidget(QWidget $arg1, Int $row, Int $column, Int $rowSpan, Int $columnSpan, Int $arg6 = Qt::Alignment())
+	calls Qt method void addWidget(QWidget* arg1, int row, int column, int rowSpan, int columnSpan, Qt::Alignment arg6 = Qt::Alignment())
+
+#### Method addWidget(QWidget $arg1, Int $row, Int $column, Int $arg4 = Qt::Alignment())
+	calls Qt method void addWidget(QWidget* arg1, int row, int column, Qt::Alignment arg4 = Qt::Alignment())
 
 #### Method cellRect(Int $row, Int $column --> QRect)
 	calls Qt method QRect cellRect(int row, int column)
@@ -4132,11 +4528,11 @@ Class QGridLayout
 #### Method columnStretch(Int $column --> Int)
 	calls Qt method int columnStretch(int column)
 
-#### Method QGridLayout.new(QWidget $parent --> QGridLayout))
-	calls Qt method  QGridLayout(QWidget* parent)
-
 #### Method QGridLayout.new( --> QGridLayout))
 	calls Qt method  QGridLayout()
+
+#### Method QGridLayout.new(QWidget $parent --> QGridLayout))
+	calls Qt method  QGridLayout(QWidget* parent)
 
 #### Method horizontalSpacing( --> Int)
 	calls Qt method int horizontalSpacing()
@@ -4210,21 +4606,21 @@ Class QGroupBox
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
 	calls Qt method QRect contentsRect()
 
-#### Method QGroupBox.new(QWidget $parent = (QWidget) --> QGroupBox))
-	calls Qt method  QGroupBox(QWidget* parent = nullptr)
-
 #### Method QGroupBox.new(Str $title, QWidget $parent = (QWidget) --> QGroupBox))
 	calls Qt method  QGroupBox(const QString& title, QWidget* parent = nullptr)
 
+#### Method QGroupBox.new(QWidget $parent = (QWidget) --> QGroupBox))
+	calls Qt method  QGroupBox(QWidget* parent = nullptr)
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -4232,7 +4628,7 @@ Class QGroupBox
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -4244,7 +4640,7 @@ Class QGroupBox
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -4265,7 +4661,7 @@ Class QGroupBox
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -4293,35 +4689,35 @@ Class QGroupBox
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setAlignment(Int $alignment)
 	calls Qt method void setAlignment(int alignment)
@@ -4619,21 +5015,21 @@ Class QLabel
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
 	calls Qt method QRect contentsRect()
 
-#### Method QLabel.new(QWidget $parent = (QWidget), Int $f = Qt::WindowFlags() --> QLabel))
-	calls Qt method  QLabel(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags())
-
 #### Method QLabel.new(Str $text, QWidget $parent = (QWidget), Int $f = Qt::WindowFlags() --> QLabel))
 	calls Qt method  QLabel(const QString& text, QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags())
 
+#### Method QLabel.new(QWidget $parent = (QWidget), Int $f = Qt::WindowFlags() --> QLabel))
+	calls Qt method  QLabel(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags())
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -4661,7 +5057,7 @@ Class QLabel
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -4673,7 +5069,7 @@ Class QLabel
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -4685,7 +5081,7 @@ Class QLabel
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method lineWidth( --> Int)
 	inherited from QFrame
@@ -4721,35 +5117,35 @@ Class QLabel
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setAlignment(Int $arg1)
 	calls Qt method void setAlignment(Qt::Alignment arg1)
@@ -4934,17 +5330,17 @@ Class QLineEdit
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
 	calls Qt method QRect contentsRect()
 
-#### Method QLineEdit.new(QWidget $parent = (QWidget) --> QLineEdit))
-	calls Qt method  QLineEdit(QWidget* parent = nullptr)
-
 #### Method QLineEdit.new(Str $arg1, QWidget $parent = (QWidget) --> QLineEdit))
 	calls Qt method  QLineEdit(const QString& arg1, QWidget* parent = nullptr)
+
+#### Method QLineEdit.new(QWidget $parent = (QWidget) --> QLineEdit))
+	calls Qt method  QLineEdit(QWidget* parent = nullptr)
 
 #### Method editingFinished()
 	[signal] 
@@ -4952,7 +5348,7 @@ Class QLineEdit
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -4960,7 +5356,7 @@ Class QLineEdit
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -4972,7 +5368,7 @@ Class QLineEdit
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -4984,7 +5380,7 @@ Class QLineEdit
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -5012,35 +5408,35 @@ Class QLineEdit
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method returnPressed()
 	[signal] 
@@ -5177,7 +5573,7 @@ Class QMainWindow
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -5188,7 +5584,7 @@ Class QMainWindow
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method event(QEvent $event --> Bool)
 	[protected] [override] 
@@ -5200,7 +5596,7 @@ Class QMainWindow
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -5212,7 +5608,7 @@ Class QMainWindow
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -5237,7 +5633,7 @@ Class QMainWindow
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -5271,19 +5667,19 @@ Class QMainWindow
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method removeToolBar(QToolBar $toolbar)
 	calls Qt method void removeToolBar(QToolBar* toolbar)
@@ -5295,17 +5691,17 @@ Class QMainWindow
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setCentralWidget(QWidget $widget)
 	calls Qt method void setCentralWidget(QWidget* widget)
@@ -5405,13 +5801,13 @@ Class QMainWindow
 #### Method toolBarBreak(QToolBar $toolbar --> Bool)
 	calls Qt method bool toolBarBreak(QToolBar* toolbar)
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -5427,11 +5823,11 @@ Class QMatrix
 
 
 
-#### Method QMatrix.new(Qt::Initialization $arg1 --> QMatrix))
-	calls Qt method  QMatrix(Qt::Initialization arg1)
-
 #### Method QMatrix.new( --> QMatrix))
 	calls Qt method  QMatrix()
+
+#### Method QMatrix.new(Qt::Initialization $arg1 --> QMatrix))
+	calls Qt method  QMatrix(Qt::Initialization arg1)
 
 #### Method mapRect(QRect $arg1 --> QRect)
 	calls Qt method QRect mapRect(const QRect& arg1)
@@ -5483,7 +5879,7 @@ Class QMenu
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -5497,7 +5893,7 @@ Class QMenu
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method exec( --> QAction)
 	calls Qt method QAction * exec()
@@ -5511,7 +5907,7 @@ Class QMenu
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -5523,7 +5919,7 @@ Class QMenu
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -5535,7 +5931,7 @@ Class QMenu
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -5563,19 +5959,19 @@ Class QMenu
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
@@ -5591,7 +5987,7 @@ Class QMenu
 
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
@@ -5661,13 +6057,13 @@ Class QMenu
 	[slot] inherited from QWidget
 	calls Qt method void show()
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -5709,7 +6105,7 @@ Class QMenuBar
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -5720,7 +6116,7 @@ Class QMenuBar
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method event(QEvent $arg1 --> Bool)
 	[protected] [override] 
@@ -5736,7 +6132,7 @@ Class QMenuBar
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -5747,12 +6143,8 @@ Class QMenuBar
 	calls Qt method int height()
 
 #### Method heightForWidth(Int $arg1 --> Int)
-	[override] 
-	calls Qt method int heightForWidth(int arg1)
-
-#### Method heightForWidth(Int $arg1 --> Int)
-	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	[virtual] [override] 
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -5783,12 +6175,8 @@ Class QMenuBar
 	calls Qt method void keyPressEvent(QKeyEvent* arg1)
 
 #### Method leaveEvent(QEvent $arg1)
-	[protected] [override] 
-	calls Qt method void leaveEvent(QEvent* arg1)
-
-#### Method leaveEvent(QEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void leaveEvent(QEvent* arg1)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -5819,56 +6207,36 @@ Class QMenuBar
 	calls Qt method QSize minimumSizeHint()
 
 #### Method mouseMoveEvent(QMouseEvent $arg1)
-	[protected] [override] 
-	calls Qt method void mouseMoveEvent(QMouseEvent* arg1)
-
-#### Method mouseMoveEvent(QMouseEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void mouseMoveEvent(QMouseEvent* arg1)
 
 #### Method mousePressEvent(QMouseEvent $arg1)
-	[protected] [override] 
-	calls Qt method void mousePressEvent(QMouseEvent* arg1)
-
-#### Method mousePressEvent(QMouseEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void mousePressEvent(QMouseEvent* arg1)
 
 #### Method mouseReleaseEvent(QMouseEvent $arg1)
-	[protected] [override] 
-	calls Qt method void mouseReleaseEvent(QMouseEvent* arg1)
-
-#### Method mouseReleaseEvent(QMouseEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void mouseReleaseEvent(QMouseEvent* arg1)
 
 #### Method paintEvent(QPaintEvent $arg1)
-	[protected] [override] 
-	calls Qt method void paintEvent(QPaintEvent* arg1)
-
-#### Method paintEvent(QPaintEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void paintEvent(QPaintEvent* arg1)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
-#### Method resizeEvent(QResizeEvent $arg1)
-	[protected] [override] 
-	calls Qt method void resizeEvent(QResizeEvent* arg1)
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
 
-#### Method resizeEvent(QResizeEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+#### Method resizeEvent(QResizeEvent $arg1)
+	[virtual] [protected] [override] 
+	called as Qt method void resizeEvent(QResizeEvent* arg1)
 
 #### Method setActiveAction(QAction $action)
 	calls Qt method void setActiveAction(QAction* action)
@@ -5990,13 +6358,25 @@ Class QMessageBox
 
     enum StandardButton 
 
+#### Method accept()
+	[slot] [virtual] inherited from QDialog
+	called as Qt method void accept()
+
+#### Method accepted()
+	[signal] inherited from QDialog
+	calls Qt method void accepted()
+
 #### Method activateWindow()
 	inherited from QWidget
 	calls Qt method void activateWindow()
 
+#### Method adjustPosition(QWidget $arg1)
+	[protected] inherited from QDialog
+	calls Qt method void adjustPosition(QWidget* arg1)
+
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -6005,13 +6385,25 @@ Class QMessageBox
 #### Method QMessageBox.new(QWidget $parent = (QWidget) --> QMessageBox))
 	calls Qt method  QMessageBox(QWidget* parent = nullptr)
 
+#### Method done(Int $arg1)
+	[slot] [virtual] inherited from QDialog
+	called as Qt method void done(int arg1)
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method exec( --> Int)
 	[slot] [virtual] inherited from QDialog
-	calls Qt method int exec()
+	called as Qt method int exec()
+
+#### Method extension( --> QWidget)
+	inherited from QDialog
+	calls Qt method QWidget * extension()
+
+#### Method finished(Int $result)
+	[signal] inherited from QDialog
+	calls Qt method void finished(int result)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -6019,7 +6411,7 @@ Class QMessageBox
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -6031,7 +6423,7 @@ Class QMessageBox
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -6041,9 +6433,17 @@ Class QMessageBox
 	inherited from QWidget
 	calls Qt method bool isActiveWindow()
 
+#### Method isSizeGripEnabled( --> Bool)
+	inherited from QDialog
+	calls Qt method bool isSizeGripEnabled()
+
+#### Method keyPressEvent(QKeyEvent $arg1)
+	[protected] [override] inherited from QDialog
+	calls Qt method void keyPressEvent(QKeyEvent* arg1)
+
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -6069,21 +6469,41 @@ Class QMessageBox
 	inherited from QWidget
 	calls Qt method QPoint mapToParent(const QPoint& arg1)
 
+#### Method minimumSizeHint( --> QSize)
+	[override] inherited from QDialog
+	calls Qt method QSize minimumSizeHint()
+
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
+
+#### Method open()
+	[slot] [virtual] inherited from QDialog
+	called as Qt method void open()
+
+#### Method orientation( --> Qt::Orientation)
+	inherited from QDialog
+	calls Qt method Qt::Orientation orientation()
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
+
+#### Method reject()
+	[slot] [virtual] inherited from QDialog
+	called as Qt method void reject()
+
+#### Method rejected()
+	[signal] inherited from QDialog
+	calls Qt method void rejected()
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
@@ -6099,11 +6519,19 @@ Class QMessageBox
 
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
+
+#### Method result( --> Int)
+	inherited from QDialog
+	calls Qt method int result()
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
 	calls Qt method void setDisabled(bool arg1)
+
+#### Method setExtension(QWidget $extension)
+	inherited from QDialog
+	calls Qt method void setExtension(QWidget* extension)
 
 #### Method setFixedHeight(Int $h)
 	inherited from QWidget
@@ -6152,9 +6580,25 @@ Class QMessageBox
 	inherited from QWidget
 	calls Qt method void setMinimumWidth(int minw)
 
+#### Method setModal(Bool $modal)
+	inherited from QDialog
+	calls Qt method void setModal(bool modal)
+
 #### Method setMouseTracking(Bool $enable)
 	inherited from QWidget
 	calls Qt method void setMouseTracking(bool enable)
+
+#### Method setOrientation(Qt::Orientation $orientation)
+	inherited from QDialog
+	calls Qt method void setOrientation(Qt::Orientation orientation)
+
+#### Method setResult(Int $r)
+	inherited from QDialog
+	calls Qt method void setResult(int r)
+
+#### Method setSizeGripEnabled(Bool $arg1)
+	inherited from QDialog
+	calls Qt method void setSizeGripEnabled(bool arg1)
 
 #### Method setSizePolicy(QSizePolicy::Policy $horizontal, QSizePolicy::Policy $vertical)
 	inherited from QWidget
@@ -6169,6 +6613,10 @@ Class QMessageBox
 #### Method setToolTip(Str $arg1)
 	inherited from QWidget
 	calls Qt method void setToolTip(const QString& arg1)
+
+#### Method setVisible(Bool $visible)
+	[override] inherited from QDialog
+	calls Qt method void setVisible(bool visible)
 
 #### Method setWindowTitle(Str $arg1)
 	[slot] inherited from QWidget
@@ -6208,17 +6656,17 @@ Class QMouseEvent
 #### Method button( --> Qt::MouseButton)
 	calls Qt method Qt::MouseButton button()
 
-#### Method QMouseEvent.new(QEvent::Type $type, QPointF $localPos, Qt::MouseButton $button, Int $buttons, Int $modifiers --> QMouseEvent))
-	calls Qt method  QMouseEvent(Type type, const QPointF& localPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
-
 #### Method QMouseEvent.new(QEvent::Type $type, QPointF $localPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers --> QMouseEvent))
 	calls Qt method  QMouseEvent(Type type, const QPointF& localPos, const QPointF& screenPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
+
+#### Method QMouseEvent.new(QEvent::Type $type, QPointF $localPos, QPointF $windowPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers, Qt::MouseEventSource $source --> QMouseEvent))
+	calls Qt method  QMouseEvent(Type type, const QPointF& localPos, const QPointF& windowPos, const QPointF& screenPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::MouseEventSource source)
 
 #### Method QMouseEvent.new(QEvent::Type $type, QPointF $localPos, QPointF $windowPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers --> QMouseEvent))
 	calls Qt method  QMouseEvent(Type type, const QPointF& localPos, const QPointF& windowPos, const QPointF& screenPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
 
-#### Method QMouseEvent.new(QEvent::Type $type, QPointF $localPos, QPointF $windowPos, QPointF $screenPos, Qt::MouseButton $button, Int $buttons, Int $modifiers, Qt::MouseEventSource $source --> QMouseEvent))
-	calls Qt method  QMouseEvent(Type type, const QPointF& localPos, const QPointF& windowPos, const QPointF& screenPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::MouseEventSource source)
+#### Method QMouseEvent.new(QEvent::Type $type, QPointF $localPos, Qt::MouseButton $button, Int $buttons, Int $modifiers --> QMouseEvent))
+	calls Qt method  QMouseEvent(Type type, const QPointF& localPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
 
 #### Method ignore()
 	inherited from QEvent
@@ -6304,17 +6752,17 @@ Class QPainter
 #### Method begin(QPaintDevice $arg1 --> Bool)
 	calls Qt method bool begin(QPaintDevice* arg1)
 
-#### Method boundingRect(QRect $rect, Int $flags, Str $text --> QRect)
-	calls Qt method QRect boundingRect(const QRect& rect, int flags, const QString& text)
-
 #### Method boundingRect(Int $x, Int $y, Int $w, Int $h, Int $flags, Str $text --> QRect)
 	calls Qt method QRect boundingRect(int x, int y, int w, int h, int flags, const QString& text)
 
-#### Method QPainter.new( --> QPainter))
-	calls Qt method  QPainter()
+#### Method boundingRect(QRect $rect, Int $flags, Str $text --> QRect)
+	calls Qt method QRect boundingRect(const QRect& rect, int flags, const QString& text)
 
 #### Method QPainter.new(QPaintDevice $arg1 --> QPainter))
 	calls Qt method  QPainter(QPaintDevice* arg1)
+
+#### Method QPainter.new( --> QPainter))
+	calls Qt method  QPainter()
 
 #### Method drawEllipse(Int $x, Int $y, Int $w, Int $h)
 	calls Qt method void drawEllipse(int x, int y, int w, int h)
@@ -6349,14 +6797,14 @@ Class QPainter
 #### Method setFont(QFont $f)
 	calls Qt method void setFont(const QFont& f)
 
-#### Method setPen(QColor $color)
-	calls Qt method void setPen(const QColor& color)
-
 #### Method setPen(QPen $pen)
 	calls Qt method void setPen(const QPen& pen)
 
 #### Method setPen(Qt::PenStyle $style)
 	calls Qt method void setPen(Qt::PenStyle style)
+
+#### Method setPen(QColor $color)
+	calls Qt method void setPen(const QColor& color)
 
 
 Class QPainterPath
@@ -6380,14 +6828,14 @@ Class QPen
 
 
 
-#### Method QPen.new( --> QPen))
-	calls Qt method  QPen()
-
 #### Method QPen.new(Qt::PenStyle $arg1 --> QPen))
 	calls Qt method  QPen(Qt::PenStyle arg1)
 
 #### Method QPen.new(QColor $color --> QPen))
 	calls Qt method  QPen(const QColor& color)
+
+#### Method QPen.new( --> QPen))
+	calls Qt method  QPen()
 
 #### Method setBrush(QBrush $brush)
 	calls Qt method void setBrush(const QBrush& brush)
@@ -6421,11 +6869,11 @@ Class QPoint
 
 
 
-#### Method QPoint.new( --> QPoint))
-	calls Qt method  QPoint()
-
 #### Method QPoint.new(Int $xpos, Int $ypos --> QPoint))
 	calls Qt method  QPoint(int xpos, int ypos)
+
+#### Method QPoint.new( --> QPoint))
+	calls Qt method  QPoint()
 
 #### Method isNull( --> Bool)
 	calls Qt method bool isNull()
@@ -6458,11 +6906,11 @@ Class QPointF
 #### Method QPointF.new( --> QPointF))
 	calls Qt method  QPointF()
 
-#### Method QPointF.new(QPoint $p --> QPointF))
-	calls Qt method  QPointF(const QPoint& p)
-
 #### Method QPointF.new(Real $xpos, Real $ypos --> QPointF))
 	calls Qt method  QPointF(qreal xpos, qreal ypos)
+
+#### Method QPointF.new(QPoint $p --> QPointF))
+	calls Qt method  QPointF(const QPoint& p)
 
 #### Method isNull( --> Bool)
 	calls Qt method bool isNull()
@@ -6507,7 +6955,7 @@ Class QPushButton
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -6518,7 +6966,7 @@ Class QPushButton
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -6526,7 +6974,7 @@ Class QPushButton
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -6538,7 +6986,7 @@ Class QPushButton
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -6562,7 +7010,7 @@ Class QPushButton
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -6590,23 +7038,23 @@ Class QPushButton
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method nextCheckState()
 	[virtual] [protected] inherited from QAbstractButton
-	calls Qt method void nextCheckState()
+	called as Qt method void nextCheckState()
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method pressed()
 	[signal] inherited from QAbstractButton
@@ -6620,17 +7068,17 @@ Class QPushButton
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setAutoExclusive(Bool $arg1)
 	inherited from QAbstractButton
@@ -6735,13 +7183,13 @@ Class QPushButton
 	[signal] inherited from QAbstractButton
 	calls Qt method void toggled(bool checked)
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -6772,21 +7220,21 @@ Class QRadioButton
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
 	calls Qt method QRect contentsRect()
 
-#### Method QRadioButton.new(QWidget $parent = (QWidget) --> QRadioButton))
-	calls Qt method  QRadioButton(QWidget* parent = nullptr)
-
 #### Method QRadioButton.new(Str $text, QWidget $parent = (QWidget) --> QRadioButton))
 	calls Qt method  QRadioButton(const QString& text, QWidget* parent = nullptr)
 
+#### Method QRadioButton.new(QWidget $parent = (QWidget) --> QRadioButton))
+	calls Qt method  QRadioButton(QWidget* parent = nullptr)
+
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -6794,7 +7242,7 @@ Class QRadioButton
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -6806,7 +7254,7 @@ Class QRadioButton
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -6830,7 +7278,7 @@ Class QRadioButton
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -6858,23 +7306,23 @@ Class QRadioButton
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method nextCheckState()
 	[virtual] [protected] inherited from QAbstractButton
-	calls Qt method void nextCheckState()
+	called as Qt method void nextCheckState()
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method pressed()
 	[signal] inherited from QAbstractButton
@@ -6888,17 +7336,17 @@ Class QRadioButton
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setAutoExclusive(Bool $arg1)
 	inherited from QAbstractButton
@@ -7043,11 +7491,11 @@ Class QRect
 #### Method QRect.new( --> QRect))
 	calls Qt method  QRect()
 
-#### Method QRect.new(QPoint $topleft, QPoint $bottomright --> QRect))
-	calls Qt method  QRect(const QPoint& topleft, const QPoint& bottomright)
-
 #### Method QRect.new(Int $left, Int $top, Int $width, Int $height --> QRect))
 	calls Qt method  QRect(int left, int top, int width, int height)
+
+#### Method QRect.new(QPoint $topleft, QPoint $bottomright --> QRect))
+	calls Qt method  QRect(const QPoint& topleft, const QPoint& bottomright)
 
 #### Method height( --> Int)
 	calls Qt method int height()
@@ -7146,8 +7594,11 @@ Class QRectF
 #### Method center( --> QPointF)
 	calls Qt method QPointF center()
 
-#### Method QRectF.new( --> QRectF))
-	calls Qt method  QRectF()
+#### Method QRectF.new(QRect $rect --> QRectF))
+	calls Qt method  QRectF(const QRect& rect)
+
+#### Method QRectF.new(Real $left, Real $top, Real $width, Real $height --> QRectF))
+	calls Qt method  QRectF(qreal left, qreal top, qreal width, qreal height)
 
 #### Method QRectF.new(QPointF $topleft, QSizeF $size --> QRectF))
 	calls Qt method  QRectF(const QPointF& topleft, const QSizeF& size)
@@ -7155,11 +7606,8 @@ Class QRectF
 #### Method QRectF.new(QPointF $topleft, QPointF $bottomRight --> QRectF))
 	calls Qt method  QRectF(const QPointF& topleft, const QPointF& bottomRight)
 
-#### Method QRectF.new(Real $left, Real $top, Real $width, Real $height --> QRectF))
-	calls Qt method  QRectF(qreal left, qreal top, qreal width, qreal height)
-
-#### Method QRectF.new(QRect $rect --> QRectF))
-	calls Qt method  QRectF(const QRect& rect)
+#### Method QRectF.new( --> QRectF))
+	calls Qt method  QRectF()
 
 #### Method height( --> Real)
 	calls Qt method qreal height()
@@ -7296,11 +7744,11 @@ Class QSize
 #### Method boundedTo(QSize $arg1 --> QSize)
 	calls Qt method QSize boundedTo(const QSize& arg1)
 
-#### Method QSize.new( --> QSize))
-	calls Qt method  QSize()
-
 #### Method QSize.new(Int $w, Int $h --> QSize))
 	calls Qt method  QSize(int w, int h)
+
+#### Method QSize.new( --> QSize))
+	calls Qt method  QSize()
 
 #### Method expandedTo(QSize $arg1 --> QSize)
 	calls Qt method QSize expandedTo(const QSize& arg1)
@@ -7369,7 +7817,7 @@ Class QSlider
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -7383,7 +7831,7 @@ Class QSlider
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -7391,7 +7839,7 @@ Class QSlider
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -7407,7 +7855,7 @@ Class QSlider
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -7427,7 +7875,7 @@ Class QSlider
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -7463,15 +7911,15 @@ Class QSlider
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method orientation( --> Qt::Orientation)
 	inherited from QAbstractSlider
@@ -7483,7 +7931,7 @@ Class QSlider
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
@@ -7499,7 +7947,7 @@ Class QSlider
 
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
@@ -7696,7 +8144,7 @@ Class QStatusBar
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -7710,7 +8158,7 @@ Class QStatusBar
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method event(QEvent $arg1 --> Bool)
 	[protected] [override] 
@@ -7722,7 +8170,7 @@ Class QStatusBar
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -7734,7 +8182,7 @@ Class QStatusBar
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -7759,7 +8207,7 @@ Class QStatusBar
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -7791,23 +8239,19 @@ Class QStatusBar
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $arg1)
-	[protected] [override] 
-	calls Qt method void paintEvent(QPaintEvent* arg1)
-
-#### Method paintEvent(QPaintEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void paintEvent(QPaintEvent* arg1)
 
 #### Method reformat()
 	[protected] 
@@ -7829,12 +8273,8 @@ Class QStatusBar
 	calls Qt method void repaint(int x, int y, int w, int h)
 
 #### Method resizeEvent(QResizeEvent $arg1)
-	[protected] [override] 
-	calls Qt method void resizeEvent(QResizeEvent* arg1)
-
-#### Method resizeEvent(QResizeEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void resizeEvent(QResizeEvent* arg1)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
@@ -7911,13 +8351,13 @@ Class QStatusBar
 	[slot] 
 	calls Qt method void showMessage(const QString& text, int timeout = 0)
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -7944,7 +8384,7 @@ Class QTextEdit
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -7955,7 +8395,7 @@ Class QTextEdit
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	inherited from QWidget
@@ -7983,7 +8423,7 @@ Class QTextEdit
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -7995,7 +8435,7 @@ Class QTextEdit
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -8007,7 +8447,7 @@ Class QTextEdit
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method lineWidth( --> Int)
 	inherited from QFrame
@@ -8043,35 +8483,35 @@ Class QTextEdit
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] inherited from QWidget
@@ -8183,13 +8623,13 @@ Class QTextEdit
 #### Method toPlainText( --> Str)
 	calls Qt method QString toPlainText()
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -8296,7 +8736,7 @@ Class QToolBar
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -8310,7 +8750,7 @@ Class QToolBar
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method event(QEvent $event --> Bool)
 	[protected] [override] 
@@ -8322,7 +8762,7 @@ Class QToolBar
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -8334,7 +8774,7 @@ Class QToolBar
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -8368,7 +8808,7 @@ Class QToolBar
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -8396,15 +8836,15 @@ Class QToolBar
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method movableChanged(Bool $movable)
 	[signal] 
@@ -8418,12 +8858,8 @@ Class QToolBar
 	calls Qt method void orientationChanged(Qt::Orientation orientation)
 
 #### Method paintEvent(QPaintEvent $event)
-	[protected] [override] 
-	calls Qt method void paintEvent(QPaintEvent* event)
-
-#### Method paintEvent(QPaintEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	inherited from QWidget
@@ -8439,7 +8875,7 @@ Class QToolBar
 
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setAllowedAreas(Int $areas)
 	calls Qt method void setAllowedAreas(Qt::ToolBarAreas areas)
@@ -8573,7 +9009,7 @@ Class QToolButton
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	inherited from QWidget
@@ -8586,12 +9022,8 @@ Class QToolButton
 	calls Qt method QAction * defaultAction()
 
 #### Method enterEvent(QEvent $arg1)
-	[protected] [override] 
-	calls Qt method void enterEvent(QEvent* arg1)
-
-#### Method enterEvent(QEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void enterEvent(QEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void enterEvent(QEvent* arg1)
 
 #### Method event(QEvent $e --> Bool)
 	[protected] [override] 
@@ -8603,7 +9035,7 @@ Class QToolButton
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] inherited from QWidget
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	inherited from QWidget
@@ -8615,7 +9047,7 @@ Class QToolButton
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] inherited from QWidget
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] inherited from QWidget
@@ -8642,12 +9074,8 @@ Class QToolButton
 	calls Qt method bool isDown()
 
 #### Method leaveEvent(QEvent $arg1)
-	[protected] [override] 
-	calls Qt method void leaveEvent(QEvent* arg1)
-
-#### Method leaveEvent(QEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void leaveEvent(QEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void leaveEvent(QEvent* arg1)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	inherited from QWidget
@@ -8682,35 +9110,23 @@ Class QToolButton
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $arg1)
-	[protected] [override] 
-	calls Qt method void mousePressEvent(QMouseEvent* arg1)
-
-#### Method mousePressEvent(QMouseEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void mousePressEvent(QMouseEvent* arg1)
 
 #### Method mouseReleaseEvent(QMouseEvent $arg1)
-	[protected] [override] 
-	calls Qt method void mouseReleaseEvent(QMouseEvent* arg1)
-
-#### Method mouseReleaseEvent(QMouseEvent $event)
-	[virtual] [protected] inherited from QWidget
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	[virtual] [protected] [override] 
+	called as Qt method void mouseReleaseEvent(QMouseEvent* arg1)
 
 #### Method nextCheckState()
-	[protected] [override] 
-	calls Qt method void nextCheckState()
-
-#### Method nextCheckState()
-	[virtual] [protected] inherited from QAbstractButton
-	calls Qt method void nextCheckState()
+	[virtual] [protected] [override] 
+	called as Qt method void nextCheckState()
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method popupMode( --> QToolButton::ToolButtonPopupMode)
 	calls Qt method ToolButtonPopupMode popupMode()
@@ -8727,17 +9143,17 @@ Class QToolButton
 	inherited from QWidget
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
 
-#### Method repaint()
-	[slot] inherited from QWidget
-	calls Qt method void repaint()
-
 #### Method repaint(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void repaint(int x, int y, int w, int h)
 
+#### Method repaint()
+	[slot] inherited from QWidget
+	calls Qt method void repaint()
+
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] inherited from QWidget
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setAutoExclusive(Bool $arg1)
 	inherited from QAbstractButton
@@ -8865,13 +9281,13 @@ Class QToolButton
 	[signal] 
 	calls Qt method void triggered(QAction* arg1)
 
-#### Method update()
-	[slot] inherited from QWidget
-	calls Qt method void update()
-
 #### Method update(Int $x, Int $y, Int $w, Int $h)
 	inherited from QWidget
 	calls Qt method void update(int x, int y, int w, int h)
+
+#### Method update()
+	[slot] inherited from QWidget
+	calls Qt method void update()
 
 #### Method width( --> Int)
 	inherited from QWidget
@@ -8944,7 +9360,7 @@ Class QWidget
 	inherits QObject
 	inherits QPaintDevice
 
-	inherited by QAbstractButton, QAbstractSlider, QDialog, QFrame, QGroupBox, QLineEdit, QMainWindow, QMenu, QMenuBar, QStatusBar, QToolBar
+	inherited by QAbstractButton, QAbstractSlider, QDialog, QDialogButtonBox, QFrame, QGroupBox, QLineEdit, QMainWindow, QMenu, QMenuBar, QStatusBar, QToolBar
 
     enum RenderFlag 
 
@@ -8953,7 +9369,7 @@ Class QWidget
 
 #### Method closeEvent(QCloseEvent $event)
 	[virtual] [protected] 
-	calls Qt method void closeEvent(QCloseEvent* event)
+	called as Qt method void closeEvent(QCloseEvent* event)
 
 #### Method contentsRect( --> QRect)
 	calls Qt method QRect contentsRect()
@@ -8963,14 +9379,14 @@ Class QWidget
 
 #### Method enterEvent(QEvent $event)
 	[virtual] [protected] 
-	calls Qt method void enterEvent(QEvent* event)
+	called as Qt method void enterEvent(QEvent* event)
 
 #### Method font( --> QFont)
 	calls Qt method QFont & font()
 
 #### Method hasHeightForWidth( --> Bool)
 	[virtual] 
-	calls Qt method bool hasHeightForWidth()
+	called as Qt method bool hasHeightForWidth()
 
 #### Method hasMouseTracking( --> Bool)
 	calls Qt method bool hasMouseTracking()
@@ -8980,7 +9396,7 @@ Class QWidget
 
 #### Method heightForWidth(Int $arg1 --> Int)
 	[virtual] 
-	calls Qt method int heightForWidth(int arg1)
+	called as Qt method int heightForWidth(int arg1)
 
 #### Method hide()
 	[slot] 
@@ -8991,7 +9407,7 @@ Class QWidget
 
 #### Method leaveEvent(QEvent $event)
 	[virtual] [protected] 
-	calls Qt method void leaveEvent(QEvent* event)
+	called as Qt method void leaveEvent(QEvent* event)
 
 #### Method mapFrom(QWidget $arg1, QPoint $arg2 --> QPoint)
 	calls Qt method QPoint mapFrom(const QWidget* arg1, const QPoint& arg2)
@@ -9013,33 +9429,33 @@ Class QWidget
 
 #### Method mouseMoveEvent(QMouseEvent $event)
 	[virtual] [protected] 
-	calls Qt method void mouseMoveEvent(QMouseEvent* event)
+	called as Qt method void mouseMoveEvent(QMouseEvent* event)
 
 #### Method mousePressEvent(QMouseEvent $event)
 	[virtual] [protected] 
-	calls Qt method void mousePressEvent(QMouseEvent* event)
+	called as Qt method void mousePressEvent(QMouseEvent* event)
 
 #### Method mouseReleaseEvent(QMouseEvent $event)
 	[virtual] [protected] 
-	calls Qt method void mouseReleaseEvent(QMouseEvent* event)
+	called as Qt method void mouseReleaseEvent(QMouseEvent* event)
 
 #### Method paintEvent(QPaintEvent $event)
 	[virtual] [protected] 
-	calls Qt method void paintEvent(QPaintEvent* event)
+	called as Qt method void paintEvent(QPaintEvent* event)
 
 #### Method render(QPaintDevice $target, QPoint $targetOffset = QPoint.new(), QRegion $sourceRegion = QRegion.new(), Int $renderFlags = RenderFlags(DrawWindowBackground +| DrawChildren))
 	calls Qt method void render(QPaintDevice* target, const QPoint& targetOffset = QPoint(), const QRegion& sourceRegion = QRegion(), RenderFlags renderFlags = RenderFlags(DrawWindowBackground | DrawChildren))
+
+#### Method repaint(Int $x, Int $y, Int $w, Int $h)
+	calls Qt method void repaint(int x, int y, int w, int h)
 
 #### Method repaint()
 	[slot] 
 	calls Qt method void repaint()
 
-#### Method repaint(Int $x, Int $y, Int $w, Int $h)
-	calls Qt method void repaint(int x, int y, int w, int h)
-
 #### Method resizeEvent(QResizeEvent $event)
 	[virtual] [protected] 
-	calls Qt method void resizeEvent(QResizeEvent* event)
+	called as Qt method void resizeEvent(QResizeEvent* event)
 
 #### Method setDisabled(Bool $arg1)
 	[slot] 

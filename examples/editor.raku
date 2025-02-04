@@ -70,7 +70,7 @@ class TextEdit is QTextEdit {
         # and return if confirmation is refused
         return if self.main.textModified 
                     && !askForConfirmation(self,
-                                  "They will be lostif a" 
+                                  "They will be lost if a"
                                 ~ " new file is loaded");
         
         # Ask the user for a file

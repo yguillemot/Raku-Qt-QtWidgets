@@ -26,6 +26,7 @@ use-ok "Qt::QtWidgets::QContextMenuEvent";
 use-ok "Qt::QtWidgets::QCoreApplication";
 use-ok "Qt::QtWidgets::QDial";
 use-ok "Qt::QtWidgets::QDialog";
+use-ok "Qt::QtWidgets::QDialogButtonBox";
 use-ok "Qt::QtWidgets::QEvent";
 use-ok "Qt::QtWidgets::QFileDialog";
 use-ok "Qt::QtWidgets::QFont";

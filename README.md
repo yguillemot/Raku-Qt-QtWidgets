@@ -363,6 +363,11 @@ a QGraphicsScene.
 
 `raku examples/moving_objects.raku`
 
+### 5.11 show_dialog.raku
+
+An example of a popup dialog to enter some data
+
+`raku examples/show_dialog.raku`
 
 ## 6. TOOL
 
@@ -459,7 +464,7 @@ Yves Guillemot
 
 ## 11. COPYRIGHT AND LICENSE
 
-Copyright (C) 2021-2024 Yves Guillemot
+Copyright (C) 2021-2025 Yves Guillemot
 
 This software is free: you can redistribute and/or modify it under
 the GNU General Public License as published by the Free Software

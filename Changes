@@ -1,3 +1,8 @@
+v0.0.7  2025/02/04
+    * Fix a bug rising when some Qt C++ virtual methods are used
+    * Add QDialog class
+    * Add a QDialog example
+
 v0.0.6  2024/11/28
     * Move to zef ecosystem
     * Add new Qt classes (QGridLayout, QMainWindow, some QGraphics classes ...)
